@@ -1,0 +1,363 @@
+{
+  "checked_at": "2026-10-30 Asia/Shanghai",
+  "local_baseline": "9bfd436",
+  "sources": [
+    {
+      "id": "S-WANG",
+      "title": "王树森《搜索引擎技术》",
+      "url": "https://github.com/wangshusen/SearchEngine",
+      "commit": "7339c6b126e314abdb74a89adb033d39d8e3d37b",
+      "role": "搜索六大模块主线",
+      "verified": "README完整目录与9个已链接PDF；后四模块仅有目录条目，不能称课件全部发布。仓库书稿PDF存在，但本轮未成功抽取，未把未读书稿作为覆盖证据。",
+      "availability": "公开中文目录、部分PDF/视频；只链接原件，不再分发"
+    },
+    {
+      "id": "A-LIU",
+      "title": "刘鹏、王超《计算广告》第2版，出版社提供的目录",
+      "url": "https://read.douban.com/ebook/371259701/",
+      "role": "广告产品—系统—技术总体结构",
+      "verified": "核对公开目录与简介；未获取或声称通读付费正文。使用明确第2版目录，不混用第3版。",
+      "availability": "出版教材；不当作免费GitHub全套讲义"
+    },
+    {
+      "id": "A-CCR",
+      "title": "《计算传播学导论》第8章计算广告PPT",
+      "url": "https://github.com/SocratesClub/ccrbook/blob/6dbd5650f2adc6e257e5bd5d156bc50a72560ee9/slides/Chapter%208%20%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A.pptx",
+      "repository": "https://github.com/SocratesClub/ccrbook",
+      "commit": "6dbd5650f2adc6e257e5bd5d156bc50a72560ee9",
+      "git_blob_sha1": "4bbd18bc89768e2f856d7529f577eb7bf5cfc411",
+      "bytes": 3546790,
+      "role": "作者配套GitHub中文课件，补广告目标与市场机制",
+      "verified": "GitHub API确认实际PPT文件、大小和blob；教材目录确认该章涉及优化目标、博弈、拍卖与匹配。本轮未逐页渲染PPT，不据此声称覆盖现代广告工程全链路。",
+      "availability": "确有GitHub PPT；单章而非完整广告课程，无明确再分发许可不复制进Lab"
+    },
+    {
+      "id": "A-NJU",
+      "title": "南京大学《计算传播与广告》2015课程",
+      "url": "https://github.com/SocratesClub/computational-advertising-2015",
+      "role": "博弈、拍卖、匹配与搜索广告市场补充",
+      "verified": "课程表和作业入口；不能因为有课程仓库就声称全套PPT均可下载。",
+      "availability": "中文公开课程仓库，较早且不以CTR工程为主"
+    },
+    {
+      "id": "A-RTB",
+      "title": "Weinan Zhang / Jian Xu, Learning, Prediction and Optimisation in RTB Display Advertising, CIKM 2016",
+      "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf",
+      "role": "广告决策技术讲义主参考",
+      "verified": "作者站点PDF，164页；已读目录与相应结构：系统、拍卖、响应预测、出价、归因、pacing、定向扩量与底价。",
+      "availability": "英文公开作者讲义；2016内容不是当前市场份额或最新机制事实"
+    },
+    {
+      "id": "A-PAPERS",
+      "title": "张伟楠 RTB论文索引",
+      "url": "https://github.com/wnzhang/rtb-papers",
+      "commit": "ddf66afe2371778a54671e7890d12cb8a4d7dd7f",
+      "role": "为新增教学单元追溯原论文",
+      "verified": "原作者论文/综述索引；并非课程讲义本体。",
+      "availability": "GitHub索引"
+    },
+    {
+      "id": "A-COMMUNITY",
+      "title": "fun-rec-mdbook Part12计算广告专题",
+      "url": "https://github.com/Haozhe-Xing/fun-rec-mdbook",
+      "commit": "84b2d5d011c7abe85b34fe919764bb7c88161518",
+      "role": "可选中文术语与练习组织交叉检查",
+      "verified": "README与在线目录；社区知识库，不冒充大学课程或刘鹏本人讲义，不作为唯一技术权威。",
+      "availability": "CC BY-SA 4.0；若改编需逐项遵守署名与相同许可要求"
+    }
+  ],
+  "units": {
+    "search": [
+      {
+        "id": "S01",
+        "topic": "任务、用户需求与搜索产品",
+        "source": "S-WANG 基础",
+        "status": "部分",
+        "evidence": "17总览仅以科学声明检索为例；30做离线误差",
+        "acceptance": "补充不同检索场景、用户满意度与离线代理指标之间的区别；构造会话对比，不能把NDCG当满意度。"
+      },
+      {
+        "id": "S02",
+        "topic": "相关性分档、标注与评估设计",
+        "source": "S-WANG 相关性",
+        "status": "部分",
+        "evidence": "25的qrels契约、二值NDCG、宏平均、不完整判断",
+        "acceptance": "增加分级相关性、标注分歧与pooling；手算gain/discount；旧SciFact读取将正标签二值化，不冒充分级标签实验。"
+      },
+      {
+        "id": "S03",
+        "topic": "文本规范化、中文分词与新词",
+        "source": "S-WANG 查询处理",
+        "status": "缺失",
+        "evidence": "search.py的正则CountVectorizer不是中文分词课程",
+        "acceptance": "做字典切分、歧义与OOV的可运行对照；解释神经子词与词切分的不同，不把手写词例称真实业务评估。"
+      },
+      {
+        "id": "S04",
+        "topic": "查询词权重与字段匹配",
+        "source": "S-WANG 查询处理/文本匹配",
+        "status": "部分",
+        "evidence": "26的BM25含IDF；query词频被二值化",
+        "acceptance": "从词权重出发学习标题/正文、必选词与软权重，比较改权重后的候选和误召；不能将IDF覆盖等同完整query理解。"
+      },
+      {
+        "id": "S05",
+        "topic": "类目与意图识别",
+        "source": "S-WANG 查询处理",
+        "status": "缺失",
+        "evidence": "无查询类目/意图数据或分类器",
+        "acceptance": "先定义可检验标签与任务，再实现小样本训练或清楚标注规则机制；数据类别不能伪称电商类目或中文用户意图。"
+      },
+      {
+        "id": "S06",
+        "topic": "查询改写、纠错与语义漂移",
+        "source": "S-WANG 查询处理",
+        "status": "缺失",
+        "evidence": "无改写器或改写评估",
+        "acceptance": "建立同义/拼写/约束词改写与原查询对照；评估漏召与误召、改写失败和原查询回退；不以生成流畅代替检索正确。"
+      },
+      {
+        "id": "S07",
+        "topic": "倒排索引、布尔与位置约束",
+        "source": "S-WANG 召回 + Lab教学展开",
+        "status": "部分",
+        "evidence": "26可检查稀疏倒排，但没有布尔/短语索引教学",
+        "acceptance": "补AND/OR、短语与位置、字段约束；建小索引并用穷举核验。增量/删除作为工程拓展，不包装成分布式引擎。"
+      },
+      {
+        "id": "S08",
+        "topic": "词法相关性与BM25",
+        "source": "S-WANG 相关性/召回",
+        "status": "已覆盖",
+        "evidence": "26真实BM25、b变量、词频饱和/OOV/并列边界",
+        "acceptance": "复用现有章节；放在查询分析与倒排之后，补与前序词权重及误差的连接。"
+      },
+      {
+        "id": "S09",
+        "topic": "语义表示与向量召回",
+        "source": "S-WANG 召回",
+        "status": "已覆盖",
+        "evidence": "27冻结MiniLM的token/mask/归一化/截断与词法对比",
+        "acceptance": "保留冻结编码器教学；明确并未完成召回编码器训练或工业embedding系统。"
+      },
+      {
+        "id": "S10",
+        "topic": "近似索引与候选预算",
+        "source": "S-WANG 向量召回 + Lab教学展开",
+        "status": "机制",
+        "evidence": "28的12簇coarse索引及全簇等价",
+        "acceptance": "保留机制验收，不标成HNSW/FAISS完整复现；图索引、压缩等列进阶选修，可按资源补最小对照。"
+      },
+      {
+        "id": "S11",
+        "topic": "缓存召回与一致性",
+        "source": "S-WANG 缓存召回",
+        "status": "缺失",
+        "evidence": "查询向量缓存只是推理优化，没有候选缓存课程",
+        "acceptance": "模拟缓存命中、TTL、陈旧文档与回退；统计成本和结果差异，区分特征缓存、候选缓存与结果缓存。"
+      },
+      {
+        "id": "S12",
+        "topic": "BERT相关性打分与推理",
+        "source": "S-WANG 相关性BERT推理",
+        "status": "部分",
+        "evidence": "29仅冻结TinyBERT重排少量查询，27是双编码器",
+        "acceptance": "补交叉编码/双编码的输入和复杂度、pair截断与batch推理；真实打分与候选上限对照。"
+      },
+      {
+        "id": "S13",
+        "topic": "相关性模型训练",
+        "source": "S-WANG 相关性BERT训练",
+        "status": "缺失",
+        "evidence": "正式MiniLM/TinyBERT均冻结；线性重排不是BERT训练",
+        "acceptance": "显式做小预算相关性模型训练/微调和冻结对照，按query切分与train-only负例策略；只报教学select，新run隔离，不替换正式服务。"
+      },
+      {
+        "id": "S14",
+        "topic": "排序目标与多路融合训练",
+        "source": "S-WANG 排序",
+        "status": "部分",
+        "evidence": "29有RRF和pointwise线性两组真拟合",
+        "acceptance": "补pointwise/pairwise/listwise区别、训练目标与排名指标不一致；至少一个可运行目标对照，弱负例边界写清。"
+      },
+      {
+        "id": "S15",
+        "topic": "质量、多样性与业务约束",
+        "source": "S-WANG 用户满意度 + Lab拓展",
+        "status": "缺失",
+        "evidence": "仅离线相关性均值/失败查询；无搜索约束教学",
+        "acceptance": "在明确构造的查询候选上比较相关性与约束目标；讨论指标冲突、曝光偏差和线上实验边界，不声称商业增益。"
+      },
+      {
+        "id": "S16",
+        "topic": "查询推荐与建议词",
+        "source": "S-WANG 查询推荐",
+        "status": "缺失",
+        "evidence": "没有suggest/related-query召回排序",
+        "acceptance": "按前缀建议、相关查询与会话需求分别定义任务，做候选生成/排序/离线评估；合成query日志需显著标识。"
+      },
+      {
+        "id": "S17",
+        "topic": "服务链路、误差定位与性能",
+        "source": "S-WANG 链路 + Lab教学展开",
+        "status": "部分",
+        "evidence": "30有失败归因、HTTP与离线前10一致性和计时",
+        "acceptance": "补查询处理→多路召回→缓存→重排的可追溯链路、空结果和故障回退；新模块仍同一服务。"
+      },
+      {
+        "id": "S18",
+        "topic": "综合复盘与课程导航",
+        "source": "Lab教学设计，串联六大模块",
+        "status": "部分",
+        "evidence": "17是既有实验总览，页面按已存在章节组织",
+        "acceptance": "以S01–S17语义路径导航；17作为综合实验参考而非所有课程前置。每节标来源、先修、证据类型和覆盖状态。"
+      }
+    ],
+    "ads": [
+      {
+        "id": "A01",
+        "topic": "广告参与方、产品与交易全貌",
+        "source": "A-LIU 市场/产品；A-CCR 第8章",
+        "status": "缺失",
+        "evidence": "18只从Criteo预测和模拟切入",
+        "acceptance": "以广告主/媒体/用户/平台解释合约、竞价、搜索、原生、程序化产品；贯通一次请求和结算，先讲目标再讲模型。"
+      },
+      {
+        "id": "A02",
+        "topic": "计费单位、指标与三方目标",
+        "source": "A-LIU 基础；A-CCR 优化目标",
+        "status": "部分",
+        "evidence": "23/24有每曝光货币、价值与盈余边界",
+        "acceptance": "补CPM/CPC/CPA、CTR/CVR/CTCVR、eCPM/ROAS单位换算和分母；用可检查账本避免把出价、支付、收入、利润混为一谈。"
+      },
+      {
+        "id": "A03",
+        "topic": "合约广告、库存预测与在线分配",
+        "source": "A-LIU 合约/核心技术；A-NJU 匹配",
+        "status": "缺失",
+        "evidence": "无合约、保量、库存与分配课程",
+        "acceptance": "构造库存与合约，做离线最优小规模枚举/LP与在线贪心对照，检查保量、欠投和机会成本；不用虚构真实订单。"
+      },
+      {
+        "id": "A04",
+        "topic": "搜索广告、定向资格与质量排序",
+        "source": "A-LIU 搜索竞价；A-NJU 搜索广告市场",
+        "status": "缺失",
+        "evidence": "SciFact文档检索不是广告匹配；auction无关键词广告场景",
+        "acceptance": "讲关键词/广告/落地页匹配、资格过滤与质量分；同请求中区分自然结果与商业候选，缺质量日志用机制例。"
+      },
+      {
+        "id": "A05",
+        "topic": "GFP/GSP/VCG与多广告位拍卖",
+        "source": "A-CCR/A-NJU 拍卖；A-RTB auction",
+        "status": "机制",
+        "evidence": "23只有单赢家独立二价，无多广告位机制",
+        "acceptance": "增加位置外部性、多广告位GSP/VCG支付与效用可枚举验算；不把现单物品二价叫GSP/VCG，不承诺真实最优。"
+      },
+      {
+        "id": "A06",
+        "topic": "程序化RTB、底价与市场反馈",
+        "source": "A-LIU 程序化；A-RTB 系统/底价",
+        "status": "部分",
+        "evidence": "auction有固定外部报价，非完整RTB协议；外部价不等于平台底价",
+        "acceptance": "串联DSP/SSP/ADX的请求和反馈；区分底价、竞价对手、支付、输标和截尾市场价；把制度设定写入实验配置。"
+      },
+      {
+        "id": "A07",
+        "topic": "受众定向、上下文、扩量与DMP",
+        "source": "A-LIU 定向/数据；A-RTB targeting",
+        "status": "缺失",
+        "evidence": "39个匿名字段不含已知用户画像语义",
+        "acceptance": "以构造人群/上下文做约束匹配与扩量、覆盖和误投；解释冷启动、数据最小化与跨域限制，不能把匿名编码解释为真实属性。"
+      },
+      {
+        "id": "A08",
+        "topic": "广告候选检索与约束匹配",
+        "source": "A-LIU 定向/竞价技术；Lab教学展开",
+        "status": "缺失",
+        "evidence": "无广告库、活动状态/预算资格的候选引擎",
+        "acceptance": "建小广告库存与AND/OR约束索引、候选top-k；向量检索可复用共享组件，但必须检验资格约束，不能借文档搜索冒充广告引擎。"
+      },
+      {
+        "id": "A09",
+        "topic": "真实曝光、标签、切分与线性CTR",
+        "source": "A-LIU CTR；A-RTB response",
+        "status": "已覆盖",
+        "evidence": "19/20真实曝光、特征组切分、onehot两次真拟合",
+        "acceptance": "复用，不重新训练200k正式实验；把抽样、训练先验和未知字段语义放进数据契约。"
+      },
+      {
+        "id": "A10",
+        "topic": "特征交叉与非线性响应模型",
+        "source": "A-LIU CTR；A-RTB response",
+        "status": "部分",
+        "evidence": "21是构造XOR与真实树容量，未实际实现广告FM/FFM/神经CTR",
+        "acceptance": "复用推荐06机制代码而非复制；选少量有代表性的交叉/embedding对照进行实际小预算拟合，单变量与参数预算清楚，不堆论文名字。"
+      },
+      {
+        "id": "A11",
+        "topic": "转化预估、延迟反馈与样本选择",
+        "source": "A-RTB response/attribution；Lab展开",
+        "status": "缺失",
+        "evidence": "Criteo样本只有曝光点击，无真实转化或延迟标签",
+        "acceptance": "讲CTR×CVR与CTCVR、延迟删失与选择偏差；要么找许可清楚的小真实转换数据，要么明确构造日志做机制，绝不从click捏造conversion。"
+      },
+      {
+        "id": "A12",
+        "topic": "概率校准、评分与分段审计",
+        "source": "A-LIU CTR；Lab概率方法展开",
+        "status": "已覆盖",
+        "evidence": "22 proper scores、sigmoid重拟合、分箱/分段；正式raw/sigmoid/isotonic",
+        "acceptance": "保留负结果和计数，说明calibration/audit独立性与抽样先验限制；不把ECE最小当唯一选型。"
+      },
+      {
+        "id": "A13",
+        "topic": "出价目标、竞价函数与智能投放",
+        "source": "A-RTB learning to bid；A-LIU 程序化",
+        "status": "部分",
+        "evidence": "23仅value/flat/倍数与单赢家市场",
+        "acceptance": "从CPC/CPA/ROAS目标推导报价、约束和最优反应的依赖假设；至少固定市场比较价值报价与约束策略，不承诺实投利润。"
+      },
+      {
+        "id": "A14",
+        "topic": "预算pacing与反馈控制",
+        "source": "A-RTB pacing",
+        "status": "机制",
+        "evidence": "24是累计预算比例硬门控，非PID/对偶优化",
+        "acceptance": "先讲现门控，再加入反馈型节奏控制并比较突发、稀疏、漂移；逐请求断言花费不超预算，区分匀速花费与价值最大化。"
+      },
+      {
+        "id": "A15",
+        "topic": "归因与增量效果",
+        "source": "A-RTB attribution；A-LIU 相关技术",
+        "status": "缺失",
+        "evidence": "没有曝光/点击/转化序列与归因",
+        "acceptance": "构造多触点路径比last-click等记账；另用带已知随机分配的机制实验说明增量。没有propensity不能声称真实IPS/OPE或因果增收。"
+      },
+      {
+        "id": "A16",
+        "topic": "底价优化与供需策略",
+        "source": "A-RTB reserve price",
+        "status": "缺失",
+        "evidence": "外部报价变化不是平台reserve机制或最优底价",
+        "acceptance": "在相同构造报价分布下扫底价，计算填充、收入和广告主效用；明确分布/拍卖机制，不依据模拟选择真实价格。"
+      },
+      {
+        "id": "A17",
+        "topic": "实验、偏差、反作弊与数据边界",
+        "source": "A-LIU 其他技术；Lab工程展开",
+        "status": "部分",
+        "evidence": "现有离线分区/校准审计与预算断言，不含广告在线实验/欺诈",
+        "acceptance": "通过机制例说明曝光选择、分桶干扰、异常流量与数据滥用；不可由特征哈希切分推断用户级独立或公平性；保留负结果。"
+      },
+      {
+        "id": "A18",
+        "topic": "端到端账本与课程综合",
+        "source": "Lab教学设计，串联产品/预测/决策",
+        "status": "部分",
+        "evidence": "18/24串联概率与模拟，但尚无产品—资格—候选—决策—反馈全过程",
+        "acceptance": "用同一Lab中的可追溯小请求演示完整结构，始终将真实CTR证据和模拟决策证据分层；课程先产品/市场，再预测/优化，不从Criteo实验倒推主线。"
+      }
+    ]
+  }
+}

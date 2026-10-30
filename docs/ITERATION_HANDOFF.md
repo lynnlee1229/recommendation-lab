@@ -1,3 +1,11 @@
+# 课程主线审计（最新，2026-10-30）
+
+用户要求先对照课程建立搜索和广告完整学习路线，再分别新session补，不迁就现有实验。已完成18+18语义单元审计与源快照：SEARCH_LEARNING_ROADMAP.md、ADS_LEARNING_ROADMAP.md、COURSE_AUDIT_SOURCES.json。本轮只新增路线文档，不声称已实现缺口。GitHub中文广告PPT已由API核实，确为ccrbook/slides/Chapter 8 计算广告.pptx；它是单章，不是全套工程广告课。
+
+公用session已完成35本课程并在本地提交9bfd436、结束写入；其推送被自动审批拒绝，要求用户直接确认更新main。远端仍为42625aa。不要借旧授权绕过拒绝，当前审计与后续补课可本地继续实现/验收/提交；在收到明确的新确认前不推送main。本轮最终答复向用户说明这一具体审批阻塞。
+
+串行交接规则见COURSE_COMPLETION_HANDOFF.md：当前先完成审计本地提交并停止写checkout，再启动搜索和广告新session；广告先只读准备，确认搜索session结束且释放标记已提交、工作区干净后才写同一checkout。保持同一Lab，旧35本和固定正式模型不覆写。
+
 # 公用基础课程已完成（最新）
 
 同一checkout新增31–34四本独立公用课程，总35本：公用4、推荐17、搜索7、广告7。旧31本未改动。公用学习路径、TARGETS、curriculum、API与源码白名单已接通，首页缺口提示替换为课程入口。详见COMMON_FOUNDATIONS.md。下文为历史。

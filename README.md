@@ -143,3 +143,13 @@ Notebook代码和项目源码可编辑，使用Search Recommendation Ads Lab (Py
 ![按模块组织的工作台](docs/screenshots/overview.png)
 
 [窄屏界面截图](docs/screenshots/mobile.png)
+
+## 课程先行的搜索与广告补齐路线
+
+已按公开课程重新盘点，而非按现有实验倒推课程：
+
+- [搜索完整学习路线与缺口](docs/SEARCH_LEARNING_ROADMAP.md)：王树森课程六大模块拆为18个教学单元，逐项列出现有证据、缺口与验收要求。
+- [广告完整学习路线与缺口](docs/ADS_LEARNING_ROADMAP.md)：产品与市场先行，再到预测、分配、竞价与反馈，共18个教学单元。
+- [课程来源快照与结构化审计](docs/COURSE_AUDIT_SOURCES.json)：明确区分作者讲义、出版目录、GitHub单章PPT、课程仓库、论文索引与社区材料。
+
+路线是待补齐课程的设计，不代表所有单元已实现。搜索和广告分别在新session中串行补齐，仍使用本仓库、同一服务与原始实验；公用31–34作为先修。
