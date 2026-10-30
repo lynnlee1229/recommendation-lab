@@ -1,6 +1,6 @@
 # 同一系统的真实搜索迭代
 
-搜索复用 `reclab/experiments.py` 的 append-only begin/finish/catalog/result、`reclab/retrieval.py` 的稳定 topk 与二值 qrels 指标、`reclab/learning/retrieval.py` 的粗索引、公开下载校验器、FastAPI、本机工作台07和 Notebook 目录。任务 adapter 为 `reclab/search.py`，没有新增仓库或服务器。
+搜索复用 `reclab/experiments.py` 的 append-only begin/finish/catalog/result、`reclab/retrieval.py` 的稳定 topk 与二值 qrels 指标、`reclab/learning/retrieval.py` 的粗索引、公开下载校验器、FastAPI、本机工作台“共享实验记录”和 Notebook 目录。任务 adapter 为 `reclab/search.py`，没有新增仓库或服务器。
 
 ## 来源、资源与可复现性
 

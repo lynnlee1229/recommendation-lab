@@ -1,7 +1,7 @@
 [project]
-name = "recommendation-lab"
+name = "search-recommendation-ads-lab"
 version = "0.1.0"
-description = "A local, traceable recommendation learning workbench"
+description = "A local, traceable learning workbench for search, recommendation and advertising"
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "numpy>=2.1,<3",

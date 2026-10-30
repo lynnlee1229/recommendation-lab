@@ -36,7 +36,7 @@ def save(stem, cells):
     if path.exists():
         raise FileExistsError(f'Refusing to overwrite {path}')
     nb = nbf.v4.new_notebook(cells=cells, metadata={
-        'kernelspec': {'display_name': 'Recommendation Lab (Python 3.12)', 'language': 'python', 'name': 'reclab'},
+        'kernelspec': {'display_name': 'Search Recommendation Ads Lab (Python 3.12)', 'language': 'python', 'name': 'reclab'},
         'language_info': {'name': 'python', 'version': '3.12'},
         'reclab': {'mode': 'real-competition-core-reproduction', 'source': 'WSDM Cup 2022 XMRec'}})
     nbf.validate(nb)

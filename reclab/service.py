@@ -19,7 +19,7 @@ from .paths import ROOT, ARTIFACTS, PROCESSED, read_json, atomic_json
 from .train import TrainConfig, load_model, model_scorer
 from .retrieval import cf_scores, topk, mmr
 
-app = FastAPI(title="Recommendation Lab", docs_url=None, redoc_url=None)
+app = FastAPI(title="Search Recommendation Ads Lab", docs_url=None, redoc_url=None)
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 SOURCE_FILES = {

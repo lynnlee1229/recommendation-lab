@@ -1,0 +1,46 @@
+{
+  "pytest_passed": 83,
+  "restored_lab": "PASS: 68 assets, 45 lectures, 31 notebooks, 4 recommendation versions",
+  "ads": "PASS: 30 online probabilities, 500 tree export rows, saved metrics, budget constraints",
+  "search_http": [
+    {
+      "method": "bm25",
+      "returned": 10,
+      "first_document": "30720103"
+    },
+    {
+      "method": "dense",
+      "returned": 10,
+      "first_document": "21553394"
+    },
+    {
+      "method": "hybrid_rrf",
+      "returned": 10,
+      "first_document": "30720103"
+    },
+    {
+      "method": "linear_rerank",
+      "returned": 10,
+      "first_document": "30720103"
+    },
+    {
+      "method": "tinybert_rerank",
+      "returned": 10,
+      "first_document": "21553394"
+    }
+  ],
+  "browser": [
+    "real recommendation",
+    "RRF search",
+    "CTR prediction",
+    "invalid JSON recovery",
+    "auction simulation",
+    "course filtering and empty result",
+    "search-only experiment records",
+    "390px home and search: no horizontal overflow"
+  ],
+  "console": "No application errors observed; two unrelated Zotero extension connection errors",
+  "repository_id": "R_kgDOVc_wBw",
+  "notebooks_modified": false,
+  "retraining": false
+}

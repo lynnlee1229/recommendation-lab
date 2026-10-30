@@ -1,6 +1,6 @@
 # 同一系统的真实广告点击与模拟决策
 
-广告 adapter 为 `reclab/ads.py`，共用 `experiments.begin/finish/catalog/result`、`download_public_assets.fetch`、FastAPI、工作台07、源码白名单及 Notebook 目录。新增 `reclab/probability.py` 供二分类概率任务复用；AUC/logloss/Brier与检索NDCG分开。独立生成市场的 `reclab/auction.py` 可供其他预算分配练习复用，没有新增服务器或仓库。
+广告 adapter 为 `reclab/ads.py`，共用 `experiments.begin/finish/catalog/result`、`download_public_assets.fetch`、FastAPI、工作台“共享实验记录”、源码白名单及 Notebook 目录。新增 `reclab/probability.py` 供二分类概率任务复用；AUC/logloss/Brier与检索NDCG分开。独立生成市场的 `reclab/auction.py` 可供其他预算分配练习复用，没有新增服务器或仓库。
 
 ## 真实来源与资源
 
@@ -58,7 +58,7 @@ AUC、二分类logloss（概率裁剪1e-7）、Brier、10等宽箱ECE及各箱�
 
 ## 统一工作台与教学
 
-工作台07按recommendation/search/ads独立渲染，不能跨任务混比指标。广告提供：
+工作台“共享实验记录”按recommendation/search/ads独立渲染，不能跨任务混比指标。广告提供：
 
 - `POST /api/ads/predict`：13数值+26匿名类别，实际加载本机训练GBDT与校准映射；示例来自audit。修改匿名特征不具因果意义。
 - `GET /api/ads/example`：本机公开审计输入，不含真实个人标识。

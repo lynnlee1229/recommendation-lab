@@ -1648,7 +1648,7 @@ wheels = [
 ]
 
 [[package]]
-name = "recommendation-lab"
+name = "search-recommendation-ads-lab"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

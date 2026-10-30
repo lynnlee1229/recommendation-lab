@@ -1,3 +1,9 @@
+# 产品化迭代（2026-10-30 最新）
+
+统一品牌为“搜推广告学习 Lab / Search Recommendation Ads Lab”；原GitHub仓库已改名search-recommendation-ads-lab，ID仍为R_kgDOVc_wBw，沿用同一checkout和历史。origin已更新。首页并列三领域，推荐/搜索/广告各自工作区，共享实验记录按领域筛选并折叠详情。31本Notebook按基础4/推荐13/搜索7/广告7组织，可筛选与检索；旧Notebook未重建或修改。源码与讲义入口保留，原工作台07现为“共享实验记录”。没有新服务器、数据副本或重训。
+
+本轮83项pytest通过，verify_restored_lab和verify_ads通过；浏览器验证真实推荐、RRF查询、点击概率、模拟拍卖、课程筛选/无匹配与无效JSON恢复。390px首页无横向溢出，截图见docs/screenshots。Jupyter与用户内核未停止，仅正常重启本项目18580。下文为各阶段历史交接，旧页面编号和内核显示名描述以本节为准。
+
 # 同一搜推广告系统：阶段交接
 
 ## 当前最终状态：三阶段均已实现
@@ -17,7 +23,7 @@
 
 ## 仓库与运行环境
 
-同一checkout：/Users/lynnlee/Documents/Codex/2026-10-30/task/soutui-lab；公开远端https://github.com/lynnlee1229/recommendation-lab，main。目标机LYNNZLLI-MB2，M1Pro16GB，macOS15。使用已有.venv/Python3.12，依赖按uv.lock，已有Homebrew libomp。旧uv0.9有问题，项目.bootstrap-uv/bin/uv为0.13.6。公开数据在data，模型/运行结果在artifacts，均Git忽略；任何凭据、环境和数据不上传。
+同一checkout：/Users/lynnlee/Documents/Codex/2026-10-30/task/soutui-lab；公开远端https://github.com/lynnlee1229/search-recommendation-ads-lab，main。目标机LYNNZLLI-MB2，M1Pro16GB，macOS15。使用已有.venv/Python3.12，依赖按uv.lock，已有Homebrew libomp。旧uv0.9有问题，项目.bootstrap-uv/bin/uv为0.13.6。公开数据在data，模型/运行结果在artifacts，均Git忽略；任何凭据、环境和数据不上传。
 
 工作台127.0.0.1:18580，Jupyter127.0.0.1:18581，保留token与同源保护。只可重启本项目拥有的工作台，不停止用户Jupyter或其他服务。不要改容器、睡眠或系统安全设置。
 

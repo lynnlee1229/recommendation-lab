@@ -173,7 +173,7 @@ def setup(destination):
                    cwd=destination, env=env, check=True)
     python = str(destination / ".venv/bin/python")
     subprocess.run([python, "-m", "ipykernel", "install", "--prefix", str(destination / ".venv"),
-                    "--name", "reclab", "--display-name", "Recommendation Lab (Python 3.12)"],
+                    "--name", "reclab", "--display-name", "Search Recommendation Ads Lab (Python 3.12)"],
                    cwd=destination, env=env, check=True)
     receipt_path = destination / ".portable-receipt.json"
     receipt = json.loads(receipt_path.read_text())

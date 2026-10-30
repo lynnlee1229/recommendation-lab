@@ -74,7 +74,7 @@ PY
 then
   "$PY" -m reclab.competition run --tag clone-setup
 fi
-"$PY" -m ipykernel install --prefix "$ROOT/.venv" --name reclab --display-name 'Recommendation Lab (Python 3.12)'
+"$PY" -m ipykernel install --prefix "$ROOT/.venv" --name reclab --display-name 'Search Recommendation Ads Lab (Python 3.12)'
 "$PY" -m compileall -q reclab scripts tests
 "$PY" -m pytest -q
 "$PY" scripts/verify_restored_lab.py

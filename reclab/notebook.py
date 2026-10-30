@@ -140,7 +140,7 @@ def ensure_server():
                 "--name",
                 "reclab",
                 "--display-name",
-                "Recommendation Lab (Python 3.12)",
+                "Search Recommendation Ads Lab (Python 3.12)",
             ],
             check=True,
             stdout=subprocess.DEVNULL,

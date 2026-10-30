@@ -20,7 +20,7 @@ def main():
         partial = raw / "retailrocket.zip.part"
         print("Downloading original Retailrocket archive (~291 MiB).", flush=True)
         request = urllib.request.Request(
-            SOURCE, headers={"User-Agent": "recommendation-lab/0.1"}
+            SOURCE, headers={"User-Agent": "search-recommendation-ads-lab/0.1"}
         )
         with (
             urllib.request.urlopen(request, timeout=60) as source,

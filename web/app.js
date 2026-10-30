@@ -28,19 +28,22 @@ function notice(s = "") {
   $("notice").textContent = s;
 }
 function table(head, rows, className = "") {
-  return `<div class="table-wrap ${className}"><table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  return `<div class="table-wrap ${className}"><table><thead><tr>${head.map((h) => `<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
 const labels = {
-  research: ["实验对照", "同一系统的推荐、搜索与广告；各领域独立评估。"],
+  home: ["搜推广告学习 Lab", "从一个问题开始：先预测，只改一个变量，运行，再解释结果。"],
+  search: ["搜索工作区", "真实 SciFact 文档上的检索、融合与重排。"],
+  ads: ["广告工作区", "真实点击概率与独立模拟市场，分别观察与解释。"],
+  research: ["共享实验记录", "同一系统的推荐、搜索与广告；各领域独立评估。"],
   overview: ["实验概览", "先建立可信的比较口径，再观察模型学到了什么。"],
-  trace: ["推荐过程", "追踪召回、过滤、融合与 MMR。每个候选都保留来源和分数。"],
+  trace: ["推荐工作区", "追踪召回、过滤、融合与 MMR。每个候选都保留来源和分数。"],
   features: ["特征与样本", "检查时间边界、Embedding 输入和真实训练样本。"],
   experiments: ["训练与实验", "一次改变一个变量，让假设接受真实数据检验。"],
   course: [
     "课程地图",
     "45 份讲义的实验路线。区分机制复现、待实现内容与数据缺口。",
   ],
-  code: ["代码与 Notebook", "读真实 Python 源码，在独立内核里逐格运行实验。"],
+  code: ["学习路径与源码", "读真实 Python 源码，在独立内核里逐格运行实验。"],
 };
 document.querySelectorAll("nav button").forEach((b) =>
   b.addEventListener("click", () => {
@@ -48,6 +51,8 @@ document.querySelectorAll("nav button").forEach((b) =>
       .querySelectorAll("nav button,.tab")
       .forEach((e) => e.classList.remove("active"));
     b.classList.add("active");
+    document.querySelectorAll("nav button").forEach(x => x.setAttribute("aria-current", x === b ? "page" : "false"));
+    location.hash = b.dataset.tab;
     $(b.dataset.tab).classList.add("active");
     $("page-title").textContent = labels[b.dataset.tab][0];
     $("page-desc").textContent = labels[b.dataset.tab][1];
@@ -59,25 +64,47 @@ document.querySelectorAll("nav button").forEach((b) =>
     }
   }),
 );
+let notebookCatalog = [];
 async function loadNotebookCatalog() {
   try {
     const result = await api("/api/notebooks");
-    $("notebook-list-summary").textContent =
-      `共 ${result.notebooks.length} 个 Notebook · 课程与竞赛复现`;
-    $("notebook-list").innerHTML = result.notebooks
-      .map((item) => {
-        const content = `<strong>${esc(item.title)}</strong><span>${esc(item.mode)}${item.available ? "" : " · 文件暂不可用"}</span>`;
-        return item.available
-          ? `<a class="notebook-entry" href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${content}</a>`
-          : `<div class="notebook-entry">${content}</div>`;
-      })
-      .join("");
+    notebookCatalog = result.notebooks;
+    renderNotebookCatalog();
   } catch (error) {
     $("notebook-list-summary").textContent = "";
     $("notebook-list").innerHTML =
       `<p role="alert">课程目录加载失败：${esc(error.message)}。请刷新重试。</p>`;
   }
 }
+const pathInfo = {
+ foundation: ['基础与导览', '00 导览 → 01 数据 → 02 双塔 → 03 评估基础；再选择一个领域深入。'],
+ recommendation: ['推荐', '04–10 机制 → 11–15 XMRec 竞赛 → 16 综合对照；机制练习不等于论文完整复现。'],
+ search: ['搜索', '17 综合实验先看全景，再按 25–30 拆解任务、词法、语义、索引、重排与误差。'],
+ ads: ['广告', '18 综合实验 → 19–22 真实点击建模与校准 → 23–24 独立模拟拍卖和预算。']
+};
+function chapterDomain(item) {
+ const n = parseInt(item.file, 10);
+ return n <= 3 ? 'foundation' : n <= 16 ? 'recommendation' : n === 17 || n >= 25 ? 'search' : 'ads';
+}
+function renderNotebookCatalog() {
+ const q = $('course-query').value.trim().toLowerCase();
+ const domain = $('course-domain').value;
+ const items = notebookCatalog.filter(x => (domain === 'all' || chapterDomain(x) === domain) && `${x.file} ${x.title} ${x.mode}`.toLowerCase().includes(q));
+ $('notebook-list-summary').textContent = `显示 ${items.length} / ${notebookCatalog.length} 本 Notebook · 综合章与深入章共享同一实验`;
+ $('notebook-list').innerHTML = Object.entries(pathInfo).map(([key,[title,desc]]) => {
+  const group = items.filter(x => chapterDomain(x) === key);
+  if (!group.length) return '';
+  return `<section class="learning-path"><h2>${title} <small>${group.length} 章</small></h2><p>${desc}</p><div class="chapter-grid">${group.map(item => {
+   const n = parseInt(item.file,10);
+   const evidence = n === 0 ? '学习导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
+   const content = `<span class="badge">${evidence}</span><strong>${esc(item.title)}</strong><span>${esc(item.mode)}</span>`;
+   return item.available ? `<a class="notebook-entry" href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${content}</a>` : `<div class="notebook-entry">${content}<span>文件暂不可用</span></div>`;
+  }).join('')}</div></section>`;
+ }).join('') || '<div class="empty">没有匹配章节。试试其他关键词或切回全部路径。</div>';
+}
+$('course-query').addEventListener('input', renderNotebookCatalog);
+$('course-domain').addEventListener('change', renderNotebookCatalog);
+document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => document.querySelector(`nav button[data-tab="${b.dataset.open}"]`).click()));
 let codeCatalogReady = false;
 async function loadCode() {
   if (!codeCatalogReady) {
@@ -468,7 +495,8 @@ async function drawResearch() {
     for (const run of experiments.filter(x => x.state === 'completed' && !x.annotation?.superseded).reverse()) {
       const result = await api(`/api/experiments/${encodeURIComponent(run.domain)}/${encodeURIComponent(run.run_id)}`);
       const panel = document.createElement('details');
-      panel.open = true;
+      panel.open = false;
+      panel.dataset.domain = run.domain;
       panel.innerHTML = `<summary>${esc(run.domain)} · ${esc(run.run_id)}</summary><p>${esc(result.scope || '')}</p>`;
       if (run.domain === 'recommendation') {
         panel.innerHTML += table(['编码器','负采样','种子','NDCG@20','Recall@20','打乱历史NDCG','覆盖率','训练秒'], result.rows.map(r => [esc(r.encoder),esc(r.sampler),r.seed,fmt(r['ndcg@20']),fmt(r['recall@20']),fmt(r.shuffled['ndcg@20']),fmt(r['coverage@20']),r.seconds.toFixed(1)]));
@@ -497,19 +525,32 @@ async function drawResearch() {
       panel.innerHTML += `<p><a href="/api/experiments/${encodeURIComponent(run.domain)}/${encodeURIComponent(run.run_id)}" target="_blank" rel="noopener">完整实验记录 JSON ↗</a></p>`;
       target.appendChild(panel);
     }
+    filterResearch();
     if (!target.children.length) target.textContent = '尚无完成实验。运行对应的项目实验命令后刷新。';
   } catch (e) { target.textContent = `实验读取失败：${e.message}`; }
 }
 drawResearch();
+$('research-domain').addEventListener('change', filterResearch);
+$('research-refresh').addEventListener('click', drawResearch);
+function filterResearch() { const d = $('research-domain').value; document.querySelectorAll('#research-results > details').forEach(p => p.hidden = d !== 'all' && p.dataset.domain !== d); }
+async function loadHome() {
+ try { const {experiments} = await api('/api/experiments'); for (const [id,domain] of [['trace','recommendation'],['search','search'],['ads','ads']]) { const runs = experiments.filter(r => r.domain === domain && r.state === 'completed' && !r.annotation?.superseded); $(`status-${id}`).textContent = runs.length ? `${runs.length} 条已完成记录 · 打开工作区运行真实交互` : '尚无完成记录 · 请按工作区提示准备数据与模型'; } }
+ catch(e) { ['trace','search','ads'].forEach(id => $(`status-${id}`).textContent = `状态读取失败：${e.message}`); }
+}
+loadHome();
+document.querySelectorAll('#search-output,#ads-output,#auction-output').forEach(x => { x.setAttribute('role','status'); x.setAttribute('aria-live','polite'); });
+const initialTab = location.hash.slice(1);
+if (labels[initialTab]) document.querySelector(`nav button[data-tab="${initialTab}"]`).click();
 
 $('search-form').addEventListener('submit', async (event) => {
   event.preventDefault();
+  const button = event.submitter; button.disabled = true;
   const output = $('search-output');
   output.textContent = '正在检索；首次请求需要加载本机小模型…';
   try {
     const result = await api('/api/search', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({query:$('search-query').value, method:$('search-method').value, limit:5})});
     output.innerHTML = `<p>${esc(result.method)} · ${result.latency_ms.toFixed(1)} 毫秒 · 分数是排序分数，不能解释为科学声明成立概率。</p>` + result.items.map(x => `<details><summary>${esc(x.document_id)} · ${esc(x.title)}</summary><p>${esc(x.text)}</p><p>score: ${fmt(x.score)}</p></details>`).join('');
-  } catch (e) { output.textContent = `检索失败：${e.message}`; }
+  } catch (e) { output.textContent = `检索失败：${e.message}。确认已准备搜索数据与模型后重试。`; } finally { button.disabled = false; }
 });
 
 
@@ -519,16 +560,20 @@ $('ads-example').addEventListener('click', async () => {
 });
 $('ads-form').addEventListener('submit', async (event) => {
   event.preventDefault();
+  const button = event.submitter; button.disabled = true;
+  $('ads-output').textContent = '正在计算…';
   try {
     const input = JSON.parse($('ads-input').value);
     const r = await api('/api/ads/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)});
     $('ads-output').innerHTML = table(['基模型','原始概率','sigmoid概率','isotonic概率'],[[esc(r.base),fmt(r.raw),fmt(r.sigmoid),fmt(r.isotonic)]])+'<p>仅公开样本分布概率；匿名特征含义未知，修改不能解释为因果效果。</p>';
-  } catch(e) { $('ads-output').textContent=e.message; }
+  } catch(e) { $('ads-output').textContent=`计算失败：${e.message}。检查输入和本机模型后重试。`; } finally { button.disabled = false; }
 });
 $('auction-form').addEventListener('submit', async (event) => {
   event.preventDefault();
+  const button = event.submitter; button.disabled = true;
+  $('auction-output').textContent = '正在计算…';
   try {
     const r=await api('/api/ads/simulate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({strategy:$('auction-strategy').value,budget:Number($('auction-budget').value),multiplier:Number($('auction-multiplier').value),paced:$('auction-paced').checked,seed:42})});
     $('auction-output').innerHTML=table(['模拟收入','期望点击价值','模拟点击','预算约束'],[[r.spend.toFixed(2),r.expected_click_value.toFixed(2),r.clicks,r.budget_ok?'通过':'失败']])+table(['模拟广告主','花费','赢得曝光','点击'],r.advertisers.map((a,i)=>[i+1,a.spend.toFixed(2),a.wins,a.clicks]));
-  } catch(e) { $('auction-output').textContent=e.message; }
+  } catch(e) { $('auction-output').textContent=`计算失败：${e.message}。检查输入和本机模型后重试。`; } finally { button.disabled = false; }
 });

@@ -23,7 +23,7 @@
 .venv/bin/python scripts/execute_notebooks.py --only 25_Search_Task_Qrels 26_Search_BM25 27_Search_Semantic 28_Search_ANN 29_Search_Fusion_Ranking 30_Search_Errors_Service
 ```
 
-30章直接调用18580已有服务；不启动第二台服务器、不停止Jupyter。29章每次Run All实际训练两组模型，创建新的search教学run，按config.workshop隔离；latest服务只读取正式run，07分别渲染select与正式测试。语义查询向量缓存放本机artifacts/search/lessons，按父实验ID和查询文本摘要隔离。练习不会覆写已完成正式实验、qrels或服务权重。
+30章直接调用18580已有服务；不启动第二台服务器、不停止Jupyter。29章每次Run All实际训练两组模型，创建新的search教学run，按config.workshop隔离；latest服务只读取正式run，共享实验记录分别渲染select与正式测试。语义查询向量缓存放本机artifacts/search/lessons，按父实验ID和查询文本摘要隔离。练习不会覆写已完成正式实验、qrels或服务权重。
 
 ## 明确的评估边界
 

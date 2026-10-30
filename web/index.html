@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Recommendation Lab</title>
+    <title>搜推广告学习 Lab · Search Recommendation Ads Lab</title>
     <link rel="stylesheet" href="/static/style.css" />
-    <link rel="stylesheet" href="/static/refinements.css?v=course1" />
+    <link rel="stylesheet" href="/static/refinements.css?v=unified2" />
   </head>
   <body>
+    <a class="skip-link" href="#page-title">跳到主要内容</a>
     <aside class="rail">
-      <div class="brand">RECOMMENDATION<br /><strong>LAB / 01</strong></div>
-      <div class="rail-note">从数据到向量，从向量到推荐。</div>
+      <div class="brand">SEARCH · REC · ADS<br /><strong>学习 LAB</strong></div>
+      <div class="rail-note">理解机制，运行实验，追溯证据。</div>
       <a
         class="rail-course-link"
         href="/notebooks?target=course"
@@ -19,38 +20,46 @@
         >打开 Notebook 课程 ↗</a
       >
       <nav aria-label="工作台导航">
-        <button data-tab="overview" class="active">01　实验概览</button
-        ><button data-tab="trace">02　推荐过程</button
-        ><button data-tab="features">03　特征与样本</button
-        ><button data-tab="experiments">04　训练与实验</button
-        ><button data-tab="course">05　课程地图</button
-        ><button data-tab="code">06　代码与 Notebook</button><button data-tab="research">07　实验对照</button>
+        <button data-tab="home" class="active">学习总览</button>
+        <button data-tab="trace">推荐工作区</button>
+        <button data-tab="search">搜索工作区</button>
+        <button data-tab="ads">广告工作区</button>
+        <button data-tab="code">学习路径与源码</button>
+        <button data-tab="research">共享实验记录</button>
+        <span class="nav-label">推荐诊断与参考</span>
+        <button data-tab="overview">推荐数据总览</button>
+        <button data-tab="features">推荐特征与样本</button>
+        <button data-tab="experiments">双塔训练</button>
+        <button data-tab="course">讲义与论文</button>
       </nav>
       <div class="rail-foot">
-        LOCAL · OFFLINE<br />Retailrocket / PyTorch<br /><span
+        LOCAL · OFFLINE<br />Retailrocket · SciFact · Criteo<br /><span
           id="version"
         ></span
-        ><br />实时链路尚未接入
+        ><br />真实离线实验 / 独立模拟
       </div>
     </aside>
     <main>
       <header>
         <div class="eyebrow">REBUILD INTUITION · RUN EXPERIMENTS</div>
-        <h1 id="page-title">实验概览</h1>
+        <h1 id="page-title" tabindex="-1">搜推广告学习 Lab</h1>
         <p id="page-desc">
-          用真实行为重建你的推荐系统直觉。每一个分数，都能回到特征、样本与代码。
+          从一个问题开始：先预测，只改一个变量，运行，再解释结果。
         </p>
       </header>
       <div id="notice" role="status" aria-live="polite"></div>
-      <section id="overview" class="tab active">
+      <section id="overview" class="tab">
         <div id="overview-content"><p>正在读取真实数据与训练结果…</p></div>
       </section>
-      <section id="research" class="tab"><p>共享实验记录：推荐、搜索与广告使用同一工作台。真实数据实验与模拟任务在各自记录中说明。</p><p><a href="/notebooks?target=deep_recommendation" target="_blank" rel="noopener">16 · 深入推荐：负例、序列与索引 ↗</a></p><p><a href="/notebooks?target=search" target="_blank" rel="noopener">17 · 真实搜索：词法、语义、融合与重排 ↗</a></p>
-        <p><a href="/notebooks?target=ads" target="_blank" rel="noopener">18 · 真实点击预测、校准与模拟拍卖 ↗</a></p>
-        <p>广告深入：<a href="/notebooks?target=ads_19" target="_blank" rel="noopener">19 数据切分</a> · <a href="/notebooks?target=ads_20" target="_blank" rel="noopener">20 线性特征</a> · <a href="/notebooks?target=ads_21" target="_blank" rel="noopener">21 非线性交叉</a> · <a href="/notebooks?target=ads_22" target="_blank" rel="noopener">22 概率校准</a> · <a href="/notebooks?target=ads_23" target="_blank" rel="noopener">23 拍卖出价</a> · <a href="/notebooks?target=ads_24" target="_blank" rel="noopener">24 预算整合</a></p>
-        <details><summary>真实点击模型：修改匿名特征</summary><p>从本机审计样本载入13个数值、26个匿名类别；可修改一个变量。概率仅针对抽样后的公开日志分布。</p><button id="ads-example" type="button">载入真实样本</button><form id="ads-form"><textarea id="ads-input" rows="8" style="width:100%" required aria-label="广告匿名特征JSON"></textarea><button type="submit">计算点击概率</button></form><div id="ads-output"></div></details>
+      <section id="home" class="tab active">
+        <div class="hero"><span class="eyebrow">ONE LAB · THREE LEARNING PATHS</span><h2>从候选到排序，<br>从概率到决策。</h2><p>真实数据建立判断，短实验拆解机制。推荐、搜索与广告共享课程、源码和可追溯的实验记录。</p><button data-open="code" class="primary">选择学习路径 →</button></div>
+        <div class="domain-grid">
+<article class="domain-card"><span class="eyebrow">Retailrocket / XMRec</span><h2>推荐</h2><p>用户历史如何变成候选与排序？</p><p class="muted">01–16 · 基础、机制、竞赛与综合实验</p><p id="status-trace" role="status">读取实验状态…</p><button data-open="trace">进入推荐工作区 →</button> <a href="/notebooks?target=deep_recommendation" target="_blank" rel="noopener">综合 Notebook ↗</a></article><article class="domain-card"><span class="eyebrow">BEIR SciFact</span><h2>搜索</h2><p>词法、语义与重排分别解决什么问题？</p><p class="muted">17 总览 → 25–30 深入六章</p><p id="status-search" role="status">读取实验状态…</p><button data-open="search">进入搜索工作区 →</button> <a href="/notebooks?target=search" target="_blank" rel="noopener">综合 Notebook ↗</a></article><article class="domain-card"><span class="eyebrow">Criteo / 独立模拟市场</span><h2>广告</h2><p>点击概率如何连接校准与预算决策？</p><p class="muted">18 总览 → 19–24 深入六章</p><p id="status-ads" role="status">读取实验状态…</p><button data-open="ads">进入广告工作区 →</button> <a href="/notebooks?target=ads" target="_blank" rel="noopener">综合 Notebook ↗</a></article></div><div class="note"><strong>先分清证据，再比较结果</strong><p>推荐日志缺少完整曝光；SciFact 相关性判断不完整；Criteo 概率属于抽样分布。拍卖与预算使用独立模拟市场，模拟收入不能证明线上收益。各领域指标不作横向排名。</p></div></section>
+<section id="search" class="tab"><div class="workspace-intro"><span class="badge">真实语料 · 冻结小模型与训练重排</span><h2>检索一条科学声明</h2><p>输入英文声明，比较词法、语义、融合与重排。分数表示文档排序，不表示声明成立概率。</p><a href="/notebooks?target=search_task_qrels" target="_blank" rel="noopener">深入路径：任务 → BM25 → 语义 → 索引 → 重排 → 误差 ↗</a></div><form id="search-form"><label>在真实 SciFact 语料检索（英文科学声明）<input id="search-query" maxlength="1000" required value="Vitamin D deficiency is associated with cardiovascular disease."></label><label>方法<select id="search-method"><option value="bm25">BM25</option><option value="dense">MiniLM 向量</option><option value="hybrid_rrf" selected>混合 RRF</option><option value="linear_rerank">训练线性重排</option><option value="tinybert_rerank">TinyBERT 重排</option></select></label><button type="submit">检索论文</button></form><div id="search-output"></div><div class="note">首次使用：先按 README 运行 <code>.venv/bin/python -m reclab.search --download</code> 准备数据与正式模型。首次神经查询需加载本机模型。</div></section>
+<section id="ads" class="tab"><div class="workspace-intro"><span class="badge">真实概率预测 / 独立模拟决策</span><h2>先检查概率，再研究出价</h2><p>预测层读取真实训练模型；决策层使用独立生成的市场。两者的结果不能当作真实竞价回放。</p><a href="/notebooks?target=ads_19" target="_blank" rel="noopener">深入路径：数据 → 特征 → 容量 → 校准 → 拍卖 → 预算 ↗</a></div><details open><summary>真实点击模型：修改匿名特征</summary><p>从本机审计样本载入13个数值、26个匿名类别；可修改一个变量。概率仅针对抽样后的公开日志分布。</p><button id="ads-example" type="button">载入真实样本</button><form id="ads-form"><textarea id="ads-input" rows="8" style="width:100%" required aria-label="广告匿名特征JSON"></textarea><button type="submit">计算点击概率</button></form><div id="ads-output"></div></details>
         <details><summary>独立模拟市场：出价与预算 pacing</summary><p>3个模拟广告主、6000次请求、二价按曝光支付。与Criteo无因果或收益联系；所有货币与收入均为模拟。</p><form id="auction-form"><label>策略<select id="auction-strategy"><option value="value">估计点击率 × 点击价值</option><option value="flat">固定曝光出价</option></select></label><label>每广告主预算<input id="auction-budget" type="number" min="0.01" max="10000" step="0.01" value="60"></label><label>出价倍数<input id="auction-multiplier" type="number" min="0.01" max="10" step="0.01" value="1"></label><label><input id="auction-paced" type="checkbox" checked>均匀预算pacing</label><button type="submit">运行相同seed模拟</button></form><div id="auction-output"></div></details>
-        <form id="search-form"><label>在真实 SciFact 语料检索（英文科学声明）<input id="search-query" maxlength="1000" required value="Vitamin D deficiency is associated with cardiovascular disease."></label><label>方法<select id="search-method"><option value="bm25">BM25</option><option value="dense">MiniLM 向量</option><option value="hybrid_rrf" selected>混合 RRF</option><option value="linear_rerank">训练线性重排</option><option value="tinybert_rerank">TinyBERT 重排</option></select></label><button type="submit">检索论文</button></form><div id="search-output"></div><div id="research-results">正在读取实验…</div></section>
+        <div class="note">首次使用：运行 <code>.venv/bin/python -m reclab.ads --download</code> 准备真实点击模型。模拟市场可独立运行。</div></section>
+<section id="research" class="tab"><p>同一实验目录，按领域与阶段查看；教学 select 与正式评估独立呈现。</p><label>实验领域<select id="research-domain"><option value="all">全部领域</option><option value="recommendation">推荐</option><option value="search">搜索</option><option value="ads">广告</option></select></label><button id="research-refresh">刷新记录</button><div id="research-results" aria-live="polite">正在读取实验…</div></section>
       <section id="code" class="tab">
         <p>
           <a href="/notebooks?target=course" target="_blank" rel="noopener"
@@ -58,17 +67,16 @@
           >
         </p>
         <div class="note">
-          <strong>推荐系统的核心是 Python / PyTorch</strong>
+          <strong>Notebook 学机制，工作区验证交互，源码追溯实现</strong>
           <p>
-            数据与样本在 data.py，网络在 models.py，优化与验证在
-            train.py。网页调用这些 Python 服务。
+            推荐从 data.py / models.py 开始，搜索在 search.py，点击预测在 ads.py，模拟决策在 auction.py。网页复用同一 Python 服务。
           </p>
           <p>
             下面直接查看当前运行项目的源码；进入 JupyterLab 后，可以编辑 .py
             文件，也可以逐格运行 Notebook。
           </p>
         </div>
-        <p><a href="/notebooks?target=xmrec_start" target="_blank" rel="noopener">新增：11～15 · WSDM Cup 2022 冠军核心复现</a> · 从数据、特征和采样开始，亲手重训并评估。</p>
+        <div class="toolbar"><label>学习领域<select id="course-domain"><option value="all">全部路径</option><option value="foundation">基础与导览</option><option value="recommendation">推荐</option><option value="search">搜索</option><option value="ads">广告</option></select></label><label>查找章节<input id="course-query" type="search" placeholder="标题、编号或实验类型"></label></div>
         <p id="notebook-list-summary" class="muted" aria-live="polite"></p>
         <div id="notebook-list" class="notebook-links" aria-live="polite">
           <p>正在读取完整 Notebook 课程目录…</p>
@@ -288,6 +296,6 @@
         >
       </footer>
     </main>
-    <script src="/static/app.js?v=xmrec1"></script>
+    <script src="/static/app.js?v=unified2"></script>
   </body>
 </html>

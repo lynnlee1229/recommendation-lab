@@ -41,7 +41,7 @@ dataset = Dataset()
 print("Project:", PROJECT)
 print("Dataset version:", dataset.manifest["dataset_version"])
 print("Python:", sys.executable)
-assert Path(sys.executable).parent == PROJECT / ".venv/bin", "请选择 Recommendation Lab 内核"
+assert Path(sys.executable).parent == PROJECT / ".venv/bin", "请选择 Search Recommendation Ads Lab 内核"
 """
 
 
@@ -54,7 +54,7 @@ def first():
         本 Notebook 默认只读已有数据和基线，不重新下载、不改原流计算 lab，也不更新模型。用 **Shift+Enter** 逐格执行；左侧文件浏览器可以打开并编辑 `reclab/*.py`。
         """),
         md("""## Setup
-        内核选择 **Recommendation Lab (Python 3.12)**。输入来自本项目的 `data/processed/events.parquet`、`manifest.json` 和 `artifacts/baselines/`；数据源为 [Retailrocket](https://www.kaggle.com/retailrocket/ecommerce-dataset/home)。
+        内核选择 **Search Recommendation Ads Lab (Python 3.12)**。输入来自本项目的 `data/processed/events.parquet`、`manifest.json` 和 `artifacts/baselines/`；数据源为 [Retailrocket](https://www.kaggle.com/retailrocket/ecommerce-dataset/home)。
 
         当前任务是训练截止之后的**暖商品、新物品交互召回**。浏览是行为，不是推荐曝光；未交互不等于曝光未点击。"""),
         code(SETUP),
@@ -164,7 +164,7 @@ def second():
 
         **Run All 会在最后创建一个新模型版本**，保留原来的数据和模型。本教程先做小 Batch 数学检查，再运行项目的共享训练器；不使用测试集。"""),
         md("""## Setup
-        使用项目的 **Recommendation Lab (Python 3.12)** 内核。下面的用户和物品来自现有真实训练集；小 Batch 实验只是检查梯度，不能证明推荐效果提升。"""),
+        使用项目的 **Search Recommendation Ads Lab (Python 3.12)** 内核。下面的用户和物品来自现有真实训练集；小 Batch 实验只是检查梯度，不能证明推荐效果提升。"""),
         code(SETUP),
         code("""import torch
         from torch import nn
@@ -308,7 +308,7 @@ def main():
             cells=cells,
             metadata={
                 "kernelspec": {
-                    "display_name": "Recommendation Lab (Python 3.12)",
+                    "display_name": "Search Recommendation Ads Lab (Python 3.12)",
                     "language": "python",
                     "name": "reclab",
                 },

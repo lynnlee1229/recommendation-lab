@@ -1,4 +1,4 @@
-# Recommendation Lab · 搜推广告学习系统
+# 搜推广告学习 Lab · Search Recommendation Ads Lab
 
 以 Notebook 为主线的同一搜推广告学习系统：真实推荐与XMRec冠军核心方法、SciFact搜索与重排、Criteo点击预测及独立模拟拍卖。共31本 Notebook，配套45份公开讲义。
 
@@ -7,8 +7,8 @@
 实测环境：Apple M1 Pro、16GB、macOS15。macOS要求Apple Silicon和14以上；其他系统尚未做完整验收。建议预留至少5GB磁盘。无需Docker、Podman或GPU。
 
 ```bash
-git clone https://github.com/lynnlee1229/recommendation-lab.git
-cd recommendation-lab
+git clone https://github.com/lynnlee1229/search-recommendation-ads-lab.git
+cd search-recommendation-ads-lab
 # macOS缺少OpenMP运行库时先执行：brew install libomp
 ./setup.sh
 ```
@@ -42,7 +42,7 @@ cd recommendation-lab
 ./lab.sh stop
 ```
 
-Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)内核。02的Run All会新建训练实验；其他章节分别标注真实数据、构造张量或模拟流量。学习约定见[NOTEBOOK_FIRST.md](docs/NOTEBOOK_FIRST.md)。
+Notebook代码和项目源码可编辑，使用Search Recommendation Ads Lab (Python 3.12)内核。02的Run All会新建训练实验；其他章节分别标注真实数据、构造张量或模拟流量。学习约定见[NOTEBOOK_FIRST.md](docs/NOTEBOOK_FIRST.md)。
 
 ## 仓库包含什么
 
@@ -79,7 +79,7 @@ Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)�
 .venv/bin/python scripts/execute_notebooks.py --only 16_Recommendation_Experiments
 ```
 
-16章对比均匀/热门/难负例、mean/GRU/带位置注意力、精确/12簇粗索引；默认12000条真实因果样本、4轮、2个种子。正式旧双塔不覆盖。结果进入同一工作台“07 实验对照”，共用实验记录/API，搜索与广告共用该接口。详细协议见[推荐深化](docs/RECOMMENDATION_DEPTH.md)。
+16章对比均匀/热门/难负例、mean/GRU/带位置注意力、精确/12簇粗索引；默认12000条真实因果样本、4轮、2个种子。正式旧双塔不覆盖。结果进入同一工作台“共享实验记录”，共用实验记录/API，搜索与广告共用该接口。详细协议见[推荐深化](docs/RECOMMENDATION_DEPTH.md)。
 
 
 ## 新增：同一系统的真实搜索
@@ -89,7 +89,7 @@ Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)�
 .venv/bin/python scripts/execute_notebooks.py --only 17_Search_Experiments
 ```
 
-第17章使用公开 SciFact 的完整5,183篇文档与300测试查询，实际比较BM25、冻结MiniLM、RRF、训练线性重排、小型TinyBERT重排及共享粗索引。下载约110MiB固定版本数据/权重，逐项SHA校验；无需账号。未判断文档按不相关计分，神经模型没有微调。每次新建共享实验记录，工作台07可实际输入查询检索，推荐功能保留。详见[搜索协议与来源](docs/SEARCH_EXPERIMENTS.md)。搜索是显式可选命令，原setup流程保持推荐/XMRec，避免首次设置自动增加模型下载与推理预算。
+第17章使用公开 SciFact 的完整5,183篇文档与300测试查询，实际比较BM25、冻结MiniLM、RRF、训练线性重排、小型TinyBERT重排及共享粗索引。下载约110MiB固定版本数据/权重，逐项SHA校验；无需账号。未判断文档按不相关计分，神经模型没有微调。每次新建共享实验记录，共享实验记录可实际输入查询检索，推荐功能保留。详见[搜索协议与来源](docs/SEARCH_EXPERIMENTS.md)。搜索是显式可选命令，原setup流程保持推荐/XMRec，避免首次设置自动增加模型下载与推理预算。
 
 
 ## 新增：同一系统的真实广告点击与模拟决策
@@ -102,7 +102,7 @@ Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)�
 
 第18章使用官方Criteo真实曝光点击：约46MiB固定SHA分片，明确取前20万行；训练线性/特征树模型，独立select/calibration/audit，报告AUC、logloss、Brier、可靠性与分段。线性在本轮优于树，sigmoid改善不确定，isotonic负结果保留。抽样比例未知，概率不代表线上CTR。二价拍卖、出价和预算pacing使用独立模拟市场，所有收入仅为模拟。
 
-推荐、搜索、广告共用一个仓库、下载校验器、append-only实验目录、FastAPI、工作台07与31本Notebook；概率指标单独抽象，领域指标不混比。工作台可实际计算匿名特征的点击概率，并独立改变模拟预算和出价。来源、协议、实测与局限见[广告实验](docs/ADS_EXPERIMENTS.md)。广告下载/训练同样是显式可选，不增加原setup默认预算；数据、权重和逐条明细保留本机。
+推荐、搜索、广告共用一个仓库、下载校验器、append-only实验目录、FastAPI、共享实验记录与31本Notebook；概率指标单独抽象，领域指标不混比。工作台可实际计算匿名特征的点击概率，并独立改变模拟预算和出价。来源、协议、实测与局限见[广告实验](docs/ADS_EXPERIMENTS.md)。广告下载/训练同样是显式可选，不增加原setup默认预算；数据、权重和逐条明细保留本机。
 
 
 ### 广告深入课程（保留18综合章）
@@ -122,3 +122,13 @@ Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)�
 ### 搜索深入课程（保留17综合章）
 
 25 任务与qrels → 26 倒排与BM25 → 27 语义编码 → 28 近似索引 → 29 融合与重排训练 → 30 误差分析与统一服务。六本共32个短代码格，含手算/形状断言、真实查询单变量实验、实际两组训练与五种API逐文档核验。[逐章内容、执行命令和子集边界](docs/SEARCH_COURSE.md)。广告19～24与搜索25～30共用同一实验目录、数据与服务；旧综合章不覆盖。
+
+## 统一工作台
+
+首页并列展示推荐、搜索、广告三个入口与本机实验记录状态；三个工作区分别保留真实推荐、五种搜索方法、点击概率与独立模拟拍卖交互。“学习路径与源码”按基础、推荐、搜索、广告组织31本Notebook，可按领域与关键词筛选；综合章先建立全景，再进入深入章。“共享实验记录”按领域筛选，展开查看正式结果与教学select对照；“讲义与论文”保留原45份推荐讲义及复现边界。推荐数据、特征与双塔训练收在诊断导航。
+
+首次安装默认只准备推荐/XMRec；搜索与广告按各节命令显式准备。首页的“已完成记录”仅表示实验记录存在，交互是否可用仍以本机数据和模型加载结果为准。原API、Python包名reclab、内核ID与Git历史保持兼容。
+
+![统一工作台首页](docs/screenshots/overview.png)
+
+[窄屏界面截图](docs/screenshots/mobile.png)

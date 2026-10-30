@@ -638,7 +638,7 @@ def save(path, cells, lectures=()):
         cells=cells,
         metadata={
             "kernelspec": {
-                "display_name": "Recommendation Lab (Python 3.12)",
+                "display_name": "Search Recommendation Ads Lab (Python 3.12)",
                 "language": "python",
                 "name": "reclab",
             },
