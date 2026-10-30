@@ -23,6 +23,7 @@ app = FastAPI(title="Search Recommendation Ads Lab", docs_url=None, redoc_url=No
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 SOURCE_FILES = {
+    "foundations": ("reclab/learning/foundations.py", "公用基础：梯度下降与训练集拟合的构造机制"),
     "search_lessons": ("reclab/search_lessons.py", "深入搜索：复用真实语料、向量和查询级训练练习"),
     "ads_teaching": ("reclab/ads_teaching.py", "真实点击小预算单变量教学训练"),
     "ads": ("reclab/ads.py", "真实点击预测、独立校准与分段审计"),

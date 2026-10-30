@@ -3,10 +3,10 @@ const LAB_MODULES = {
   common: {
     title: '公用', code: 'COMMON', description: '先建立共用的实验方法与证据口径，再进入一个领域。',
     pages: [
-      ['start', '起步', 'home'], ['method', '实验方法', 'method'],
+      ['start', '起步', 'home'], ['path', '学习路径', 'code'], ['method', '实验方法', 'method'],
       ['records', '全局实验台账', 'research'], ['source', '公共源码', 'source'],
     ],
-    sources: ['experiments', 'probability', 'service'],
+    sources: ['foundations', 'experiments', 'probability', 'service'],
   },
   search: {
     title: '搜索', code: 'SEARCH', description: '从查询与相关性判断开始，学习词法、语义、索引、融合与重排。',
@@ -38,6 +38,9 @@ const LAB_MODULES = {
   },
 };
 const COURSE_PATHS = {
+  common: [
+    {title: '基础 · 从张量到评估', chapters: [31, 32, 33, 34], description: '张量与线性代数 → 计算图与梯度 → 优化与泛化 → 评分、概率与排序评估。小数组构造机制实验，再进入领域路径。'},
+  ],
   recommendation: [
     {title: '入门 · 数据、基线与训练', chapters: [1, 2, 3], description: '以真实推荐日志为例认识数据、双塔、梯度与评估；这是推荐入门，并非独立的公用基础课。'},
     {title: '机制 · 逐个理解算法', chapters: [4, 5, 6, 7, 8, 9, 10], description: '召回 → 多目标 → 特征交叉 → 序列 → 多样性 → 冷启动 → 工程。构造张量和模拟流量均按章节标识。'},

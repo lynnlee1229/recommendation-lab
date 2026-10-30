@@ -1,3 +1,7 @@
+# 公用基础课程已完成（最新）
+
+同一checkout新增31–34四本独立公用课程，总35本：公用4、推荐17、搜索7、广告7。旧31本未改动。公用学习路径、TARGETS、curriculum、API与源码白名单已接通，首页缺口提示替换为课程入口。详见COMMON_FOUNDATIONS.md。下文为历史。
+
 # 模块层级修正（最新，取代下面的第一版产品布局）
 
 用户指出领域、算法、工具混排，明确要求按“公用、搜、广、推”组织，发现缺口后另起session补。现一级仅公用/搜索/广告/推荐。二级为模块自身的课程、交互、记录和源码；双塔仅在推荐内，广告预测与模拟拍卖分开。全局台账归公用；领域内台账和源码自动限制当前领域。旧#experiments转#recommendation/two-tower，旧链接兼容。结构配置web/navigation.js，说明docs/PRODUCT_ARCHITECTURE.md。

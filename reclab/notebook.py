@@ -20,6 +20,10 @@ RUNTIME = ROOT / "logs/jupyter-runtime"
 PID_FILE = ROOT / "logs/notebook.pid"
 PYTHON = ROOT / ".venv/bin/python"
 TARGETS = {
+    "common_34": "notebooks/34_Common_Scores_Evaluation.ipynb",
+    "common_33": "notebooks/33_Common_Optimization.ipynb",
+    "common_32": "notebooks/32_Common_Gradients.ipynb",
+    "common_31": "notebooks/31_Common_Tensors.ipynb",
     "search_lessons_code": "reclab/search_lessons.py",
     "search_task_qrels": "notebooks/25_Search_Task_Qrels.ipynb",
     "search_bm25": "notebooks/26_Search_BM25.ipynb",

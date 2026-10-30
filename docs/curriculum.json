@@ -2,7 +2,7 @@
   "local_source": "resources/slides",
   "total_files": 45,
   "total_pages": 902,
-  "learning_path": "Notebook 优先：00课程导航 → 01真实数据 → 02双塔基础 → 03~10专题；讲义与论文用于回查。",
+  "learning_path": "公用31–34基础 → 搜索 / 广告 / 推荐；原00–03仍归推荐。",
   "groups": [
     {
       "id": "01",
@@ -1098,6 +1098,34 @@
       "file": "30_Search_Errors_Service.ipynb",
       "title": "失败分析、延迟口径与统一服务",
       "mode": "深入搜索 · 真实语料/明确子集 · 公式与单变量实验 · 共享服务"
+    },
+    {
+      "target": "common_31",
+      "file": "31_Common_Tensors.ipynb",
+      "title": "线性代数与张量形状",
+      "mode": "公用基础 · 构造机制实验 · 单变量对照",
+      "module": "common"
+    },
+    {
+      "target": "common_32",
+      "file": "32_Common_Gradients.ipynb",
+      "title": "计算图、链式法则与梯度",
+      "mode": "公用基础 · 构造机制实验 · 单变量对照",
+      "module": "common"
+    },
+    {
+      "target": "common_33",
+      "file": "33_Common_Optimization.ipynb",
+      "title": "优化、容量与泛化",
+      "mode": "公用基础 · 构造机制实验 · 单变量对照",
+      "module": "common"
+    },
+    {
+      "target": "common_34",
+      "file": "34_Common_Scores_Evaluation.ipynb",
+      "title": "评分、概率、排序与评估边界",
+      "mode": "公用基础 · 构造机制实验 · 单变量对照",
+      "module": "common"
     }
   ]
 }

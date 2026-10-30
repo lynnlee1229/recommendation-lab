@@ -58,7 +58,7 @@ function renderRoute() {
   notice();
   if (page[2] === 'code') {
     if (previous.module !== currentRoute.module) $('course-query').value = '';
-    $('path-intro').textContent = config.description + ' 先读综合章建立全景，再沿链路逐节运行。';
+    $('path-intro').textContent = config.description + (currentRoute.module === 'common' ? ' 按31–34顺序运行，再选择领域路径。' : ' 先读综合章建立全景，再沿链路逐节运行。');
     loadNotebookCatalog();
   }
   if (page[2] === 'source') {
@@ -105,7 +105,7 @@ function renderNotebookCatalog() {
     if (!group.length) return '';
     return `<section class="learning-path"><h2>${esc(title)} <small>${group.length} 章</small></h2><p>${esc(description)}</p><div class="chapter-grid">${group.map(item => {
       const n = parseInt(item.file, 10);
-      const evidence = n === 0 ? '旧版推荐导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
+      const evidence = n >= 31 ? '公用构造机制实验' : n === 0 ? '旧版推荐导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
       const content = `<span class="badge">${evidence}</span><strong>${esc(item.title)}</strong><span>${esc(item.mode)}</span>`;
       return item.available ? `<a class="notebook-entry" href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${content}</a>` : `<div class="notebook-entry">${content}<span>文件暂不可用</span></div>`;
     }).join('')}</div></section>`;

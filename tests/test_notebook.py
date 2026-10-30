@@ -16,6 +16,7 @@ def client():
 def test_source_catalog_is_real_and_whitelisted(client):
     catalog = client.get("/api/code").json()["files"]
     assert {row["id"] for row in catalog} == {
+        "foundations",
         "models",
         "data",
         "train",
