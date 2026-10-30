@@ -46,6 +46,10 @@
         <div id="overview-content"><p>正在读取真实数据与训练结果…</p></div>
       </section>
       <section id="research" class="tab"><p>共享实验记录：推荐、搜索与广告使用同一工作台。真实数据实验与模拟任务在各自记录中说明。</p><p><a href="/notebooks?target=deep_recommendation" target="_blank" rel="noopener">16 · 深入推荐：负例、序列与索引 ↗</a></p><p><a href="/notebooks?target=search" target="_blank" rel="noopener">17 · 真实搜索：词法、语义、融合与重排 ↗</a></p>
+        <p><a href="/notebooks?target=ads" target="_blank" rel="noopener">18 · 真实点击预测、校准与模拟拍卖 ↗</a></p>
+        <p>广告深入：<a href="/notebooks?target=ads_19" target="_blank" rel="noopener">19 数据切分</a> · <a href="/notebooks?target=ads_20" target="_blank" rel="noopener">20 线性特征</a> · <a href="/notebooks?target=ads_21" target="_blank" rel="noopener">21 非线性交叉</a> · <a href="/notebooks?target=ads_22" target="_blank" rel="noopener">22 概率校准</a> · <a href="/notebooks?target=ads_23" target="_blank" rel="noopener">23 拍卖出价</a> · <a href="/notebooks?target=ads_24" target="_blank" rel="noopener">24 预算整合</a></p>
+        <details><summary>真实点击模型：修改匿名特征</summary><p>从本机审计样本载入13个数值、26个匿名类别；可修改一个变量。概率仅针对抽样后的公开日志分布。</p><button id="ads-example" type="button">载入真实样本</button><form id="ads-form"><textarea id="ads-input" rows="8" style="width:100%" required aria-label="广告匿名特征JSON"></textarea><button type="submit">计算点击概率</button></form><div id="ads-output"></div></details>
+        <details><summary>独立模拟市场：出价与预算 pacing</summary><p>3个模拟广告主、6000次请求、二价按曝光支付。与Criteo无因果或收益联系；所有货币与收入均为模拟。</p><form id="auction-form"><label>策略<select id="auction-strategy"><option value="value">估计点击率 × 点击价值</option><option value="flat">固定曝光出价</option></select></label><label>每广告主预算<input id="auction-budget" type="number" min="0.01" max="10000" step="0.01" value="60"></label><label>出价倍数<input id="auction-multiplier" type="number" min="0.01" max="10" step="0.01" value="1"></label><label><input id="auction-paced" type="checkbox" checked>均匀预算pacing</label><button type="submit">运行相同seed模拟</button></form><div id="auction-output"></div></details>
         <form id="search-form"><label>在真实 SciFact 语料检索（英文科学声明）<input id="search-query" maxlength="1000" required value="Vitamin D deficiency is associated with cardiovascular disease."></label><label>方法<select id="search-method"><option value="bm25">BM25</option><option value="dense">MiniLM 向量</option><option value="hybrid_rrf" selected>混合 RRF</option><option value="linear_rerank">训练线性重排</option><option value="tinybert_rerank">TinyBERT 重排</option></select></label><button type="submit">检索论文</button></form><div id="search-output"></div><div id="research-results">正在读取实验…</div></section>
       <section id="code" class="tab">
         <p>
@@ -279,8 +283,7 @@
       </section>
       <section id="course" class="tab"><div id="course-content"></div></section>
       <footer>
-        所有数据留在本机。行为日志不包含完整曝光，离线 Recall / NDCG 不等于 CTR
-        或线上收益。<a href="/api/summary" target="_blank" rel="noopener"
+        所有数据留在本机。推荐日志不含完整曝光；广告概率仅针对公开抽样分布；模拟收益不等于线上收益。<a href="/api/summary" target="_blank" rel="noopener"
           >原始实验结果 JSON ↗</a
         >
       </footer>

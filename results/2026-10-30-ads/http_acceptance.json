@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "shared_domains": [
+    "ads",
+    "recommendation",
+    "search"
+  ],
+  "real_http_ads_prediction": true,
+  "real_http_simulation_budget30": true,
+  "existing_search_methods_match_saved_top10": 5,
+  "cross_origin_rejected": true
+}

@@ -23,6 +23,10 @@ app = FastAPI(title="Recommendation Lab", docs_url=None, redoc_url=None)
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 SOURCE_FILES = {
+    "ads_teaching": ("reclab/ads_teaching.py", "真实点击小预算单变量教学训练"),
+    "ads": ("reclab/ads.py", "真实点击预测、独立校准与分段审计"),
+    "probability": ("reclab/probability.py", "共享概率评估：AUC、logloss、Brier与可靠性"),
+    "auction": ("reclab/auction.py", "独立模拟市场：二价拍卖与预算pacing"),
     "search": ("reclab/search.py", "真实查询与文档：检索、融合和重排"),
     "experiments": ("reclab/experiments.py", "跨搜索推荐广告共用实验记录"),
     "deep_recommendation": ("reclab/deep_recommendation.py", "真实推荐：负采样、序列与索引对照"),
@@ -560,3 +564,56 @@ def search_documents(request: SearchRequest):
         return search_index(receipt['run_id']).search(request.query,request.method,request.limit)
     except (FileNotFoundError, ValueError) as exc:
         raise HTTPException(503, 'Search inputs unavailable; run python -m reclab.search --download') from exc
+
+
+class AdsPredictRequest(BaseModel):
+    numeric: list[float | None] = Field(min_length=13, max_length=13)
+    categorical: list[str | None] = Field(min_length=26, max_length=26)
+
+
+@lru_cache(maxsize=1)
+def ads_predictor(run_id):
+    from .ads import Predictor
+    return Predictor(run_id)
+
+
+@app.get('/api/ads/example')
+def ads_example():
+    from .ads import latest, NUM, CAT
+    try:
+        receipt, _ = latest()
+        examples = read_json(ARTIFACTS / 'experiments/ads' / receipt['run_id'] / 'example_inputs.json')
+        row = examples[0]
+        return {'numeric': [row[k] for k in NUM], 'categorical': [row[k] for k in CAT]}
+    except FileNotFoundError as exc:
+        raise HTTPException(503, 'Run python -m reclab.ads --download') from exc
+
+
+@app.post('/api/ads/predict')
+def ads_predict(request: AdsPredictRequest):
+    import math
+    from .ads import latest
+    if any(v is not None and (not math.isfinite(v) or abs(v)>1e12) for v in request.numeric) or any(v is not None and len(v)>64 for v in request.categorical):
+        raise HTTPException(422, 'Use finite numeric features and categorical strings up to 64 characters')
+    try:
+        receipt, _ = latest()
+        return ads_predictor(receipt['run_id']).predict(request.numeric, request.categorical)
+    except FileNotFoundError as exc:
+        raise HTTPException(503, 'Run python -m reclab.ads --download') from exc
+
+
+class AuctionRequest(BaseModel):
+    strategy: str = 'value'
+    paced: bool = True
+    budget: float = Field(default=60., gt=0, le=10000, allow_inf_nan=False)
+    multiplier: float = Field(default=1., gt=0, le=10, allow_inf_nan=False)
+    seed: int = Field(default=42, ge=0, le=1000000)
+
+
+@app.post('/api/ads/simulate')
+def ads_simulate(request: AuctionRequest):
+    from .auction import market, simulate
+    if request.strategy not in ('flat', 'value'):
+        raise HTTPException(422, 'Choose flat or value')
+    return {'scope': 'SYNTHETIC market only; revenue and currency units are simulated. Independent of Criteo predictions.',
+            **simulate(market(request.seed), request.strategy, request.budget, request.multiplier, request.paced)}

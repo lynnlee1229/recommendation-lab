@@ -1,0 +1,238 @@
+[
+  {
+    "run_id": "20261030T130907-22ac6037",
+    "config": {
+      "workshop": "linear_features",
+      "rows": 40000,
+      "seed": 42,
+      "evaluation": "select only; audit untouched"
+    },
+    "kind": "workshop",
+    "scope": "Chapter workshop linear_features: first 40000 real Criteo rows; same feature-group split; select-only development results, not independent audit.",
+    "rows": [
+      {
+        "method": "numeric_only",
+        "fit_seconds": 0.05920566699933261,
+        "features": 24,
+        "select": {
+          "n": 6006,
+          "positives": 194,
+          "click_rate": 0.032301032301032304,
+          "mean_probability": 0.03135311601652264,
+          "auc": 0.7070511774430436,
+          "logloss": 0.13445082564049976,
+          "brier": 0.03066777864137898,
+          "ece": 0.0016655732756905872,
+          "reliability": [
+            {
+              "bin": 0,
+              "count": 5869,
+              "mean_probability": 0.028991598372928716,
+              "click_rate": 0.030328846481513034
+            },
+            {
+              "bin": 1,
+              "count": 132,
+              "mean_probability": 0.12890912965738704,
+              "click_rate": 0.11363636363636363
+            },
+            {
+              "bin": 2,
+              "count": 5,
+              "mean_probability": 0.227823765948243,
+              "click_rate": 0.2
+            }
+          ]
+        },
+        "iterations": 14
+      },
+      {
+        "method": "numeric+categorical",
+        "fit_seconds": 0.8149522499988961,
+        "features": 2470,
+        "select": {
+          "n": 6006,
+          "positives": 194,
+          "click_rate": 0.032301032301032304,
+          "mean_probability": 0.03177244855026241,
+          "auc": 0.7211022697440772,
+          "logloss": 0.13535924760121054,
+          "brier": 0.031106683422217875,
+          "ece": 0.008736148314485468,
+          "reliability": [
+            {
+              "bin": 0,
+              "count": 5619,
+              "mean_probability": 0.02120982552198579,
+              "click_rate": 0.02616123865456487
+            },
+            {
+              "bin": 1,
+              "count": 271,
+              "mean_probability": 0.13556873630163452,
+              "click_rate": 0.11439114391143912
+            },
+            {
+              "bin": 2,
+              "count": 80,
+              "mean_probability": 0.24756263723168787,
+              "click_rate": 0.1125
+            },
+            {
+              "bin": 3,
+              "count": 21,
+              "mean_probability": 0.3462358202848502,
+              "click_rate": 0.14285714285714285
+            },
+            {
+              "bin": 4,
+              "count": 7,
+              "mean_probability": 0.4366170186989139,
+              "click_rate": 0.14285714285714285
+            },
+            {
+              "bin": 5,
+              "count": 4,
+              "mean_probability": 0.5397823429934993,
+              "click_rate": 0.5
+            },
+            {
+              "bin": 6,
+              "count": 3,
+              "mean_probability": 0.6229831151264942,
+              "click_rate": 0.3333333333333333
+            },
+            {
+              "bin": 7,
+              "count": 1,
+              "mean_probability": 0.7478277943321489,
+              "click_rate": 0.0
+            }
+          ]
+        },
+        "iterations": 108
+      }
+    ],
+    "shapes": {
+      "raw": [
+        40000,
+        39
+      ],
+      "train": 22024,
+      "select": 6006
+    },
+    "changed_variable": "linear_features",
+    "limits": "Small prefix, correlated observations and anonymous fields; do not compare to 200k audit or choose production model from this workshop."
+  },
+  {
+    "run_id": "20261030T130911-14b5a3de",
+    "config": {
+      "workshop": "tree_capacity",
+      "rows": 40000,
+      "seed": 42,
+      "evaluation": "select only; audit untouched"
+    },
+    "kind": "workshop",
+    "scope": "Chapter workshop tree_capacity: first 40000 real Criteo rows; same feature-group split; select-only development results, not independent audit.",
+    "rows": [
+      {
+        "method": "leaves_7",
+        "fit_seconds": 0.12630695799998648,
+        "features": 39,
+        "select": {
+          "n": 6006,
+          "positives": 194,
+          "click_rate": 0.032301032301032304,
+          "mean_probability": 0.030233777388326062,
+          "auc": 0.7042862793651244,
+          "logloss": 0.13406318624944522,
+          "brier": 0.03058742314365669,
+          "ece": 0.0036548626755967565,
+          "reliability": [
+            {
+              "bin": 0,
+              "count": 5768,
+              "mean_probability": 0.025453620125229906,
+              "click_rate": 0.028432732316227463
+            },
+            {
+              "bin": 1,
+              "count": 212,
+              "mean_probability": 0.13353048882212673,
+              "click_rate": 0.1179245283018868
+            },
+            {
+              "bin": 2,
+              "count": 24,
+              "mean_probability": 0.23993096041780237,
+              "click_rate": 0.20833333333333334
+            },
+            {
+              "bin": 3,
+              "count": 2,
+              "mean_probability": 0.35038971582104256,
+              "click_rate": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "method": "leaves_15",
+        "fit_seconds": 0.17574779100141313,
+        "features": 39,
+        "select": {
+          "n": 6006,
+          "positives": 194,
+          "click_rate": 0.032301032301032304,
+          "mean_probability": 0.029073240393216217,
+          "auc": 0.688729681214125,
+          "logloss": 0.1370543769948845,
+          "brier": 0.03082452197211184,
+          "ece": 0.007550777584353196,
+          "reliability": [
+            {
+              "bin": 0,
+              "count": 5731,
+              "mean_probability": 0.022444940815741696,
+              "click_rate": 0.028092828476705637
+            },
+            {
+              "bin": 1,
+              "count": 205,
+              "mean_probability": 0.13383019664657042,
+              "click_rate": 0.1024390243902439
+            },
+            {
+              "bin": 2,
+              "count": 54,
+              "mean_probability": 0.23803061469514544,
+              "click_rate": 0.18518518518518517
+            },
+            {
+              "bin": 3,
+              "count": 13,
+              "mean_probability": 0.3432188730219932,
+              "click_rate": 0.15384615384615385
+            },
+            {
+              "bin": 4,
+              "count": 3,
+              "mean_probability": 0.41041237709008366,
+              "click_rate": 0.0
+            }
+          ]
+        }
+      }
+    ],
+    "shapes": {
+      "raw": [
+        40000,
+        39
+      ],
+      "train": 22024,
+      "select": 6006
+    },
+    "changed_variable": "tree_capacity",
+    "limits": "Small prefix, correlated observations and anonymous fields; do not compare to 200k audit or choose production model from this workshop."
+  }
+]

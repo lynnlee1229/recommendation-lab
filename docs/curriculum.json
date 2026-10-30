@@ -1020,6 +1020,48 @@
       "file": "17_Search_Experiments.ipynb",
       "title": "真实搜索：词法、语义、融合与重排",
       "mode": "SciFact真实标注 · 冻结小模型 · 训练线性排序 · 同一实验目录"
+    },
+    {
+      "target": "ads",
+      "file": "18_Ads_Experiments.ipynb",
+      "title": "真实广告点击：概率、校准与模拟拍卖",
+      "mode": "真实曝光点击 · 独立校准与审计 · 模拟预算市场"
+    },
+    {
+      "target": "ads_19",
+      "file": "19_Ads_Data_Splits.ipynb",
+      "title": "曝光、标签、缺失与无泄漏切分",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_20",
+      "file": "20_Ads_Linear_Features.ipynb",
+      "title": "CTR线性基线与特征工程",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_21",
+      "file": "21_Ads_Nonlinearity.ipynb",
+      "title": "非线性、特征交叉与树容量",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_22",
+      "file": "22_Ads_Calibration.ipynb",
+      "title": "概率评分、可靠性与校准审计",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_23",
+      "file": "23_Ads_Auction_Bids.ipynb",
+      "title": "拍卖、支付规则与出价",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_24",
+      "file": "24_Ads_Pacing_Integration.ipynb",
+      "title": "预算pacing、约束与整合误差分析",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
     }
   ]
 }

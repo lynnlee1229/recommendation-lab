@@ -1,0 +1,19 @@
+{
+  "dataset": "Criteo 1TB Click Logs",
+  "publisher": "Criteo AI Lab",
+  "original_source": "https://ailab.criteo.com/download-criteo-1tb-click-logs-dataset/",
+  "license": "CC-BY-NC-SA-4.0",
+  "revision": "e11d69ae913b16cdd7387706a2133def0fdc6ced",
+  "selection": "2015-02-15 part-00079 only; first 200000 physical rows; not representative of all days; parquet row chronology not independently guaranteed",
+  "assets": [
+    {
+      "url": "https://huggingface.co/datasets/criteo/CriteoClickLogs/resolve/e11d69ae913b16cdd7387706a2133def0fdc6ced/data/day=2015-02-15/part-00079-99c339d5-fbac-4110-9dcf-75453a61a5c1.c000.snappy.parquet",
+      "destination": "data/ads/criteo-day15-part00079.parquet",
+      "bytes": 47872279,
+      "sha256": "d0733ed6b4925d0dceadca865e50cfefbccfe8c2f2e5a2d49166aa6368e2435d",
+      "revision": "e11d69ae913b16cdd7387706a2133def0fdc6ced",
+      "license": "CC-BY-NC-SA-4.0",
+      "downloader": "curl"
+    }
+  ]
+}

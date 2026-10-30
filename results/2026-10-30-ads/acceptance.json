@@ -1,0 +1,18 @@
+{
+  "run_id": "20261030T125738-f82b6582",
+  "status": "PASS",
+  "offline_online_probability_rows": 30,
+  "probability_tolerance": 1e-10,
+  "tree_export_golden_rows": 500,
+  "saved_metrics_recomputed": true,
+  "feature_group_overlap": 0,
+  "notebooks": 25,
+  "recommendation_versions": [
+    "ablation-history64",
+    "ablation-logq",
+    "ablation-no-history",
+    "baseline-history32"
+  ],
+  "itemcf": true,
+  "simulation_budget_all_seeds": true
+}

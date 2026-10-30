@@ -31,7 +31,7 @@ function table(head, rows, className = "") {
   return `<div class="table-wrap ${className}"><table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
 const labels = {
-  research: ["实验对照", "同一系统中比较推荐与搜索；结果来自已完成的本机实验。"],
+  research: ["实验对照", "同一系统的推荐、搜索与广告；各领域独立评估。"],
   overview: ["实验概览", "先建立可信的比较口径，再观察模型学到了什么。"],
   trace: ["推荐过程", "追踪召回、过滤、融合与 MMR。每个候选都保留来源和分数。"],
   features: ["特征与样本", "检查时间边界、Embedding 输入和真实训练样本。"],
@@ -460,6 +460,17 @@ async function drawResearch() {
         panel.innerHTML += `<p>重排候选Recall@20：${fmt(result['rerank_candidate_recall@20'])}。未判断文档按不相关计算，真实相关性可能不完整。延迟包含查询编码与重排，不含离线建索引。<a href="/notebooks?target=search">打开搜索实验 Notebook ↗</a></p>`;
         panel.innerHTML += table(['失败查询ID','BM25 NDCG','TinyBERT NDCG'],result.failures.slice(0,5).map(r => [esc(r.qid),fmt(r.metrics.bm25['ndcg@10']),fmt(r.metrics.tinybert_rerank['ndcg@10'])]));
       }
+      if (run.domain === 'ads' && result.kind === 'workshop') {
+        panel.innerHTML += table(['教学方法','select AUC','select logloss','特征维度','拟合秒'],result.rows.map(r=>[esc(r.method),fmt(r.select.auc),fmt(r.select.logloss),r.features,r.fit_seconds.toFixed(2)]));
+        panel.innerHTML += '<p>小前缀教学训练，只报告select；不替换正式200k实验，不混比audit。</p>';
+      }
+      if (run.domain === 'ads' && result.kind !== 'workshop') {
+        panel.innerHTML += table(['方法','审计AUC','logloss','Brier','ECE(10等宽箱)','拟合秒'], result.rows.map(r => [esc(r.method),fmt(r.audit.auc),fmt(r.audit.logloss),fmt(r.audit.brier),fmt(r.audit.ece),r.fit_seconds.toFixed(2)]));
+        panel.innerHTML += `<p>树模型家族按select logloss选定：${esc(result.selected_base)}；单独calibration拟合校准器，audit未参与选型。公开数据正负抽样比例未知，这些概率不代表线上CTR。<a href="/notebooks?target=ads">打开广告实验 Notebook ↗</a></p>`;
+        panel.innerHTML += table(['审计分段','曝光数','真实点击率','原始logloss','sigmoid logloss'],result.segments.map(r => [esc(r.segment),r.raw.n,fmt(r.raw.click_rate),fmt(r.raw.logloss),fmt(r.sigmoid.logloss)]));
+        panel.innerHTML += '<p>下列为独立模拟市场（每广告主预算60），收入、价值和货币均为模拟。不能用来证明线上收益。</p>';
+        panel.innerHTML += table(['模拟策略','seed','模拟收入','期望点击价值','期望广告主盈余','预算约束'],result.simulations.map(r => [esc(r.name),r.seed,r.spend.toFixed(2),r.expected_click_value.toFixed(2),r.expected_advertiser_surplus.toFixed(2),r.budget_ok?'通过':'失败']));
+      }
       panel.innerHTML += `<p><a href="/api/experiments/${encodeURIComponent(run.domain)}/${encodeURIComponent(run.run_id)}" target="_blank" rel="noopener">完整实验记录 JSON ↗</a></p>`;
       target.appendChild(panel);
     }
@@ -476,4 +487,25 @@ $('search-form').addEventListener('submit', async (event) => {
     const result = await api('/api/search', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({query:$('search-query').value, method:$('search-method').value, limit:5})});
     output.innerHTML = `<p>${esc(result.method)} · ${result.latency_ms.toFixed(1)} 毫秒 · 分数是排序分数，不能解释为科学声明成立概率。</p>` + result.items.map(x => `<details><summary>${esc(x.document_id)} · ${esc(x.title)}</summary><p>${esc(x.text)}</p><p>score: ${fmt(x.score)}</p></details>`).join('');
   } catch (e) { output.textContent = `检索失败：${e.message}`; }
+});
+
+
+$('ads-example').addEventListener('click', async () => {
+  try { $('ads-input').value = JSON.stringify(await api('/api/ads/example'), null, 2); }
+  catch (e) { $('ads-output').textContent = e.message; }
+});
+$('ads-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  try {
+    const input = JSON.parse($('ads-input').value);
+    const r = await api('/api/ads/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)});
+    $('ads-output').innerHTML = table(['基模型','原始概率','sigmoid概率','isotonic概率'],[[esc(r.base),fmt(r.raw),fmt(r.sigmoid),fmt(r.isotonic)]])+'<p>仅公开样本分布概率；匿名特征含义未知，修改不能解释为因果效果。</p>';
+  } catch(e) { $('ads-output').textContent=e.message; }
+});
+$('auction-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  try {
+    const r=await api('/api/ads/simulate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({strategy:$('auction-strategy').value,budget:Number($('auction-budget').value),multiplier:Number($('auction-multiplier').value),paced:$('auction-paced').checked,seed:42})});
+    $('auction-output').innerHTML=table(['模拟收入','期望点击价值','模拟点击','预算约束'],[[r.spend.toFixed(2),r.expected_click_value.toFixed(2),r.clicks,r.budget_ok?'通过':'失败']])+table(['模拟广告主','花费','赢得曝光','点击'],r.advertisers.map((a,i)=>[i+1,a.spend.toFixed(2),a.wins,a.clicks]));
+  } catch(e) { $('auction-output').textContent=e.message; }
 });

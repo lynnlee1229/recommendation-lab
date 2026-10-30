@@ -20,6 +20,15 @@ RUNTIME = ROOT / "logs/jupyter-runtime"
 PID_FILE = ROOT / "logs/notebook.pid"
 PYTHON = ROOT / ".venv/bin/python"
 TARGETS = {
+    "ads_19": "notebooks/19_Ads_Data_Splits.ipynb",
+    "ads_20": "notebooks/20_Ads_Linear_Features.ipynb",
+    "ads_21": "notebooks/21_Ads_Nonlinearity.ipynb",
+    "ads_22": "notebooks/22_Ads_Calibration.ipynb",
+    "ads_23": "notebooks/23_Ads_Auction_Bids.ipynb",
+    "ads_24": "notebooks/24_Ads_Pacing_Integration.ipynb",
+
+    "ads": "notebooks/18_Ads_Experiments.ipynb",
+    "ads_code": "reclab/ads.py",
     "search": "notebooks/17_Search_Experiments.ipynb",
     "search_code": "reclab/search.py",
     "deep_recommendation": "notebooks/16_Recommendation_Experiments.ipynb",

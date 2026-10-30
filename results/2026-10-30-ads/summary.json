@@ -1,0 +1,1269 @@
+{
+  "scope": "Criteo official sampled click logs: first 200,000 rows of one 766,864-row parquet shard (2015-02-15). Real CTR task on a subsampled distribution. Auction is a separate synthetic market.",
+  "rows": [
+    {
+      "method": "train_prior",
+      "fit_seconds": 0.0,
+      "select": {
+        "n": 29984,
+        "positives": 1016,
+        "click_rate": 0.03388473852721451,
+        "mean_probability": 0.0328739709828535,
+        "auc": 0.5,
+        "logloss": 0.14801270777485181,
+        "brier": 0.03273758467318554,
+        "ece": 0.0010107675443610104,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 29984,
+            "mean_probability": 0.0328739709828535,
+            "click_rate": 0.03388473852721451
+          }
+        ]
+      },
+      "audit": {
+        "n": 29928,
+        "positives": 992,
+        "click_rate": 0.03314621758887998,
+        "mean_probability": 0.032873970982853495,
+        "auc": 0.5,
+        "logloss": 0.1455152901956826,
+        "brier": 0.032047619966645076,
+        "ece": 0.00027224660602648276,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 29928,
+            "mean_probability": 0.032873970982853495,
+            "click_rate": 0.03314621758887998
+          }
+        ]
+      }
+    },
+    {
+      "method": "linear_onehot",
+      "fit_seconds": 4.102396124999359,
+      "select": {
+        "n": 29984,
+        "positives": 1016,
+        "click_rate": 0.03388473852721451,
+        "mean_probability": 0.032963843997657505,
+        "auc": 0.7278128105517465,
+        "logloss": 0.13730641893584805,
+        "brier": 0.03187403208148407,
+        "ece": 0.004237371608241977,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28253,
+            "mean_probability": 0.02501211460949696,
+            "click_rate": 0.02774926556471879
+          },
+          {
+            "bin": 1,
+            "count": 1407,
+            "mean_probability": 0.1345587946139482,
+            "click_rate": 0.12011371712864251
+          },
+          {
+            "bin": 2,
+            "count": 231,
+            "mean_probability": 0.23767729426634301,
+            "click_rate": 0.1645021645021645
+          },
+          {
+            "bin": 3,
+            "count": 56,
+            "mean_probability": 0.34136505185497373,
+            "click_rate": 0.25
+          },
+          {
+            "bin": 4,
+            "count": 24,
+            "mean_probability": 0.44630745338365774,
+            "click_rate": 0.2916666666666667
+          },
+          {
+            "bin": 5,
+            "count": 8,
+            "mean_probability": 0.5517439685304666,
+            "click_rate": 0.5
+          },
+          {
+            "bin": 6,
+            "count": 5,
+            "mean_probability": 0.6502343665929182,
+            "click_rate": 0.0
+          }
+        ]
+      },
+      "audit": {
+        "n": 29928,
+        "positives": 992,
+        "click_rate": 0.03314621758887998,
+        "mean_probability": 0.0331044174529588,
+        "auc": 0.7214679002381228,
+        "logloss": 0.1354225313301876,
+        "brier": 0.03119330049753427,
+        "ece": 0.004382482466441462,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28189,
+            "mean_probability": 0.02525080829891963,
+            "click_rate": 0.027599418212778035
+          },
+          {
+            "bin": 1,
+            "count": 1411,
+            "mean_probability": 0.13452679030963366,
+            "click_rate": 0.10630758327427356
+          },
+          {
+            "bin": 2,
+            "count": 249,
+            "mean_probability": 0.23854202310600658,
+            "click_rate": 0.1646586345381526
+          },
+          {
+            "bin": 3,
+            "count": 56,
+            "mean_probability": 0.33640125284757855,
+            "click_rate": 0.25
+          },
+          {
+            "bin": 4,
+            "count": 17,
+            "mean_probability": 0.4464101263041551,
+            "click_rate": 0.4117647058823529
+          },
+          {
+            "bin": 5,
+            "count": 6,
+            "mean_probability": 0.5520438678302911,
+            "click_rate": 0.3333333333333333
+          }
+        ]
+      },
+      "iterations": 130
+    },
+    {
+      "method": "gbdt_80",
+      "fit_seconds": 0.555461459000071,
+      "select": {
+        "n": 29984,
+        "positives": 1016,
+        "click_rate": 0.03388473852721451,
+        "mean_probability": 0.03253409591317595,
+        "auc": 0.718148535337391,
+        "logloss": 0.13720466583513247,
+        "brier": 0.031767946835412085,
+        "ece": 0.002474507247547781,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28704,
+            "mean_probability": 0.027622462871391865,
+            "click_rate": 0.029542920847268672
+          },
+          {
+            "bin": 1,
+            "count": 1149,
+            "mean_probability": 0.12993319866248662,
+            "click_rate": 0.11662315056570931
+          },
+          {
+            "bin": 2,
+            "count": 112,
+            "mean_probability": 0.2356094560225017,
+            "click_rate": 0.23214285714285715
+          },
+          {
+            "bin": 3,
+            "count": 14,
+            "mean_probability": 0.34129850104753123,
+            "click_rate": 0.5
+          },
+          {
+            "bin": 4,
+            "count": 5,
+            "mean_probability": 0.4334948495705828,
+            "click_rate": 0.2
+          }
+        ]
+      },
+      "audit": {
+        "n": 29928,
+        "positives": 992,
+        "click_rate": 0.03314621758887998,
+        "mean_probability": 0.03281768429214162,
+        "auc": 0.7063291304168487,
+        "logloss": 0.1360293933130953,
+        "brier": 0.031221289955195537,
+        "ece": 0.001738314050279206,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28607,
+            "mean_probability": 0.027871072425326833,
+            "click_rate": 0.028839095326318735
+          },
+          {
+            "bin": 1,
+            "count": 1222,
+            "mean_probability": 0.13182975384286852,
+            "click_rate": 0.11456628477905073
+          },
+          {
+            "bin": 2,
+            "count": 89,
+            "mean_probability": 0.22906482788341728,
+            "click_rate": 0.25842696629213485
+          },
+          {
+            "bin": 3,
+            "count": 10,
+            "mean_probability": 0.33771577462804514,
+            "click_rate": 0.4
+          }
+        ]
+      },
+      "trees": 80
+    },
+    {
+      "method": "gbdt_160",
+      "fit_seconds": 0.9322266250001121,
+      "select": {
+        "n": 29984,
+        "positives": 1016,
+        "click_rate": 0.03388473852721451,
+        "mean_probability": 0.03208625238476246,
+        "auc": 0.7142535572785174,
+        "logloss": 0.13837610886238738,
+        "brier": 0.03186602509308988,
+        "ece": 0.004995640061003304,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28301,
+            "mean_probability": 0.02483113290580872,
+            "click_rate": 0.02833822126426628
+          },
+          {
+            "bin": 1,
+            "count": 1417,
+            "mean_probability": 0.13249789783543178,
+            "click_rate": 0.1122088920254058
+          },
+          {
+            "bin": 2,
+            "count": 210,
+            "mean_probability": 0.23912681437759112,
+            "click_rate": 0.15714285714285714
+          },
+          {
+            "bin": 3,
+            "count": 40,
+            "mean_probability": 0.33491418976261716,
+            "click_rate": 0.4
+          },
+          {
+            "bin": 4,
+            "count": 8,
+            "mean_probability": 0.4382673668949928,
+            "click_rate": 0.375
+          },
+          {
+            "bin": 5,
+            "count": 7,
+            "mean_probability": 0.5386026100436132,
+            "click_rate": 0.42857142857142855
+          },
+          {
+            "bin": 6,
+            "count": 1,
+            "mean_probability": 0.6892220893541239,
+            "click_rate": 0.0
+          }
+        ]
+      },
+      "audit": {
+        "n": 29928,
+        "positives": 992,
+        "click_rate": 0.03314621758887998,
+        "mean_probability": 0.03251196996240862,
+        "auc": 0.7030353102675984,
+        "logloss": 0.13740361599014161,
+        "brier": 0.03135847991989498,
+        "ece": 0.005349847585174415,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28198,
+            "mean_probability": 0.025159727613764542,
+            "click_rate": 0.028335342932122847
+          },
+          {
+            "bin": 1,
+            "count": 1468,
+            "mean_probability": 0.13496538249794945,
+            "click_rate": 0.09400544959128065
+          },
+          {
+            "bin": 2,
+            "count": 228,
+            "mean_probability": 0.23375252556013223,
+            "click_rate": 0.19736842105263158
+          },
+          {
+            "bin": 3,
+            "count": 28,
+            "mean_probability": 0.34077898919735317,
+            "click_rate": 0.32142857142857145
+          },
+          {
+            "bin": 4,
+            "count": 5,
+            "mean_probability": 0.41824649843101785,
+            "click_rate": 0.2
+          },
+          {
+            "bin": 5,
+            "count": 1,
+            "mean_probability": 0.506436257651484,
+            "click_rate": 0.0
+          }
+        ]
+      },
+      "trees": 160
+    },
+    {
+      "method": "selected_sigmoid",
+      "fit_seconds": 0.008740374998524203,
+      "select": {
+        "n": 29984,
+        "positives": 1016,
+        "click_rate": 0.03388473852721451,
+        "mean_probability": 0.033767113711452315,
+        "auc": 0.718148535337391,
+        "logloss": 0.1371522521260614,
+        "brier": 0.031765431038523285,
+        "ece": 0.0010645541296242832,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28742,
+            "mean_probability": 0.029202502494670598,
+            "click_rate": 0.029608238814278758
+          },
+          {
+            "bin": 1,
+            "count": 1135,
+            "mean_probability": 0.12893131270105504,
+            "click_rate": 0.1171806167400881
+          },
+          {
+            "bin": 2,
+            "count": 91,
+            "mean_probability": 0.23256350310623053,
+            "click_rate": 0.26373626373626374
+          },
+          {
+            "bin": 3,
+            "count": 14,
+            "mean_probability": 0.3410834118768952,
+            "click_rate": 0.5714285714285714
+          },
+          {
+            "bin": 4,
+            "count": 2,
+            "mean_probability": 0.4296621788614098,
+            "click_rate": 0.0
+          }
+        ]
+      },
+      "audit": {
+        "n": 29928,
+        "positives": 992,
+        "click_rate": 0.03314621758887998,
+        "mean_probability": 0.034054672441161435,
+        "auc": 0.7063291304168487,
+        "logloss": 0.13596808940352492,
+        "brier": 0.031218897836043032,
+        "ece": 0.0011488903239790385,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28639,
+            "mean_probability": 0.02943761143993278,
+            "click_rate": 0.028946541429519187
+          },
+          {
+            "bin": 1,
+            "count": 1216,
+            "mean_probability": 0.13052825591227568,
+            "click_rate": 0.11677631578947369
+          },
+          {
+            "bin": 2,
+            "count": 67,
+            "mean_probability": 0.2301150705962017,
+            "click_rate": 0.2835820895522388
+          },
+          {
+            "bin": 3,
+            "count": 6,
+            "mean_probability": 0.33073564526199023,
+            "click_rate": 0.3333333333333333
+          }
+        ]
+      },
+      "base": "gbdt_80"
+    },
+    {
+      "method": "selected_isotonic",
+      "fit_seconds": 0.006878541000332916,
+      "select": {
+        "n": 29984,
+        "positives": 1016,
+        "click_rate": 0.03388473852721451,
+        "mean_probability": 0.033911447465595476,
+        "auc": 0.714404636965688,
+        "logloss": 0.13745543215889536,
+        "brier": 0.03180524206245992,
+        "ece": 0.001208378373722068,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28046,
+            "mean_probability": 0.027358069308470588,
+            "click_rate": 0.02798973115595807
+          },
+          {
+            "bin": 1,
+            "count": 1798,
+            "mean_probability": 0.11775658903540766,
+            "click_rate": 0.10845383759733036
+          },
+          {
+            "bin": 2,
+            "count": 130,
+            "mean_probability": 0.24004554713734882,
+            "click_rate": 0.23846153846153847
+          },
+          {
+            "bin": 6,
+            "count": 10,
+            "mean_probability": 0.6584160769530258,
+            "click_rate": 0.5
+          }
+        ]
+      },
+      "audit": {
+        "n": 29928,
+        "positives": 992,
+        "click_rate": 0.03314621758887998,
+        "mean_probability": 0.0340692389391651,
+        "auc": 0.7030639468805462,
+        "logloss": 0.1364371767207884,
+        "brier": 0.0313022514243036,
+        "ece": 0.0011632039192470336,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 28001,
+            "mean_probability": 0.02770809912679365,
+            "click_rate": 0.02764186993321667
+          },
+          {
+            "bin": 1,
+            "count": 1819,
+            "mean_probability": 0.11931306099538036,
+            "click_rate": 0.10390324354040682
+          },
+          {
+            "bin": 2,
+            "count": 106,
+            "mean_probability": 0.2396783777174901,
+            "click_rate": 0.27358490566037735
+          },
+          {
+            "bin": 6,
+            "count": 2,
+            "mean_probability": 0.6666666666666666,
+            "click_rate": 0.0
+          }
+        ]
+      },
+      "base": "gbdt_80"
+    }
+  ],
+  "selected_base": "gbdt_80",
+  "splits": {
+    "train": {
+      "n": 109935,
+      "positives": 3614,
+      "click_rate": 0.0328739709828535,
+      "unique_feature_groups": 109934
+    },
+    "select": {
+      "n": 29984,
+      "positives": 1016,
+      "click_rate": 0.03388473852721451,
+      "unique_feature_groups": 29984
+    },
+    "calibration": {
+      "n": 30153,
+      "positives": 1023,
+      "click_rate": 0.03392697244055318,
+      "unique_feature_groups": 30153
+    },
+    "audit": {
+      "n": 29928,
+      "positives": 992,
+      "click_rate": 0.03314621758887998,
+      "unique_feature_groups": 29928
+    }
+  },
+  "source_shard_rows": 766864,
+  "feature_duplicate_rows": 1,
+  "conflicting_label_feature_groups": 0,
+  "segments": [
+    {
+      "segment": "low_numeric_missing",
+      "raw": {
+        "n": 17016,
+        "positives": 621,
+        "click_rate": 0.0364950634696756,
+        "mean_probability": 0.03593099406294469,
+        "auc": 0.6975760942001976,
+        "logloss": 0.14704292923749332,
+        "brier": 0.034236319965549385,
+        "ece": 0.0021105666362014417,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 16104,
+            "mean_probability": 0.02995671891692582,
+            "click_rate": 0.031110283159463487
+          },
+          {
+            "bin": 1,
+            "count": 834,
+            "mean_probability": 0.13201249923307015,
+            "click_rate": 0.11630695443645084
+          },
+          {
+            "bin": 2,
+            "count": 69,
+            "mean_probability": 0.2292926827327271,
+            "click_rate": 0.2898550724637681
+          },
+          {
+            "bin": 3,
+            "count": 9,
+            "mean_probability": 0.33990822977275714,
+            "click_rate": 0.3333333333333333
+          }
+        ]
+      },
+      "sigmoid": {
+        "n": 17016,
+        "positives": 621,
+        "click_rate": 0.0364950634696756,
+        "mean_probability": 0.03711091183365956,
+        "auc": 0.6975760942001976,
+        "logloss": 0.1469354352368976,
+        "brier": 0.0342332455101511,
+        "ece": 0.0009518745914493336,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 16123,
+            "mean_probability": 0.0315289951704297,
+            "click_rate": 0.03125969112448056
+          },
+          {
+            "bin": 1,
+            "count": 834,
+            "mean_probability": 0.1306908846186911,
+            "click_rate": 0.11990407673860912
+          },
+          {
+            "bin": 2,
+            "count": 53,
+            "mean_probability": 0.2293712261349556,
+            "click_rate": 0.2830188679245283
+          },
+          {
+            "bin": 3,
+            "count": 6,
+            "mean_probability": 0.33073564526199023,
+            "click_rate": 0.3333333333333333
+          }
+        ]
+      }
+    },
+    {
+      "segment": "high_numeric_missing",
+      "raw": {
+        "n": 12912,
+        "positives": 371,
+        "click_rate": 0.028732961586121437,
+        "mean_probability": 0.02871482810719855,
+        "auc": 0.7130517025450323,
+        "logloss": 0.12151527255027343,
+        "brier": 0.02724795114972922,
+        "ece": 0.0014994081704766044,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 12503,
+            "mean_probability": 0.025184737057758238,
+            "click_rate": 0.025913780692633767
+          },
+          {
+            "bin": 1,
+            "count": 388,
+            "mean_probability": 0.1314369454525898,
+            "click_rate": 0.11082474226804123
+          },
+          {
+            "bin": 2,
+            "count": 20,
+            "mean_probability": 0.22827872865329835,
+            "click_rate": 0.15
+          },
+          {
+            "bin": 3,
+            "count": 1,
+            "mean_probability": 0.3179836783256376,
+            "click_rate": 1.0
+          }
+        ]
+      },
+      "sigmoid": {
+        "n": 12912,
+        "positives": 371,
+        "click_rate": 0.028732961586121437,
+        "mean_probability": 0.030027026104207592,
+        "auc": 0.7130517025450323,
+        "logloss": 0.12151483996883856,
+        "brier": 0.027246458243212878,
+        "ece": 0.0014085262986324885,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 12516,
+            "mean_probability": 0.026743509499472413,
+            "click_rate": 0.025966762543943752
+          },
+          {
+            "bin": 1,
+            "count": 382,
+            "mean_probability": 0.13017319742758857,
+            "click_rate": 0.1099476439790576
+          },
+          {
+            "bin": 2,
+            "count": 14,
+            "mean_probability": 0.23293105319949037,
+            "click_rate": 0.2857142857142857
+          }
+        ]
+      }
+    },
+    {
+      "segment": "any_unseen_category",
+      "raw": {
+        "n": 11668,
+        "positives": 420,
+        "click_rate": 0.03599588618443606,
+        "mean_probability": 0.03416051214015805,
+        "auc": 0.684748399715505,
+        "logloss": 0.14692868382949187,
+        "brier": 0.03392842549095804,
+        "ece": 0.0026738585430385693,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 11133,
+            "mean_probability": 0.029100569367919812,
+            "click_rate": 0.03143806700799425
+          },
+          {
+            "bin": 1,
+            "count": 497,
+            "mean_probability": 0.1323218762604404,
+            "click_rate": 0.1227364185110664
+          },
+          {
+            "bin": 2,
+            "count": 36,
+            "mean_probability": 0.22577072400917256,
+            "click_rate": 0.2222222222222222
+          },
+          {
+            "bin": 3,
+            "count": 2,
+            "mean_probability": 0.3582491562718949,
+            "click_rate": 0.5
+          }
+        ]
+      },
+      "sigmoid": {
+        "n": 11668,
+        "positives": 420,
+        "click_rate": 0.03599588618443606,
+        "mean_probability": 0.03539456305349799,
+        "auc": 0.684748399715505,
+        "logloss": 0.1467120040248541,
+        "brier": 0.03392037622173989,
+        "ece": 0.0014877128795776373,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 11147,
+            "mean_probability": 0.03068018531145862,
+            "click_rate": 0.031578003050148025
+          },
+          {
+            "bin": 1,
+            "count": 491,
+            "mean_probability": 0.13069490385654417,
+            "click_rate": 0.12016293279022404
+          },
+          {
+            "bin": 2,
+            "count": 28,
+            "mean_probability": 0.21970358953454544,
+            "click_rate": 0.2857142857142857
+          },
+          {
+            "bin": 3,
+            "count": 2,
+            "mean_probability": 0.3344188704274115,
+            "click_rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "segment": "all_categories_seen",
+      "raw": {
+        "n": 18260,
+        "positives": 572,
+        "click_rate": 0.03132530120481928,
+        "mean_probability": 0.0319596275927629,
+        "auc": 0.7203214300398832,
+        "logloss": 0.1290648302383245,
+        "brier": 0.029491451103537437,
+        "ece": 0.0011545001941534786,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 17474,
+            "mean_probability": 0.027087737787471294,
+            "click_rate": 0.027183243676319104
+          },
+          {
+            "bin": 1,
+            "count": 725,
+            "mean_probability": 0.13149239544075375,
+            "click_rate": 0.10896551724137932
+          },
+          {
+            "bin": 2,
+            "count": 53,
+            "mean_probability": 0.23130233240177217,
+            "click_rate": 0.2830188679245283
+          },
+          {
+            "bin": 3,
+            "count": 8,
+            "mean_probability": 0.33258242921708275,
+            "click_rate": 0.375
+          }
+        ]
+      },
+      "sigmoid": {
+        "n": 18260,
+        "positives": 572,
+        "click_rate": 0.03132530120481928,
+        "mean_probability": 0.03319849261286228,
+        "auc": 0.7203214300398832,
+        "logloss": 0.12910281033443025,
+        "brier": 0.029492673859903326,
+        "ece": 0.0020631137275415436,
+        "reliability": [
+          {
+            "bin": 0,
+            "count": 17492,
+            "mean_probability": 0.02864576539911992,
+            "click_rate": 0.02726960896409787
+          },
+          {
+            "bin": 1,
+            "count": 725,
+            "mean_probability": 0.13041539502864002,
+            "click_rate": 0.11448275862068966
+          },
+          {
+            "bin": 2,
+            "count": 39,
+            "mean_probability": 0.2375899800763651,
+            "click_rate": 0.28205128205128205
+          },
+          {
+            "bin": 3,
+            "count": 4,
+            "mean_probability": 0.32889403267927964,
+            "click_rate": 0.25
+          }
+        ]
+      }
+    }
+  ],
+  "missing_threshold_train": 2.0,
+  "paired_sigmoid": {
+    "calibrated_minus_raw_logloss": -6.130390957040765e-05,
+    "iid_row_bootstrap_95": [
+      -0.00016953362229380587,
+      6.253575759107997e-05
+    ],
+    "replicates": 300,
+    "limitation": "conditional on fitted models; repeated/related rows and one shard limit independence and generalization"
+  },
+  "simulation_seconds": 0.6917456249993847,
+  "total_seconds": 11.720560707999539,
+  "protocol": {
+    "split": "feature-only pandas uint64 hash modulo 10000: train <5500; select <7000; calibration <8500; audit >=8500; no feature group overlap; NOT temporal or user split",
+    "selection": "Only select logloss chooses between 80/160 tree GBDTs; train-only encoders and vocab. Calibrators fitted on separate calibration split; all variants reported on audit; no audit selection.",
+    "features": "13 signed-log numeric + imputation/scaling and 26 capped onehot for LR; raw numeric + train top255 category codes for GBDT (other=0). No semantic feature/user IDs disclosed.",
+    "timing": "CPU wall time fit and end-to-end including preprocessing, probability evaluation, disk artifacts and simulation; excludes download; up to 4 threads.",
+    "limits": "One prefix of one shard/day; unknown parquet chronology; no user identities; repeated related observations possible. Positive/negative sampling rates undisclosed: calibrated sample probabilities are NOT population CTR. ECE uses 10 equal-width bins, not a proper scoring rule.",
+    "market": "Independent synthetic 3-advertiser, 6000-request, second-price PER-IMPRESSION auction with external competing bid; 60 currency units each; no external win => no sale. No real logs are used to estimate counterfactual revenue. Seed-paired 41/42/43; same potentials across policies; not tuned."
+  },
+  "run_id": "20261030T125738-f82b6582",
+  "config": {
+    "rows": 200000,
+    "seed": 42,
+    "trees": [
+      80,
+      160
+    ],
+    "category_limit": 255
+  },
+  "source_manifest": "docs/ads_sources.json",
+  "simulations": [
+    {
+      "name": "flat",
+      "seed": 41,
+      "strategy": "flat",
+      "paced": false,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.94676799901833,
+      "simulated_platform_revenue": 179.94676799901833,
+      "expected_click_value": 310.2601511673486,
+      "realized_click_value": 328.5,
+      "expected_advertiser_surplus": 130.3133831683303,
+      "wins": 1821,
+      "clicks": 147,
+      "advertisers": [
+        {
+          "spend": 59.99999999999949,
+          "wins": 500,
+          "clicks": 20
+        },
+        {
+          "spend": 59.99999999999949,
+          "wins": 500,
+          "clicks": 38
+        },
+        {
+          "spend": 59.94676799901937,
+          "wins": 821,
+          "clicks": 89
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value",
+      "seed": 41,
+      "strategy": "value",
+      "paced": false,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.95443622050013,
+      "simulated_platform_revenue": 179.95443622050013,
+      "expected_click_value": 312.7133788241334,
+      "realized_click_value": 346.5,
+      "expected_advertiser_surplus": 132.75894260363324,
+      "wins": 1562,
+      "clicks": 176,
+      "advertisers": [
+        {
+          "spend": 59.99083333003946,
+          "wins": 647,
+          "clicks": 71
+        },
+        {
+          "spend": 59.99951788538525,
+          "wins": 470,
+          "clicks": 45
+        },
+        {
+          "spend": 59.964085005075425,
+          "wins": 445,
+          "clicks": 60
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value_paced",
+      "seed": 41,
+      "strategy": "value",
+      "paced": true,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.52349526008192,
+      "simulated_platform_revenue": 179.52349526008192,
+      "expected_click_value": 362.73862507175016,
+      "realized_click_value": 359.0,
+      "expected_advertiser_surplus": 183.21512981166825,
+      "wins": 2529,
+      "clicks": 183,
+      "advertisers": [
+        {
+          "spend": 59.800177350143905,
+          "wins": 893,
+          "clicks": 70
+        },
+        {
+          "spend": 59.884871735214865,
+          "wins": 827,
+          "clicks": 57
+        },
+        {
+          "spend": 59.838446174723146,
+          "wins": 809,
+          "clicks": 56
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value_paced_halfbid",
+      "seed": 41,
+      "strategy": "value",
+      "paced": true,
+      "multiplier": 0.5,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.58477809391368,
+      "simulated_platform_revenue": 179.58477809391368,
+      "expected_click_value": 588.80734886002,
+      "realized_click_value": 609.5,
+      "expected_advertiser_surplus": 409.2225707661064,
+      "wins": 2713,
+      "clicks": 315,
+      "advertisers": [
+        {
+          "spend": 59.8790821349328,
+          "wins": 950,
+          "clicks": 130
+        },
+        {
+          "spend": 59.81014719232837,
+          "wins": 878,
+          "clicks": 96
+        },
+        {
+          "spend": 59.8955487666525,
+          "wins": 885,
+          "clicks": 89
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "flat",
+      "seed": 42,
+      "strategy": "flat",
+      "paced": false,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.9584586830737,
+      "simulated_platform_revenue": 179.9584586830737,
+      "expected_click_value": 320.400544015055,
+      "realized_click_value": 323.5,
+      "expected_advertiser_surplus": 140.4420853319813,
+      "wins": 1855,
+      "clicks": 148,
+      "advertisers": [
+        {
+          "spend": 59.99999999999949,
+          "wins": 500,
+          "clicks": 27
+        },
+        {
+          "spend": 59.99999999999949,
+          "wins": 500,
+          "clicks": 39
+        },
+        {
+          "spend": 59.95845868307473,
+          "wins": 855,
+          "clicks": 82
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value",
+      "seed": 42,
+      "strategy": "value",
+      "paced": false,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.95095840103238,
+      "simulated_platform_revenue": 179.95095840103238,
+      "expected_click_value": 325.0991297982854,
+      "realized_click_value": 369.5,
+      "expected_advertiser_surplus": 145.148171397253,
+      "wins": 1654,
+      "clicks": 193,
+      "advertisers": [
+        {
+          "spend": 59.97240363931246,
+          "wins": 721,
+          "clicks": 82
+        },
+        {
+          "spend": 59.99248711112494,
+          "wins": 470,
+          "clicks": 62
+        },
+        {
+          "spend": 59.98606765059498,
+          "wins": 463,
+          "clicks": 49
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value_paced",
+      "seed": 42,
+      "strategy": "value",
+      "paced": true,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.35294577801656,
+      "simulated_platform_revenue": 179.35294577801656,
+      "expected_click_value": 363.6879880702231,
+      "realized_click_value": 359.5,
+      "expected_advertiser_surplus": 184.33504229220657,
+      "wins": 2522,
+      "clicks": 181,
+      "advertisers": [
+        {
+          "spend": 59.851829043575364,
+          "wins": 879,
+          "clicks": 64
+        },
+        {
+          "spend": 59.74901375169666,
+          "wins": 841,
+          "clicks": 58
+        },
+        {
+          "spend": 59.752102982744525,
+          "wins": 802,
+          "clicks": 59
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value_paced_halfbid",
+      "seed": 42,
+      "strategy": "value",
+      "paced": true,
+      "multiplier": 0.5,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.667494776487,
+      "simulated_platform_revenue": 179.667494776487,
+      "expected_click_value": 594.6071163810403,
+      "realized_click_value": 586.5,
+      "expected_advertiser_surplus": 414.93962160455334,
+      "wins": 2744,
+      "clicks": 297,
+      "advertisers": [
+        {
+          "spend": 59.879915028172924,
+          "wins": 952,
+          "clicks": 110
+        },
+        {
+          "spend": 59.87881537829919,
+          "wins": 897,
+          "clicks": 92
+        },
+        {
+          "spend": 59.90876437001489,
+          "wins": 895,
+          "clicks": 95
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "flat",
+      "seed": 43,
+      "strategy": "flat",
+      "paced": false,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.88095640580562,
+      "simulated_platform_revenue": 179.88095640580562,
+      "expected_click_value": 302.3673937967038,
+      "realized_click_value": 333.5,
+      "expected_advertiser_surplus": 122.4864373908982,
+      "wins": 1831,
+      "clicks": 152,
+      "advertisers": [
+        {
+          "spend": 59.99999999999949,
+          "wins": 500,
+          "clicks": 32
+        },
+        {
+          "spend": 59.99999999999949,
+          "wins": 500,
+          "clicks": 29
+        },
+        {
+          "spend": 59.880956405806636,
+          "wins": 831,
+          "clicks": 91
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value",
+      "seed": 43,
+      "strategy": "value",
+      "paced": false,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.95561333339865,
+      "simulated_platform_revenue": 179.95561333339865,
+      "expected_click_value": 328.79355661593985,
+      "realized_click_value": 303.5,
+      "expected_advertiser_surplus": 148.8379432825412,
+      "wins": 1598,
+      "clicks": 155,
+      "advertisers": [
+        {
+          "spend": 59.97019834695796,
+          "wins": 661,
+          "clicks": 63
+        },
+        {
+          "spend": 59.98872795683835,
+          "wins": 460,
+          "clicks": 42
+        },
+        {
+          "spend": 59.996687029602334,
+          "wins": 477,
+          "clicks": 50
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value_paced",
+      "seed": 43,
+      "strategy": "value",
+      "paced": true,
+      "multiplier": 1.0,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.5347136041073,
+      "simulated_platform_revenue": 179.5347136041073,
+      "expected_click_value": 362.4672224359997,
+      "realized_click_value": 368.0,
+      "expected_advertiser_surplus": 182.9325088318924,
+      "wins": 2561,
+      "clicks": 188,
+      "advertisers": [
+        {
+          "spend": 59.83453562586756,
+          "wins": 913,
+          "clicks": 72
+        },
+        {
+          "spend": 59.89303994512033,
+          "wins": 835,
+          "clicks": 60
+        },
+        {
+          "spend": 59.807138033119436,
+          "wins": 813,
+          "clicks": 56
+        }
+      ],
+      "budget_ok": true
+    },
+    {
+      "name": "value_paced_halfbid",
+      "seed": 43,
+      "strategy": "value",
+      "paced": true,
+      "multiplier": 0.5,
+      "budget_per_advertiser": 60.0,
+      "requests": 6000,
+      "spend": 179.65923450175904,
+      "simulated_platform_revenue": 179.65923450175904,
+      "expected_click_value": 589.5671310930973,
+      "realized_click_value": 623.0,
+      "expected_advertiser_surplus": 409.9078965913382,
+      "wins": 2720,
+      "clicks": 321,
+      "advertisers": [
+        {
+          "spend": 59.89950641889953,
+          "wins": 928,
+          "clicks": 127
+        },
+        {
+          "spend": 59.906679037242334,
+          "wins": 909,
+          "clicks": 105
+        },
+        {
+          "spend": 59.85304904561718,
+          "wins": 883,
+          "clicks": 89
+        }
+      ],
+      "budget_ok": true
+    }
+  ]
+}
