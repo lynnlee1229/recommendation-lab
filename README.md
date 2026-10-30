@@ -153,3 +153,7 @@ Notebook代码和项目源码可编辑，使用Search Recommendation Ads Lab (Py
 - [课程来源快照与结构化审计](docs/COURSE_AUDIT_SOURCES.json)：明确区分作者讲义、出版目录、GitHub单章PPT、课程仓库、论文索引与社区材料。
 
 路线是待补齐课程的设计，不代表所有单元已实现。搜索和广告分别在新session中串行补齐，仍使用本仓库、同一服务与原始实验；公用31–34作为先修。
+
+## 搜索核心课程补齐
+
+搜索学习路径现按S01–S18组织，新增35–46十二本，旧35本保持；全Lab47本。先修公用31–34，再从需求/判断进入查询处理、召回、BERT真实小预算微调、排序与查询推荐。工作台搜索模块有“讲义与路线”。详见[搜索课程](docs/SEARCH_COURSE.md)、[训练边界](docs/SEARCH_TRAINING_PROTOCOL.md)与[逐项完成证据](docs/SEARCH_CURRICULUM_COMPLETION.json)。构造机制与真实训练分开标注，正式模型不变。

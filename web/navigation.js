@@ -11,10 +11,10 @@ const LAB_MODULES = {
   search: {
     title: '搜索', code: 'SEARCH', description: '从查询与相关性判断开始，学习词法、语义、索引、融合与重排。',
     pages: [
-      ['path', '学习路径', 'code'], ['retrieval', '检索实验', 'search'],
+      ['path', '学习路径', 'code'], ['references', '讲义与路线', 'search-course'], ['retrieval', '检索实验', 'search'],
       ['records', '搜索实验记录', 'research'], ['source', '搜索源码', 'source'],
     ],
-    sources: ['search', 'search_lessons'],
+    sources: ['search', 'search_lessons', 'search_curriculum', 'search_training'],
   },
   ads: {
     title: '广告', code: 'ADS', description: '从真实曝光点击学习概率预测，再进入独立模拟的出价与预算决策。',
@@ -49,8 +49,12 @@ const COURSE_PATHS = {
     {title: '参考 · 旧版推荐课程导览', chapters: [0], description: '原00章只覆盖推荐课程，保留原内容；三领域导航以当前网页为准。'},
   ],
   search: [
-    {title: '综合 · 先看完整搜索实验', chapters: [17], description: '在真实 SciFact 上比较词法、向量、融合与重排，建立全景。'},
-    {title: '深入 · 按搜索链路拆解', chapters: [25, 26, 27, 28, 29, 30], description: '任务与qrels → BM25 → 语义编码 → 近似索引 → 融合与训练 → 误差与服务。'},
+    {title: '基础与相关性 · 需求决定判断', chapters: [35,25], description: 'S01–S02：任务、满意度、分档、分歧、pooling与真实qrels。先修公用31–34。'},
+    {title: '查询处理 · 切分到改写', chapters: [36,37,38,39], description: 'S03–S06：规范化、中文分词、字段词权重、意图拒识、纠错与漂移；人工例子讲机制。'},
+    {title: '召回 · 索引、词法、向量与缓存', chapters: [40,26,27,28,41], description: 'S07–S11：位置/布尔 → BM25 → 冻结语义表示 → 粗簇近似预算 → 候选缓存一致性。28不是HNSW复现。'},
+    {title: '相关性与排序 · 推理、真训练、目标', chapters: [42,43,29,44], description: 'S12–S15：成对BERT输入和全参数小预算微调 → 排序loss → 真实融合 → 质量与多样性；只报教学select。'},
+    {title: '查询推荐与系统复盘', chapters: [45,46,30], description: 'S16–S18：构造会话的建议召回排序 → 可追溯链路和故障回退 → 正式服务误差诊断。'},
+    {title: '参考 · 已有综合实验', chapters: [17], description: '学习主线后的真实SciFact综合参考；旧Notebook、正式模型和已见测试协议保持。'},
   ],
   ads: [
     {title: '综合 · 预测与决策的边界', chapters: [18], description: '先看真实点击建模与模拟拍卖如何分层；两者不是同一条真实竞价日志。'},

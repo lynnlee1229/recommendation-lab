@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "new_notebooks": 12,
+  "new_executed_code_cells": 61,
+  "all_notebooks": 47,
+  "search_notebooks": 19,
+  "old_35_notebooks_byte_identical_to": "5943d1e",
+  "pytest": {
+    "passed": 87,
+    "warnings": "one existing Starlette/httpx deprecation"
+  },
+  "navigation": "4 tests passed via node tests/navigation.test.cjs; node --test and JS syntax checks also passed",
+  "browser": {
+    "desktop": "path, six semantic phases, source route, exact lesson targets",
+    "mobile": {
+      "width": 390,
+      "document_scroll_width": 390,
+      "routes": [
+        "search/path",
+        "search/references"
+      ]
+    },
+    "filtering": [
+      "BERT -> one result",
+      "unknown -> zero and recovery",
+      "clear -> 19"
+    ],
+    "rendered_notebooks": [
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "screenshots": "Inspected directly through CUA, not saved into repository."
+  },
+  "search_api": {
+    "official_run": "20261030T124927-d1467622",
+    "five_methods": "passed",
+    "trace_fallback": "passed",
+    "notebooks": 47
+  },
+  "recommendation": {
+    "public_assets_verified": 68,
+    "lecture_api_verified": 45,
+    "original_model_versions": 4,
+    "itemcf": true
+  },
+  "ads": {
+    "run": "20261030T125738-f82b6582",
+    "probability_rows": 30,
+    "max_error": 1e-10,
+    "native_tree_comparison_rows": 500,
+    "saved_metrics_recomputed": true,
+    "budget_checks": true
+  },
+  "training": {
+    "run_id": "20261030T142455-38553a49",
+    "checkpoint_reload": "exact predictions and recomputed metrics",
+    "official_latest_unchanged": true
+  },
+  "preserved": "Jupyter18581 and user kernels not stopped; normally restarted only owned workbench18580."
+}

@@ -58,7 +58,7 @@ function renderRoute() {
   notice();
   if (page[2] === 'code') {
     if (previous.module !== currentRoute.module) $('course-query').value = '';
-    $('path-intro').textContent = config.description + (currentRoute.module === 'common' ? ' 按31–34顺序运行，再选择领域路径。' : ' 先读综合章建立全景，再沿链路逐节运行。');
+    $('path-intro').textContent = config.description + (currentRoute.module === 'common' ? ' 按31–34顺序运行，再选择领域路径。' : (currentRoute.module === 'search' ? ' 先修公用31–34，再按需求、查询、召回、排序与推荐依次运行；综合章为后置参考。' : ' 先读综合章建立全景，再沿链路逐节运行。'));
     loadNotebookCatalog();
   }
   if (page[2] === 'source') {
@@ -105,7 +105,7 @@ function renderNotebookCatalog() {
     if (!group.length) return '';
     return `<section class="learning-path"><h2>${esc(title)} <small>${group.length} 章</small></h2><p>${esc(description)}</p><div class="chapter-grid">${group.map(item => {
       const n = parseInt(item.file, 10);
-      const evidence = n >= 31 ? '公用构造机制实验' : n === 0 ? '旧版推荐导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
+      const evidence = n >= 35 && n <= 46 ? (n === 42 ? '真实小预算BERT微调' : '搜索构造机制实验') : n >= 31 && n <= 34 ? '公用构造机制实验' : n === 0 ? '旧版推荐导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
       const content = `<span class="badge">${evidence}</span><strong>${esc(item.title)}</strong><span>${esc(item.mode)}</span>`;
       return item.available ? `<a class="notebook-entry" href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${content}</a>` : `<div class="notebook-entry">${content}<span>文件暂不可用</span></div>`;
     }).join('')}</div></section>`;
@@ -574,3 +574,11 @@ $('auction-form').addEventListener('submit', async (event) => {
     $('auction-output').innerHTML=table(['模拟收入','期望点击价值','模拟点击','预算约束'],[[r.spend.toFixed(2),r.expected_click_value.toFixed(2),r.clicks,r.budget_ok?'通过':'失败']])+table(['模拟广告主','花费','赢得曝光','点击'],r.advertisers.map((a,i)=>[i+1,a.spend.toFixed(2),a.wins,a.clicks]));
   } catch(e) { $('auction-output').textContent=`计算失败：${e.message}。检查输入和本机模型后重试。`; } finally { button.disabled = false; }
 });
+
+async function loadSearchCourse() {
+  try {
+    const c = await api('/api/search/course');
+    $('search-course-content').innerHTML = `<p>${esc(c.prerequisites)}</p><p>${esc(c.boundary)}</p><div class="chapter-grid">${c.sources.map(s=>`<a class="notebook-entry" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join('')}</div>${c.units.map(u=>`<section class="learning-path"><h2>${esc(u.id)} · ${esc(u.topic)}</h2><p>${esc(u.acceptance)}</p><p>课程：${u.notebooks.map(n=>`<a href="/notebooks?target=${encodeURIComponent(n.target)}" target="_blank" rel="noopener">${n.chapter}章 ↗</a>`).join(' / ')} · 来源：${esc(u.source)}</p><p>已覆盖核心教学目标 · ${esc(u.evidence_type)}。${esc(u.limitation)}</p></section>`).join('')}`;
+  } catch(e) { $('search-course-content').textContent = '路线加载失败：'+e.message; }
+}
+loadSearchCourse();

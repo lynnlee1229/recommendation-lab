@@ -1,0 +1,100 @@
+{
+  "run_id": "20261030T142455-38553a49",
+  "kind": "workshop",
+  "scope": "32/8 query-disjoint SciFact training queries; 2 epochs CPU TinyBERT full fine-tuning; weak negatives; select only; no test or serving change.",
+  "rows": [
+    {
+      "method": "frozen_tinybert",
+      "select": {
+        "recall@10": 0.8333333333333333,
+        "ndcg@10": 0.8055153583060998,
+        "mrr@10": 0.8125,
+        "hit_rate@10": 0.875
+      }
+    },
+    {
+      "method": "finetuned_tinybert",
+      "select": {
+        "recall@10": 0.8333333333333333,
+        "ndcg@10": 0.8055153583060998,
+        "mrr@10": 0.8125,
+        "hit_rate@10": 0.875
+      }
+    }
+  ],
+  "losses": [
+    1.145086646080017,
+    2.506136178970337,
+    0.23671095073223114,
+    0.30008286237716675,
+    1.90982985496521,
+    0.3833845257759094,
+    0.8483719229698181,
+    0.7841504216194153,
+    1.4672768115997314,
+    0.3532311022281647,
+    2.620474338531494,
+    1.2119336128234863,
+    0.017306560650467873,
+    0.8897271752357483,
+    2.3218958377838135,
+    1.5404996871948242,
+    1.407408356666565,
+    0.8484171032905579,
+    0.7841302156448364,
+    0.8056120872497559,
+    1.0390474796295166,
+    0.37547290325164795,
+    0.2571971118450165,
+    2.9095730781555176,
+    0.3059768080711365,
+    0.9508623480796814,
+    2.423788547515869,
+    1.2721821069717407,
+    0.41025054454803467,
+    1.6949923038482666,
+    0.6706855893135071,
+    0.7730794548988342
+  ],
+  "fit_seconds": 1.1206232080003247,
+  "pairs": 128,
+  "encoder_weight_l1_change": 1.8691143989562988,
+  "pair_shapes": [
+    [
+      10,
+      96
+    ],
+    [
+      10,
+      96
+    ],
+    [
+      10,
+      96
+    ],
+    [
+      10,
+      96
+    ],
+    [
+      10,
+      96
+    ],
+    [
+      10,
+      96
+    ],
+    [
+      10,
+      96
+    ],
+    [
+      10,
+      96
+    ]
+  ],
+  "candidate_hit_rate": 0.875,
+  "limits": "Tiny selected training subset; pretraining overlap unknown; unjudged are not verified negative; fixed top10 candidate ceiling; not paper reproduction or calibrated relevance probability.",
+  "checkpoint_reload": "exact predictions and recomputed metrics",
+  "official_latest_unchanged": true
+}

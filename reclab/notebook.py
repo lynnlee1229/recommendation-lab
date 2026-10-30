@@ -20,6 +20,19 @@ RUNTIME = ROOT / "logs/jupyter-runtime"
 PID_FILE = ROOT / "logs/notebook.pid"
 PYTHON = ROOT / ".venv/bin/python"
 TARGETS = {
+    "search_35": "notebooks/35_Search_Needs_Judgments.ipynb",
+    "search_36": "notebooks/36_Search_Chinese_Tokenization.ipynb",
+    "search_37": "notebooks/37_Search_Term_Fields.ipynb",
+    "search_38": "notebooks/38_Search_Intent.ipynb",
+    "search_39": "notebooks/39_Search_Rewrite.ipynb",
+    "search_40": "notebooks/40_Search_Positional_Index.ipynb",
+    "search_41": "notebooks/41_Search_Candidate_Cache.ipynb",
+    "search_42": "notebooks/42_Search_BERT_Finetune.ipynb",
+    "search_43": "notebooks/43_Search_Ranking_Objectives.ipynb",
+    "search_44": "notebooks/44_Search_Quality_Diversity.ipynb",
+    "search_45": "notebooks/45_Search_Query_Suggestions.ipynb",
+    "search_46": "notebooks/46_Search_Trace_Review.ipynb",
+
     "common_34": "notebooks/34_Common_Scores_Evaluation.ipynb",
     "common_33": "notebooks/33_Common_Optimization.ipynb",
     "common_32": "notebooks/32_Common_Gradients.ipynb",

@@ -1,3 +1,29 @@
+# 搜索完整核心学习路径（S01–S18）
+
+先修公用31–34；本轮新增35–46十二本，不修改旧35本。搜索现在19本，全Lab47本。六模块顺序为需求/相关性 → 查询处理 → 召回 → 相关性推理与训练/排序 → 查询推荐 → 系统复盘。17综合章后置参考；编号不是教学先后。
+
+|阶段|单元|运行章节|
+|---|---|---|
+|任务、满意度、分级判断与真实qrels|S01–02|35 → 25|
+|规范化、中文切分、字段词权重、类目/意图与改写|S03–06|36 → 37 → 38 → 39|
+|位置/布尔、BM25、语义、近似预算、缓存|S07–11|40 → 26 → 27 → 28 → 41|
+|BERT输入/推理/微调、排序loss、融合与多目标|S12–15|42 → 43 → 29 → 44|
+|前缀与相关查询、端到端追踪和正式误差|S16–18|45 → 46 → 30；17综合参考|
+
+工作台“搜索 → 学习路径”按此排列；“讲义与路线”逐单元显示来源、入口、证据类型与局限。来源复核见search_completion_sources.json；历史缺口审计保留在SEARCH_LEARNING_ROADMAP.md和COURSE_AUDIT_SOURCES.json，完成证据以SEARCH_CURRICULUM_COMPLETION.json为准。
+
+35–41、43–46以明确人工构造讲机制，36使用中文词例；42复用真实英文SciFact训练分区做TinyBERT全参数微调。各章有预测、公式/契约、单变量对照、可执行断言、解释与练习。规则意图/改写、粗簇索引、合成查询日志分别保留边界，不称生产系统或完整论文复现。
+
+42章每次Run All创建独立workshop run，详见SEARCH_TRAINING_PROTOCOL.md。冻结与微调在固定32/8训练/选择query和BM25候选上比较；选择指标没有改善，保留负结果。300已见测试不参与新配方选择。教学checkpoint与预测只留本机，同一registry记录，正式latest不变。
+
+46章使用同一FastAPI的POST /api/search/workshop/trace；响应明确constructed mechanism、四文档、规则语义替身、每请求独立缓存。跨请求TTL/版本实验在41及46章Notebook里运行；不把该替身说成原SciFact链路。正式/api/search五方法保持原样，30章保留真实离线/HTTP和计时检查。
+
+```bash
+.venv/bin/python scripts/execute_notebooks.py --only 35_Search_Needs_Judgments 36_Search_Chinese_Tokenization 37_Search_Term_Fields 38_Search_Intent 39_Search_Rewrite 40_Search_Positional_Index 41_Search_Candidate_Cache 42_Search_BERT_Finetune 43_Search_Ranking_Objectives 44_Search_Quality_Diversity 45_Search_Query_Suggestions 46_Search_Trace_Review
+```
+
+## 旧六章实现说明（历史保留）
+
 # 深入搜索：六章学习路径
 
 保留17综合章与既有正式实验，新增25～30六章；不重建用户旧Notebook。与广告19～24相同，先预测、检查输入/形状、只改一个变量、实际运行、解释局限并留练习。统一课程目录提供31本入口。

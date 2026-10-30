@@ -1,0 +1,329 @@
+{
+  "25": {
+    "file": "notebooks/25_Search_Task_Qrels.ipynb",
+    "sha256": "5f7a171f430ed683b2d1ee5efb57339810cf8196ca971b3f958309d62ac0363c",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 4.68
+    },
+    "rendering": "previously accepted; original notebook bytes retained"
+  },
+  "26": {
+    "file": "notebooks/26_Search_BM25.ipynb",
+    "sha256": "4835c00e575d503bc4563be246c501f602444a398db059c56308b5b253bfd5aa",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "executed_code_cells": 6,
+    "execution": {
+      "state": "executed",
+      "code_cells": 6,
+      "seconds": 5.84
+    },
+    "rendering": "previously accepted; original notebook bytes retained"
+  },
+  "27": {
+    "file": "notebooks/27_Search_Semantic.ipynb",
+    "sha256": "01d360c775963b27ee1ddd853966f489fbd4b1f2b1edba6989ed0199922f0a52",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 6.71
+    },
+    "rendering": "previously accepted; original notebook bytes retained"
+  },
+  "28": {
+    "file": "notebooks/28_Search_ANN.ipynb",
+    "sha256": "034b224bd967ebc425a0dcb9bce63df5e56eaa47cdde214fa5c6ec9bac255d47",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 6.75
+    },
+    "rendering": "previously accepted; original notebook bytes retained"
+  },
+  "29": {
+    "file": "notebooks/29_Search_Fusion_Ranking.ipynb",
+    "sha256": "e4ae8bd431c8cea66a07a4a7e6d848fd15eebdc954184385ef7ab8afd8101317",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "executed_code_cells": 6,
+    "execution": {
+      "state": "executed",
+      "code_cells": 6,
+      "seconds": 8.58
+    },
+    "rendering": "previously accepted; original notebook bytes retained"
+  },
+  "30": {
+    "file": "notebooks/30_Search_Errors_Service.ipynb",
+    "sha256": "eec0189a142b3dad9b38c1e5e4243571291851f44462a7a0c248e728b218954a",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 6.27
+    },
+    "rendering": "previously accepted; original notebook bytes retained"
+  },
+  "35": {
+    "file": "notebooks/35_Search_Needs_Judgments.ipynb",
+    "sha256": "affcc3004d8265a4376e2fee11d48499645804b21d6391322bfd82c22dbf3d86",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 1.27
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "36": {
+    "file": "notebooks/36_Search_Chinese_Tokenization.ipynb",
+    "sha256": "ba285ae60ab0397dc41c7b4f24e6e4c785a2acb229083801f3057f4bdecc5972",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 6.2
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "37": {
+    "file": "notebooks/37_Search_Term_Fields.ipynb",
+    "sha256": "bae25c85572ff40a0fa6567c5c8b1d2a3ca526dc6e2ce58533d945e6a509819d",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 0.94
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "38": {
+    "file": "notebooks/38_Search_Intent.ipynb",
+    "sha256": "f4c98af5dcd9493fb37ae47ee18a7d39ed0161c744e72059224212b92ecee9d2",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 1.3
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "39": {
+    "file": "notebooks/39_Search_Rewrite.ipynb",
+    "sha256": "17d89aa7c03cff3bf24562079ce47b3bcae452ce613fbfdf22871e28861e4c5b",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 1.02
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "40": {
+    "file": "notebooks/40_Search_Positional_Index.ipynb",
+    "sha256": "3f640cdff25e73d026ba28432de2844860636bfcb9330e09cb9a760057e561dd",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 0.93
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "41": {
+    "file": "notebooks/41_Search_Candidate_Cache.ipynb",
+    "sha256": "e41ec0265e9d9218a4868a93455d11e7ce93c6c0ade192bf889efeb51548bf38",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 0.97
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "42": {
+    "file": "notebooks/42_Search_BERT_Finetune.ipynb",
+    "sha256": "f4ef47632f3970d2e906621f67e3bbef2fb73458266468fed1dbec627a9be14c",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "executed_code_cells": 6,
+    "execution": {
+      "state": "executed",
+      "code_cells": 6,
+      "seconds": 8.98
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "43": {
+    "file": "notebooks/43_Search_Ranking_Objectives.ipynb",
+    "sha256": "4e663d96b0297b112df2d4c357c09cd3560d91384a29dd9e20c43a407a63948e",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 2.88
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "44": {
+    "file": "notebooks/44_Search_Quality_Diversity.ipynb",
+    "sha256": "d250a639475bff089915e9eb607abd256a840a8d13e02f1dfb9438c9f4ad181c",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 0.93
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "45": {
+    "file": "notebooks/45_Search_Query_Suggestions.ipynb",
+    "sha256": "6df2e1a7362b1a1ec29a51d8ea45d3014ad0c01452e7fd1e43198adf82dde57a",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 1.03
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  },
+  "46": {
+    "file": "notebooks/46_Search_Trace_Review.ipynb",
+    "sha256": "961d76657eec19f14af8a624f5eab2b70ef78e7d59a89ec240b0f3d9f04293a5",
+    "code_cell_indices_0_based": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "executed_code_cells": 5,
+    "execution": {
+      "state": "executed",
+      "code_cells": 5,
+      "seconds": 1.08
+    },
+    "rendering": "nbconvert HTML opened in real Chrome; outputs and headings inspected"
+  }
+}

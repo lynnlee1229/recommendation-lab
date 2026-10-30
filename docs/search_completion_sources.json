@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-30 Asia/Shanghai",
+  "main_course": {
+    "url": "https://github.com/wangshusen/SearchEngine/tree/7339c6b126e314abdb74a89adb033d39d8e3d37b",
+    "commit": "7339c6b126e314abdb74a89adb033d39d8e3d37b",
+    "readme_bytes": 2200,
+    "readme_sha256": "c4296db6f60f01eb6027b1e07a42ff0ce681578a0b08b76c2e71faa7660ffa7e",
+    "verification": "Downloaded fixed README; six modules, nine linked PDF files, last four directory only. No book manuscript used."
+  },
+  "supplements": [
+    {
+      "url": "https://arxiv.org/html/1901.04085v5",
+      "verified_sections": "2 Method and 3 training: pair input, cross entropy, BM25 candidates. Lab tiny fine-tune deliberately differs in model/data/budget."
+    },
+    {
+      "url": "https://arxiv.org/abs/1810.04805v2",
+      "verified_sections": "Original BERT abstract and version metadata; not a full pretraining reproduction."
+    },
+    {
+      "url": "https://nlp.stanford.edu/IR-book/html/htmledition/positional-indexes-1.html",
+      "verified_sections": "Search-indexed original publisher-hosted text: position offsets and phrase matching."
+    },
+    {
+      "url": "https://www-nlp.stanford.edu/IR-book/html/htmledition/assessing-relevance-1.html",
+      "verified_sections": "Search-indexed original text: pooling and assessor variation; direct fetch timed out."
+    },
+    {
+      "url": "https://nlp.stanford.edu/IR-book/html/htmledition/parametric-and-zone-indexes-1.html",
+      "verified_sections": "Search-indexed original text: field/zone indexes; direct fetch timed out."
+    }
+  ],
+  "data_and_models": "docs/search_sources.json retains fixed revisions, all 20 SHA256s, permissions and bytes; no new downloaded training dataset."
+}

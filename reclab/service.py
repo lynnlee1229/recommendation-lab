@@ -23,6 +23,8 @@ app = FastAPI(title="Search Recommendation Ads Lab", docs_url=None, redoc_url=No
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 SOURCE_FILES = {
+    "search_curriculum": ("reclab/learning/search_curriculum.py", "搜索课程：查询、位置索引、缓存与建议机制"),
+    "search_training": ("reclab/search_training_workshop.py", "搜索课程：独立TinyBERT真实微调"),
     "foundations": ("reclab/learning/foundations.py", "公用基础：梯度下降与训练集拟合的构造机制"),
     "search_lessons": ("reclab/search_lessons.py", "深入搜索：复用真实语料、向量和查询级训练练习"),
     "ads_teaching": ("reclab/ads_teaching.py", "真实点击小预算单变量教学训练"),
@@ -619,3 +621,21 @@ def ads_simulate(request: AuctionRequest):
         raise HTTPException(422, 'Choose flat or value')
     return {'scope': 'SYNTHETIC market only; revenue and currency units are simulated. Independent of Criteo predictions.',
             **simulate(market(request.seed), request.strategy, request.budget, request.multiplier, request.paced)}
+
+
+class SearchWorkshopRequest(BaseModel):
+    query: str = Field(min_length=1, max_length=500)
+    fail_semantic: bool = False
+
+
+@app.post('/api/search/workshop/trace')
+def search_workshop_trace(request: SearchWorkshopRequest):
+    from .learning.search_curriculum import pipeline
+    return {'evidence': 'constructed mechanism',
+            'scope': 'Four artificial documents; rule semantic substitute; request-local cache; official SciFact service unchanged.',
+            'trace': pipeline(request.query, fail_semantic=request.fail_semantic)}
+
+
+@app.get('/api/search/course')
+def search_course():
+    return read_json(ROOT / 'docs/search_course.json')
