@@ -1,0 +1,6 @@
+{
+  "name": "no-history / 序列消融",
+  "dim": 32,
+  "epochs": 8,
+  "use_history": false
+}

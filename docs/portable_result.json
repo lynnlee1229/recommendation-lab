@@ -1,0 +1,29 @@
+{
+  "state": "PASS",
+  "scope": "Fresh directory and fresh environment on this Apple Silicon Mac, NOT destination M1",
+  "source_revision": "abd4066bb229212f51341c881eb2b32fa8cbdb9f",
+  "machine": {
+    "os": "macOS-26.7.1-arm64-arm-64bit",
+    "architecture": "arm64",
+    "physical_memory_gib": 24.0
+  },
+  "python": "Python 3.12.14",
+  "uv": "uv 0.12.5 (210d1f678 2026-08-14 aarch64-apple-darwin)",
+  "payload_files": 276,
+  "tests_passed": 56,
+  "competition_code_cells": 30,
+  "notebooks": 16,
+  "lectures": 45,
+  "live_api": {
+    "state": "PASS",
+    "restored_notebooks": 16,
+    "lecture_http_checks": 45,
+    "feature_vector_dimensions": 32,
+    "actual_recommendations": 10,
+    "isolated_temporary_api": true,
+    "m1_hardware_test": "NOT_RUN",
+    "cloud_upload": "NOT_RUN"
+  },
+  "target_m1_test": "NOT_RUN",
+  "cloud_upload": "NOT_RUN"
+}

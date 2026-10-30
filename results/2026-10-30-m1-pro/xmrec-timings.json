@@ -1,0 +1,50 @@
+[
+  {
+    "model": "t1_local",
+    "seconds": 0.6313805420004428,
+    "interactions": 60400,
+    "similarity_nnz": 206710
+  },
+  {
+    "model": "t1_s1",
+    "seconds": 5.9100800829992295,
+    "interactions": 869495,
+    "similarity_nnz": 5206794
+  },
+  {
+    "model": "t1_s3",
+    "seconds": 0.917596291999871,
+    "interactions": 117513,
+    "similarity_nnz": 402268
+  },
+  {
+    "model": "t2_local",
+    "seconds": 1.7960039999998116,
+    "interactions": 120178,
+    "similarity_nnz": 561398
+  },
+  {
+    "model": "t2_s1",
+    "seconds": 7.773122208000132,
+    "interactions": 929273,
+    "similarity_nnz": 5546326
+  },
+  {
+    "model": "t2_s3",
+    "seconds": 2.128782458000387,
+    "interactions": 177291,
+    "similarity_nnz": 773536
+  },
+  {
+    "model": "all_iuf",
+    "seconds": 10.217647833000228,
+    "interactions": 1176863,
+    "similarity_nnz": 6242196
+  },
+  {
+    "model": "all_rating",
+    "seconds": 9.48535104200073,
+    "interactions": 1176863,
+    "similarity_nnz": 6242196
+  }
+]

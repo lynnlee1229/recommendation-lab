@@ -1,0 +1,1014 @@
+{
+  "local_source": "resources/slides",
+  "total_files": 45,
+  "total_pages": 902,
+  "learning_path": "Notebook 优先：00课程导航 → 01真实数据 → 02双塔基础 → 03~10专题；讲义与论文用于回查。",
+  "groups": [
+    {
+      "id": "01",
+      "title": "基础与实验口径"
+    },
+    {
+      "id": "02",
+      "title": "召回与向量学习"
+    },
+    {
+      "id": "03",
+      "title": "排序与多目标"
+    },
+    {
+      "id": "04",
+      "title": "特征交叉"
+    },
+    {
+      "id": "05",
+      "title": "行为序列"
+    },
+    {
+      "id": "06",
+      "title": "多样性与重排"
+    },
+    {
+      "id": "07",
+      "title": "物品冷启动"
+    },
+    {
+      "id": "08",
+      "title": "系统优化与工程实践"
+    }
+  ],
+  "lessons": [
+    {
+      "file": "01_Basics_01.pdf",
+      "title": "推荐系统基本概念",
+      "status": "partial",
+      "practice": "区分行为、曝光与北极星指标；用真实日志核对指标可识别性。",
+      "code": "reclab/data.py",
+      "group": "01",
+      "pages": 10,
+      "sha256": "d23a0caa227611db938d3bcf76a7e3ca2a490d68576442cbf8c0ce01e92cf26c",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/01_Basics_01.pdf",
+      "notebook": {
+        "target": "basics",
+        "file": "03_Foundations_AB.ipynb",
+        "mode": "真实数据 + 模拟分桶",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "01_Basics_02.pdf",
+      "title": "推荐系统链路",
+      "status": "partial",
+      "practice": "跟踪逐通道候选、过滤、RRF、MMR；粗排和精排后续实现。",
+      "code": "reclab/service.py",
+      "group": "01",
+      "pages": 15,
+      "sha256": "a32c09d483e7fb5cd6153908a24b815734adfe46bc1660dfc13d3cb4b9b211a5",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/01_Basics_02.pdf",
+      "notebook": {
+        "target": "basics",
+        "file": "03_Foundations_AB.ipynb",
+        "mode": "真实数据 + 模拟分桶",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "01_Basics_03.pdf",
+      "title": "A/B 测试",
+      "status": "planned",
+      "practice": "实现稳定分桶、同层互斥、跨层正交和 holdout；没有真实用户时只做机制实验。",
+      "code": "",
+      "group": "01",
+      "pages": 23,
+      "sha256": "dbee3488e562538e7cbb613cdf9173f3c2146c47c0de79fbcd9d2cc53418088b",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/01_Basics_03.pdf",
+      "notebook": {
+        "target": "basics",
+        "file": "03_Foundations_AB.ipynb",
+        "mode": "真实数据 + 模拟分桶",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_01.pdf",
+      "title": "ItemCF",
+      "status": "ready",
+      "practice": "查看倒排共现、IUF 加权余弦、Top100 邻居和逐历史贡献。",
+      "code": "reclab/retrieval.py:itemcf",
+      "group": "02",
+      "pages": 39,
+      "sha256": "7de5aacde1346afdef0bf26f46b5bb1553d8547207f547eb92ebf3f4e38764ee",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_01.pdf",
+      "notebook": {
+        "target": "data",
+        "file": "01_Data_Features_ItemCF.ipynb",
+        "mode": "真实数据与 ItemCF 基线",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_02.pdf",
+      "title": "Swing",
+      "status": "planned",
+      "practice": "复现用户对惩罚共同兴趣小圈子的机制，与 ItemCF 共享召回评估。",
+      "code": "",
+      "group": "02",
+      "pages": 12,
+      "sha256": "97b42ae8236932ca7e538ed034305918928103e11de3fc218c561e0f6d7af50d",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_02.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_03.pdf",
+      "title": "UserCF",
+      "status": "planned",
+      "practice": "构造用户相似度，比较热门惩罚和 U2U2I 的召回差异。",
+      "code": "",
+      "group": "02",
+      "pages": 37,
+      "sha256": "9c6c00e7d0be6da5f75d5c5e24f1f654746baaefa55ed0c11f576ced3739fa1d",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_03.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_04.pdf",
+      "title": "离散特征处理",
+      "status": "ready",
+      "practice": "查看 ID 词表、padding、Embedding 参数量和实际输出向量。",
+      "code": "reclab/models.py",
+      "group": "02",
+      "pages": 17,
+      "sha256": "63af0c9f5da02d607ad63d18ed55659ef904c77a78a2839c0944847fcccd5f6e",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_04.pdf",
+      "notebook": {
+        "target": "tower",
+        "file": "02_TwoTower_HandsOn.ipynb",
+        "mode": "真实 ID / Embedding / 梯度",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_05.pdf",
+      "title": "矩阵补充与 ANN",
+      "status": "planned",
+      "practice": "增加纯矩阵分解对照；先用精确检索作为 ANN 召回损失的真值。",
+      "code": "",
+      "group": "02",
+      "pages": 34,
+      "sha256": "22990683dda183daea6bca1fc890d09445178719f1774f1599819c901a6dd617",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_05.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_06.pdf",
+      "title": "双塔模型：模型与训练",
+      "status": "partial",
+      "practice": "已实现归一化双塔和 listwise sampled softmax；pointwise/pairwise 待扩展。",
+      "code": "reclab/models.py:TwoTower",
+      "group": "02",
+      "pages": 31,
+      "sha256": "c427779656a2b201b4f6adf0ae9528f543d8f5ddf6be9d64d8f68c774ae87a4c",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_06.pdf",
+      "notebook": {
+        "target": "tower",
+        "file": "02_TwoTower_HandsOn.ipynb",
+        "mode": "真实数据与共享双塔训练器",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_07.pdf",
+      "title": "双塔模型：正负样本",
+      "status": "partial",
+      "practice": "已实现 batch 内负样本、重复目标屏蔽、LogQ 开关；无真实曝光和困难负样本日志。",
+      "code": "reclab/models.py:loss",
+      "group": "02",
+      "pages": 22,
+      "sha256": "740a12227624597d26414cd32c5dafaf7e4976ea14202f10c082be7f85416b75",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_07.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_08.pdf",
+      "title": "双塔模型：服务与更新",
+      "status": "partial",
+      "practice": "离线导出商品向量，服务实时计算用户向量；当前精确点积，增量更新待接实时链路。",
+      "code": "reclab/service.py",
+      "group": "02",
+      "pages": 21,
+      "sha256": "5073f9b13b5c824faf266129698d8dad08ca2059ef4ad5313f4675183fae2689",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_08.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_09.pdf",
+      "title": "双塔与自监督学习",
+      "status": "planned",
+      "practice": "先添加因果商品侧属性，再比较 random mask、互补特征和辅助对比损失；隐藏层 dropout 不算 SSL。",
+      "code": "",
+      "group": "02",
+      "pages": 38,
+      "sha256": "8ef93ee0f7465eb6ca0697f8e69a420a75d8f37d260c9f3408c72049b534da76",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_09.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_10.pdf",
+      "title": "Deep Retrieval",
+      "status": "planned",
+      "practice": "小词表上复现路径索引、beam search 与交替优化，比较检索开销和 Recall。",
+      "code": "",
+      "group": "02",
+      "pages": 48,
+      "sha256": "681f360e0e5c8693485e17aaf186facee08ca58bd4180101bd1ee030e4b8200f",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_10.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_11.pdf",
+      "title": "其他召回通道",
+      "status": "data",
+      "practice": "热门通道已实现；地理、作者和社交召回需对应字段，不能给匿名商品捏造真实属性。",
+      "code": "",
+      "group": "02",
+      "pages": 16,
+      "sha256": "a06a9d64de7de8eacb9f84144d4dfb755ca0cd9eb3f02da66f3e589da25c0ee2",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_11.pdf",
+      "notebook": {
+        "target": "engineering",
+        "file": "10_Engineering_Improvement.ipynb",
+        "mode": "真实多路候选 + 合成社交；缺地理字段",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "02_Retrieval_12.pdf",
+      "title": "曝光过滤与 Bloom Filter",
+      "status": "partial",
+      "practice": "当前精确过滤已交互商品；后续用合成曝光集合对比 Bloom 内存和误伤率。交互不是曝光。",
+      "code": "reclab/retrieval.py:topk",
+      "group": "02",
+      "pages": 25,
+      "sha256": "efca308181b32850dae7d0d8f24c468b385fa9daa66b8e841f29ddb809887b29",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_12.pdf",
+      "notebook": {
+        "target": "retrieval_course",
+        "file": "04_Retrieval_Methods.ipynb",
+        "mode": "真实快照 + 机制练习",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "03_Rank_01.pdf",
+      "title": "多目标排序与采样校准",
+      "status": "planned",
+      "practice": "建立加购/购买目标与观察窗口，区分条件转化预测和曝光 CTR；做负采样校准小实验。",
+      "code": "",
+      "group": "03",
+      "pages": 18,
+      "sha256": "add718799e2f5b7427cbec5f40645e0657ca03521e1aa9ffbb495bdf50942ee6",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_01.pdf",
+      "notebook": {
+        "target": "ranking",
+        "file": "05_Ranking_Multitask.ipynb",
+        "mode": "受控模拟，不是曝光 CTR",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "03_Rank_02.pdf",
+      "title": "MMoE",
+      "status": "planned",
+      "practice": "实现 shared-bottom 和多 gate experts；检查任务相关性、梯度和 gate 极化。",
+      "code": "",
+      "group": "03",
+      "pages": 18,
+      "sha256": "8d4c798b2eba1fe43e1052dff045b90f8df970c99e1ecd9ef1fbccee990993e3",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_02.pdf",
+      "notebook": {
+        "target": "ranking",
+        "file": "05_Ranking_Multitask.ipynb",
+        "mode": "受控模拟，不是曝光 CTR",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "03_Rank_03.pdf",
+      "title": "预估分数融合",
+      "status": "planned",
+      "practice": "使用已校准任务概率比较加权和与乘积；当前 RRF 是召回名次融合，不是多目标概率融合。",
+      "code": "",
+      "group": "03",
+      "pages": 8,
+      "sha256": "041e2f0f036dd0b894205ecaa9101c16eb8aa32893a0e6ac86604c7c7dee1c86",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_03.pdf",
+      "notebook": {
+        "target": "ranking",
+        "file": "05_Ranking_Multitask.ipynb",
+        "mode": "受控模拟，不是曝光 CTR",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "03_Rank_04.pdf",
+      "title": "视频播放时长建模",
+      "status": "data",
+      "practice": "需要真实播放时长与视频长度数据；可用明确标注的合成数据验证加权 logistic 数学机制。",
+      "code": "",
+      "group": "03",
+      "pages": 15,
+      "sha256": "c29310e9e0a425060d1cb41438174304c59d4636021bcfbb3f948e626119c7cb",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_04.pdf",
+      "notebook": {
+        "target": "ranking",
+        "file": "05_Ranking_Multitask.ipynb",
+        "mode": "受控模拟，不是曝光 CTR",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "03_Rank_05.pdf",
+      "title": "排序特征与服务",
+      "status": "partial",
+      "practice": "查看训练截止特征快照、版本与模型实际输入；实时统计和多源特征打包留待第二阶段。",
+      "code": "reclab/service.py:features",
+      "group": "03",
+      "pages": 14,
+      "sha256": "acf80f78cea38534c6e5ab34b998af5cec98a4d9c924bac7b82adc0762d5ef1d",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_05.pdf",
+      "notebook": {
+        "target": "data",
+        "file": "01_Data_Features_ItemCF.ipynb",
+        "mode": "真实特征快照，不含全部排序特征",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "03_Rank_06.pdf",
+      "title": "粗排三塔与 COLD",
+      "status": "planned",
+      "practice": "构建用户塔、物品塔、交叉塔，比较缓存、延迟和粗精排一致性。",
+      "code": "",
+      "group": "03",
+      "pages": 17,
+      "sha256": "556502ad59f4a7516a4e781f9ee79eb8be7a872acdcd529c721ad9391998cc8f",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_06.pdf",
+      "notebook": {
+        "target": "ranking",
+        "file": "05_Ranking_Multitask.ipynb",
+        "mode": "受控模拟，不是曝光 CTR",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "04_Cross_01.pdf",
+      "title": "FM",
+      "status": "planned",
+      "practice": "比较显式二阶交叉与 O(kd) 向量化恒等式，核对手算、参数量和梯度。",
+      "code": "",
+      "group": "04",
+      "pages": 11,
+      "sha256": "14eb66c2f1cb61c1285dbc9bb349614d8b477f0e5d83d8a74be9bc3b5d204b10",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_01.pdf",
+      "notebook": {
+        "target": "cross",
+        "file": "06_Feature_Crossing.ipynb",
+        "mode": "张量与梯度机制",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "04_Cross_02.pdf",
+      "title": "DCN V2",
+      "status": "planned",
+      "practice": "复现 full-rank cross 与 MLP 对照；同一特征/样本/预算评估，避免结构比较混入数据变化。",
+      "code": "",
+      "group": "04",
+      "pages": 24,
+      "sha256": "7fa6a6ab88b909aac832a31a70f5b65102593b628063eaa36ef90456959a903d",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_02.pdf",
+      "notebook": {
+        "target": "cross",
+        "file": "06_Feature_Crossing.ipynb",
+        "mode": "张量与梯度机制",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "04_Cross_03.pdf",
+      "title": "LHUC / PPNet",
+      "status": "planned",
+      "practice": "用小 gate 网络实现个性化隐藏单元缩放；不追求万亿参数规模。",
+      "code": "",
+      "group": "04",
+      "pages": 13,
+      "sha256": "e430e69514aeee28bfbb26b387c71132afed22323bb84aa1e26ed0f8a20f0bdd",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_03.pdf",
+      "notebook": {
+        "target": "cross",
+        "file": "06_Feature_Crossing.ipynb",
+        "mode": "张量与梯度机制",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "04_Cross_04.pdf",
+      "title": "SENet 与 FiBiNET",
+      "status": "planned",
+      "practice": "实现特征重要性门控与 bilinear interaction，逐块消融。",
+      "code": "",
+      "group": "04",
+      "pages": 22,
+      "sha256": "d27d50c11da197224026b49b60981f971157bcf631edb9d3e012b7dc91298b6e",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_04.pdf",
+      "notebook": {
+        "target": "cross",
+        "file": "06_Feature_Crossing.ipynb",
+        "mode": "张量与梯度机制",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "05_LastN_01.pdf",
+      "title": "LastN 均值特征",
+      "status": "ready",
+      "practice": "已实现严格先于目标的历史窗口、padding mask 和均值池化；比较有无历史。",
+      "code": "reclab/data.py:examples",
+      "group": "05",
+      "pages": 7,
+      "sha256": "c842e8550c6a098731c65dae9c7245ee1672d47d1388e03bb37da66b79a1fb24",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/05_LastN_01.pdf",
+      "notebook": {
+        "target": "tower",
+        "file": "02_TwoTower_HandsOn.ipynb",
+        "mode": "真实 LastN 与梯度",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "05_LastN_02.pdf",
+      "title": "DIN",
+      "status": "planned",
+      "practice": "候选相关 attention 放进精排，不塞进独立用户塔；可视化不同候选的 attention。",
+      "code": "",
+      "group": "05",
+      "pages": 19,
+      "sha256": "eb31258e4df95358eec2d75ecf7f5d5b795eca7927cb0a27b9854db7d21b201c",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/05_LastN_02.pdf",
+      "notebook": {
+        "target": "sequence",
+        "file": "07_Sequence_DIN_SIM.ipynb",
+        "mode": "真实历史 + 注意力教学变体",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "05_LastN_03.pdf",
+      "title": "SIM",
+      "status": "planned",
+      "practice": "增加长序列和类目筛选；对比先筛选后 DIN 与完整序列的成本和质量。",
+      "code": "",
+      "group": "05",
+      "pages": 16,
+      "sha256": "0b7d04128b2b6767a392307d8ba59c7a820c786eab3b27b94cde8f41b2223e30",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/05_LastN_03.pdf",
+      "notebook": {
+        "target": "sequence",
+        "file": "07_Sequence_DIN_SIM.ipynb",
+        "mode": "真实历史 + 注意力教学变体",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "06_Rerank_01.pdf",
+      "title": "多样性度量",
+      "status": "partial",
+      "practice": "已可查看推荐商品分布和 catalog coverage；增加 ILD、类目熵及头尾分层。",
+      "code": "reclab/train.py:evaluate",
+      "group": "06",
+      "pages": 15,
+      "sha256": "4d29b903d001b6750fa11e214e80b3d99902848fd34cb7965f0c6cf883a310a0",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_01.pdf",
+      "notebook": {
+        "target": "diversity",
+        "file": "08_Diversity_DPP.ipynb",
+        "mode": "真实向量 + 数值验收",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "06_Rerank_02.pdf",
+      "title": "MMR",
+      "status": "ready",
+      "practice": "调节 lambda，查看归一化相关性、最大冗余惩罚和逐步选择分数。",
+      "code": "reclab/retrieval.py:mmr",
+      "group": "06",
+      "pages": 12,
+      "sha256": "7a20d9e97c21654ed88101ac1d1bbd07a644932c4a4f846b3c4087037452c798",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_02.pdf",
+      "notebook": {
+        "target": "diversity",
+        "file": "08_Diversity_DPP.ipynb",
+        "mode": "真实向量 + 数值验收",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "06_Rerank_03.pdf",
+      "title": "重排规则",
+      "status": "planned",
+      "practice": "在逐项选择中加入类目连续限制、窗口配额，观测约束无解时的退让。",
+      "code": "",
+      "group": "06",
+      "pages": 8,
+      "sha256": "9aa508bc4f6e23859f9737d869fb881809a1833e11b1c0940629036800b2fa86",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_03.pdf",
+      "notebook": {
+        "target": "diversity",
+        "file": "08_Diversity_DPP.ipynb",
+        "mode": "真实向量 + 数值验收",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "06_Rerank_04.pdf",
+      "title": "DPP 数学基础",
+      "status": "planned",
+      "practice": "从 Gram 矩阵、投影和行列式体积开始，手算 3 个向量的小案例。",
+      "code": "",
+      "group": "06",
+      "pages": 17,
+      "sha256": "be9da03c3b8614bd5edeab98064b1db42d1a2550e6cd94479744e0c68f18cfce",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_04.pdf",
+      "notebook": {
+        "target": "diversity",
+        "file": "08_Diversity_DPP.ipynb",
+        "mode": "真实向量 + 数值验收",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "06_Rerank_05.pdf",
+      "title": "DPP 多样性算法",
+      "status": "planned",
+      "practice": "复现贪心 log-det 与 Cholesky 增量算法，用小全集穷举核验近似解。",
+      "code": "",
+      "group": "06",
+      "pages": 18,
+      "sha256": "329c38000d1b57daf19ad3d58853c14d5c9cf2b22bd5a19f396be7aa66fdfc6e",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_05.pdf",
+      "notebook": {
+        "target": "diversity",
+        "file": "08_Diversity_DPP.ipynb",
+        "mode": "真实向量 + 数值验收",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "07_ColdStart_01.pdf",
+      "title": "冷启动评价指标",
+      "status": "data",
+      "practice": "已报告 OOV 目标缺口；作者发布激励、内容质量等 UGC 指标需作者数据。",
+      "code": "",
+      "group": "07",
+      "pages": 18,
+      "sha256": "d84ac6bbba1ee759bcec08d1c821704c86bc284d8a4b0fe84e0b62b0e189696c",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_01.pdf",
+      "notebook": {
+        "target": "cold",
+        "file": "09_ColdStart_Traffic.ipynb",
+        "mode": "真实属性 + 模拟流量",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "07_ColdStart_02.pdf",
+      "title": "冷启动简单召回",
+      "status": "planned",
+      "practice": "保留新商品池，使用因果类目/属性默认 embedding，单独评估冷商品而非静默丢弃。",
+      "code": "",
+      "group": "07",
+      "pages": 21,
+      "sha256": "1c41ebb9c3cc7ca7a8f1a31b24a3760369b6ce61c4073df038cd9795bfb961d1",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_02.pdf",
+      "notebook": {
+        "target": "cold",
+        "file": "09_ColdStart_Traffic.ipynb",
+        "mode": "真实属性 + 模拟流量",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "07_ColdStart_03.pdf",
+      "title": "聚类召回",
+      "status": "data",
+      "practice": "先用匿名属性做机制实验；CNN/BERT/CLIP 图文复现需要带图文的数据集。",
+      "code": "",
+      "group": "07",
+      "pages": 20,
+      "sha256": "2bbafc81c1e64cd6c4f7d132e3db1f124361a9c20409e9093d89ffa8431fa3b4",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_03.pdf",
+      "notebook": {
+        "target": "cold",
+        "file": "09_ColdStart_Traffic.ipynb",
+        "mode": "真实属性 + 模拟流量",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "07_ColdStart_04.pdf",
+      "title": "Look-Alike 人群扩散",
+      "status": "planned",
+      "practice": "给冷商品种子人群聚合用户向量，比较目标用户近邻与普通召回覆盖。",
+      "code": "",
+      "group": "07",
+      "pages": 17,
+      "sha256": "431a8767a65f7c84ba16c403e9dfb6eb63129384d6708b1a7a9003d00538afb8",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_04.pdf",
+      "notebook": {
+        "target": "cold",
+        "file": "09_ColdStart_Traffic.ipynb",
+        "mode": "真实属性 + 模拟流量",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "07_ColdStart_05.pdf",
+      "title": "流量调控与保量",
+      "status": "planned",
+      "practice": "在明确标记的模拟请求中复现 boost、保量和供需约束；讲义曝光配额只是示例。",
+      "code": "",
+      "group": "07",
+      "pages": 22,
+      "sha256": "4de7cdf2fe860886cebdf0efb496b19f624e397cb34362ba4a19942681699a8b",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_05.pdf",
+      "notebook": {
+        "target": "cold",
+        "file": "09_ColdStart_Traffic.ipynb",
+        "mode": "真实属性 + 模拟流量",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "07_ColdStart_06.pdf",
+      "title": "冷启动 A/B 测试",
+      "status": "data",
+      "practice": "模拟用户侧和作者侧分桶的流量竞争；真实作者发布效应无法由现有日志识别。",
+      "code": "",
+      "group": "07",
+      "pages": 20,
+      "sha256": "af65f80cf114d24d484482454c96a5b6b2070d3cd9c09165f74e5144ab6bf589",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_06.pdf",
+      "notebook": {
+        "target": "cold",
+        "file": "09_ColdStart_Traffic.ipynb",
+        "mode": "真实属性 + 模拟流量",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "08_Improvement_01.pdf",
+      "title": "指标优化总览",
+      "status": "partial",
+      "practice": "建立质量、覆盖、延迟和资源共同约束；离线改善不等于留存提升。",
+      "code": "docs/EXPERIMENTS.md",
+      "group": "08",
+      "pages": 7,
+      "sha256": "eaf97307d8bc39068ddc6cf2d1826bda38efdc9ca3909ae22b42db7de272429e",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_01.pdf",
+      "notebook": {
+        "target": "engineering",
+        "file": "10_Engineering_Improvement.ipynb",
+        "mode": "真实快照 + 受控漂移/社交模拟",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "08_Improvement_02.pdf",
+      "title": "召回优化",
+      "status": "partial",
+      "practice": "已可开关召回通道、查看分数与预算；多种负样本、PDN/SINE 等列为后续扩展。",
+      "code": "reclab/service.py:recommend",
+      "group": "08",
+      "pages": 20,
+      "sha256": "a006cfef6f490bfd0f40e00eb1af16e992f9f3e4cf1470698d9393738c8d383b",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_02.pdf",
+      "notebook": {
+        "target": "engineering",
+        "file": "10_Engineering_Improvement.ipynb",
+        "mode": "真实快照 + 受控漂移/社交模拟",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "08_Improvement_03.pdf",
+      "title": "排序模型优化",
+      "status": "planned",
+      "practice": "从强基线出发测试加宽、交叉、多任务、蒸馏和增量学习，保留负结果。",
+      "code": "",
+      "group": "08",
+      "pages": 35,
+      "sha256": "f372e57af9fe42a4a1554199cd27f218fcff6cb4172a732edc11cb7d362af06f",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_03.pdf",
+      "notebook": {
+        "target": "engineering",
+        "file": "10_Engineering_Improvement.ipynb",
+        "mode": "真实快照 + 受控漂移/社交模拟",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "08_Improvement_04.pdf",
+      "title": "多样性与探索",
+      "status": "partial",
+      "practice": "已实现 MMR；探索流量、历史抽样和向量噪声需要独立实验，不能声称能提高长期留存。",
+      "code": "reclab/retrieval.py:mmr",
+      "group": "08",
+      "pages": 15,
+      "sha256": "d0f3e66e16463bfe475a651c0fa61b0deaf9d70c4cb8fcc600a460d4b341a9bb",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_04.pdf",
+      "notebook": {
+        "target": "diversity",
+        "file": "08_Diversity_DPP.ipynb",
+        "mode": "真实向量多样性；探索收益未验证",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "08_Improvement_05.pdf",
+      "title": "特殊人群",
+      "status": "planned",
+      "practice": "按训练期活跃度分层报告，比较新用户默认向量/特殊池/统一 gate；不读取未来活跃度分类。",
+      "code": "",
+      "group": "08",
+      "pages": 23,
+      "sha256": "77593c009aea02f7efc24841f5744fb7647b8acd173a1337bbcd4484fcbde2ce",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_05.pdf",
+      "notebook": {
+        "target": "engineering",
+        "file": "10_Engineering_Improvement.ipynb",
+        "mode": "真实快照 + 受控漂移/社交模拟",
+        "state": "executed"
+      }
+    },
+    {
+      "file": "08_Improvement_06.pdf",
+      "title": "交互行为与社交价值",
+      "status": "data",
+      "practice": "加购/购买可用于电商目标；关注、评论、转发、作者和站外回流需新数据。",
+      "code": "",
+      "group": "08",
+      "pages": 24,
+      "sha256": "cb957dda61d4d4da137e079196ebf7a31ea2abb37cc6b950c25e0c6c45c1ce48",
+      "public_url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_06.pdf",
+      "notebook": {
+        "target": "engineering",
+        "file": "10_Engineering_Improvement.ipynb",
+        "mode": "真实快照 + 受控漂移/社交模拟",
+        "state": "executed"
+      }
+    }
+  ],
+  "heuristics": [
+    {
+      "file": "02_Retrieval_07.pdf",
+      "pages": [
+        7
+      ],
+      "statement": "负采样概率与点击次数的 0.75 次幂相关，是讲义中的一种选择。",
+      "local_experiment": "后续对比均匀、流行度幂次和 batch 内采样；固定目标和评估词表。"
+    },
+    {
+      "file": "02_Retrieval_07.pdf",
+      "pages": [
+        15
+      ],
+      "statement": "50% 简单负样本 + 50% 困难负样本的训练示例。",
+      "local_experiment": "目前没有排序淘汰日志；后续生成明确版本的候选日志后比较比例，不能把未交互冒充困难负样本。"
+    },
+    {
+      "file": "02_Retrieval_09.pdf",
+      "pages": [
+        20
+      ],
+      "statement": "多值离散特征随机丢弃 50% 的值用于自监督增强。",
+      "local_experiment": "待接入商品属性后比较增强比例；当前 MLP dropout 与此不同。"
+    },
+    {
+      "file": "07_ColdStart_05.pdf",
+      "pages": [
+        11,
+        19
+      ],
+      "statement": "24 小时 100 次基础曝光、差异化最多 500 次；原页注明不是小红书真实数据。",
+      "local_experiment": "后续在模拟供需流量中验证保量成功率、挤占和预算；不当作生产默认值。"
+    },
+    {
+      "file": "08_Improvement_04.pdf",
+      "pages": [
+        13
+      ],
+      "statement": "2% 非个性化探索流量的讲义示例。",
+      "local_experiment": "后续比较探索比例；静态日志不能验证它对长期留存的因果影响。"
+    },
+    {
+      "file": "08_Improvement_03.pdf",
+      "pages": [
+        12
+      ],
+      "statement": "MMoE/PLE 和 position bias 纠偏可能有效，也可能无效。",
+      "local_experiment": "将无提升和变差作为完整结果；不因为模型复杂就默认胜出。"
+    }
+  ],
+  "papers": [
+    {
+      "title": "Sampling-Bias-Corrected Neural Modeling (RecSys 2019)",
+      "url": "https://research.google/pubs/sampling-bias-corrected-neural-modeling-for-large-corpus-item-recommendations/",
+      "status": "部分机制复现",
+      "scope": "双塔、batch 内负样本和 LogQ 开关。Q 用当前训练目标的精确经验频率，未复现流式频率估计器、原始数据、工业规模和论文收益。"
+    },
+    {
+      "title": "Deep Neural Networks for YouTube Recommendations (2016)",
+      "url": "https://research.google/pubs/deep-neural-networks-for-youtube-recommendations/",
+      "status": "部分机制实践",
+      "scope": "LastN Embedding 均值作为用户特征；没有复现完整 YouTube 候选生成、排序和时长加权任务。"
+    },
+    {
+      "title": "Self-supervised Learning for Large-scale Item Recommendations",
+      "url": "https://arxiv.org/abs/2007.12865",
+      "status": "后续 / 本地可缩小复现",
+      "scope": "需要多字段物品特征和增强；逐步比较辅助对比损失与长尾指标。"
+    },
+    {
+      "title": "MMoE (KDD 2018)",
+      "url": "https://research.google/pubs/modeling-task-relationships-in-multi-task-learning-with-multi-gate-mixture-of-experts/",
+      "status": "后续 / 本地可缩小复现",
+      "scope": "多任务结构可用小数据；必须定义加购/购买样本与延迟窗口，不能声称是曝光 CTR。"
+    },
+    {
+      "title": "COLD (2020)",
+      "url": "https://arxiv.org/abs/2007.16122",
+      "status": "后续 / 本地可缩小复现",
+      "scope": "三塔粗排、缓存和精排蒸馏实验，原论文大规模性能不在本地验收范围。"
+    },
+    {
+      "title": "DCN V2 (WWW 2021)",
+      "url": "https://arxiv.org/abs/2008.13535",
+      "status": "后续 / 本地可缩小复现",
+      "scope": "先验证 cross layer 数学与梯度，再比较 full-rank/低秩/MLP。"
+    },
+    {
+      "title": "DIN (KDD 2018)",
+      "url": "https://arxiv.org/abs/1706.06978",
+      "status": "后续 / 本地可缩小复现",
+      "scope": "候选相关 attention 的机制复现；完整 Dice、正则和原论文数据需逐项补齐。"
+    },
+    {
+      "title": "SIM (CIKM 2020)",
+      "url": "https://arxiv.org/abs/2006.05639",
+      "status": "后续 / 本地可缩小复现",
+      "scope": "长序列检索与 attention；当前子集不代表真实千万级序列。"
+    },
+    {
+      "title": "Fast Greedy MAP Inference for DPP (NeurIPS 2018)",
+      "url": "https://arxiv.org/abs/1709.05135",
+      "status": "后续 / 本地可复现算法",
+      "scope": "小全集穷举、贪心和 Cholesky 增量数值验收；无需大模型和工业流量。"
+    }
+  ],
+  "first_experiments": [
+    {
+      "title": "历史序列的消融",
+      "predict": "去掉历史后，个性化是否完全消失？用户 ID 还能记住什么？",
+      "action": "先比较 history32 和 no-history 的验证集指标，再在推荐页清空一个用户的历史上下文。",
+      "check": "训练消融是不同模型；在线清空是固定模型的反事实输入，二者不能混为一谈。"
+    },
+    {
+      "title": "LogQ 纠偏",
+      "predict": "降低热门负样本惩罚后，召回与覆盖一定会同时提升吗？",
+      "action": "保持 seed、维度、序列、batch 和 epoch 不变，切换 LogQ，比较 Recall、NDCG、coverage。",
+      "check": "查看校正后的 logits 和 softmax；没有提升也是有效结论。"
+    },
+    {
+      "title": "相关性与多样性的取舍",
+      "predict": "MMR lambda 从 1 降到 0.5，列表会如何变化？",
+      "action": "固定用户、模型、通道和候选预算，仅调整 lambda。",
+      "check": "查看逐步冗余惩罚与被替换商品；离线列表变化不说明真实用户喜欢或留存改善。"
+    }
+  ],
+  "notebook_chapters": [
+    {
+      "target": "basics",
+      "file": "03_Foundations_AB.ipynb",
+      "title": "基础、指标与 A/B",
+      "mode": "真实数据 + 模拟分桶"
+    },
+    {
+      "target": "retrieval_course",
+      "file": "04_Retrieval_Methods.ipynb",
+      "title": "召回、样本与检索",
+      "mode": "真实快照 + 机制练习"
+    },
+    {
+      "target": "ranking",
+      "file": "05_Ranking_Multitask.ipynb",
+      "title": "多目标、MMoE 与粗排",
+      "mode": "受控模拟，不是曝光 CTR"
+    },
+    {
+      "target": "cross",
+      "file": "06_Feature_Crossing.ipynb",
+      "title": "FM、DCN、LHUC 与 FiBiNET",
+      "mode": "张量与梯度机制"
+    },
+    {
+      "target": "sequence",
+      "file": "07_Sequence_DIN_SIM.ipynb",
+      "title": "LastN、DIN 与 SIM",
+      "mode": "真实历史 + 注意力教学变体"
+    },
+    {
+      "target": "diversity",
+      "file": "08_Diversity_DPP.ipynb",
+      "title": "多样性、规则与 DPP",
+      "mode": "真实向量 + 数值验收"
+    },
+    {
+      "target": "cold",
+      "file": "09_ColdStart_Traffic.ipynb",
+      "title": "冷启动与流量调控",
+      "mode": "真实属性 + 模拟流量"
+    },
+    {
+      "target": "engineering",
+      "file": "10_Engineering_Improvement.ipynb",
+      "title": "系统改进与工程实验",
+      "mode": "真实快照 + 受控漂移/社交模拟"
+    },
+    {
+      "target": "xmrec_start",
+      "file": "11_XMRec_Start.ipynb",
+      "title": "真实竞赛：题目与数据",
+      "mode": "WSDM Cup 2022 · 完整真实数据 · 冠军核心复现"
+    },
+    {
+      "target": "xmrec_features",
+      "file": "12_XMRec_Features.ipynb",
+      "title": "竞赛：特征与 ItemCF 对照",
+      "mode": "WSDM Cup 2022 · 完整真实数据 · 冠军核心复现"
+    },
+    {
+      "target": "xmrec_graph",
+      "file": "13_XMRec_Graph.ipynb",
+      "title": "竞赛：采样、BPR 与 LightGCN",
+      "mode": "WSDM Cup 2022 · 完整真实数据 · 冠军核心复现"
+    },
+    {
+      "target": "xmrec_ranking",
+      "file": "14_XMRec_Ranking.ipynb",
+      "title": "竞赛：重训 LightGBM 与消融",
+      "mode": "WSDM Cup 2022 · 完整真实数据 · 冠军核心复现"
+    },
+    {
+      "target": "xmrec_evaluation",
+      "file": "15_XMRec_Evaluation.ipynb",
+      "title": "竞赛：评估与误差分析",
+      "mode": "WSDM Cup 2022 · 完整真实数据 · 冠军核心复现"
+    }
+  ]
+}

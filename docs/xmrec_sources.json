@@ -1,0 +1,40 @@
+{
+  "official_url": "https://github.com/hamedrab/wsdm22_cup_xmrec",
+  "official_revision": "f5b1f087a4054537cd8f46bf346f978094b8467e",
+  "winner_url": "https://github.com/opdai/wsdm2022-xmrec-top1-solution",
+  "winner_revision": "8af3260368b1980a85a555fc470caa84bf6697d6",
+  "paper": "https://arxiv.org/abs/2203.00897",
+  "leaderboard": "https://xmrec.github.io/wsdmcup/",
+  "reported_champion_ndcg10": 0.6773,
+  "files": {
+    "s1/train.tsv": "5ec09e8655e4fc6869474bedd05649b326640c09085c28f2a0ad42c130725238",
+    "s1/train_5core.tsv": "20e099564c6760299fb4266823f1e78d15a31c3bcf34e59000d5e1b2a5847400",
+    "s1/valid_qrel.tsv": "c8e59e0f24e5dff4a4e3d0775bc9beead9af891ff42312cd0094d2c7e88f6e68",
+    "s1/valid_run.tsv": "9d66a8b08ccb8bdd5b8f900cab73dd8dab6ddf428603642d6394fa509cedcf06",
+    "s2/train.tsv": "5e0ccc7966c5cfa72013293ada7a1c1ae1bc518c190758e6686a90660eb8b24c",
+    "s2/train_5core.tsv": "ca80ec9723d0cb2864f0c7ce104ef78a722ea441dda48042bd792e997f9b3e37",
+    "s2/valid_qrel.tsv": "998fabebfc1bef764de80377a493b3829007693c00b946aa4b0c05b8eed7f567",
+    "s2/valid_run.tsv": "2927c441a966f14d899a785567147867716347323f2dbe1ae1b7bcae4d13b77a",
+    "s3/train.tsv": "eb2c0553655fa635c9e853754a9b9f25ebfb10fde390ff4aa23ceec7119db466",
+    "s3/train_5core.tsv": "844b4a0c00baed1738da0b7760e272ac05dbb46c7eefb661b2cb8a08175e9ba7",
+    "s3/valid_qrel.tsv": "fc035e19278139ebba2185b4b17b37738870857d3fe8494251997c37053d4e69",
+    "s3/valid_run.tsv": "507ba8f8298097f4039bcd09858fb9c37ce25849305c59ef1809a8dacbb2087d",
+    "t1/test_run.tsv": "68bbafa3723fd47058c405b7e2eaeb4b79ebba8e34a2209c35e5e31e57d8b5e0",
+    "t1/train.tsv": "d106a0f44641de9f3e86758773dd455d7a0fd8c423747571583371e3d8475fb5",
+    "t1/train_5core.tsv": "3937826a1d22b8d1866bdd3cb7b686a9ef9bf837cdb7acf469c7d42e6d363802",
+    "t1/valid_qrel.tsv": "9338c6ee00539b81950a6d866ef6ab0546eb93184ef6734aa26243a53bc37e91",
+    "t1/valid_run.tsv": "82a110329da25cf2ad76c8cfba37cde4385c8585bb46304e37e06c94b0cf23ed",
+    "t2/test_run.tsv": "4ed30840f9628cdd3fdf2c953e94e6ec5ab98af7fed00c3720b31d147c02c17c",
+    "t2/train.tsv": "4ed722dbef2a7ae8c86bc48fc399cb8f2b10d9262e448d634dc0d2637691c5f5",
+    "t2/train_5core.tsv": "9e1ab3683ee8cae2bb0a950b438891e6b21c34ba4780b6f61f38e40bd5908730",
+    "t2/valid_qrel.tsv": "56fc20ae4384dc00c86dedf72ad91493c255731b88020964c744a3d9afbf10b1",
+    "t2/valid_run.tsv": "04e47b0f4d769a2a588de2837ff2743311b817dfbd6ae9c89400bd23a0a5062c"
+  },
+  "source_hashes": {
+    "src/retrieval/icf_v2.py": "1e3b7fc0ef5d1c22a5d1cdeae05bdf61ed8f5cba17c59d35fdf8acdc7e8ead3b",
+    "src/retrieval/icf_v3.py": "b10e22a32134f1e59140c06a3581f7c20e4a16287cb8c06f4a4e3072a92baae5",
+    "src/retrieval/lgcn_v2/model.py": "db14bb6325f0bea44d7c823fb92b8e318029bdda5d3804d87f974fb9eeb20ccd",
+    "src/xmrec_utils/evaluation.py": "2f7ce3e28d0509c1cb853c80b137509485a067689d6164c194f5d1267fc2416f",
+    "train_main.py": "2084b428970484613f70f2ae4e51b4723b84428210f8aa934228257c015cbb8f"
+  }
+}

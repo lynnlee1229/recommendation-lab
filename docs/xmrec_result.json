@@ -1,0 +1,36 @@
+{
+  "run_id": "20261029T091104737318-champion-core",
+  "receipt": {
+    "run_id": "20261029T091104737318-champion-core",
+    "selected": "lgb_memory",
+    "seconds": 77.38424970800406,
+    "peak_rss_mib": 1422.921875,
+    "official_valid_users": 8179,
+    "features": 21,
+    "status": "PASS",
+    "hidden_test_score": null,
+    "validated_source_sha256": {
+      "reclab/competition/__init__.py": "567cb080d46155bfe0929081c9f38cf1120dc1a05c3381e27cdb7edae5a61d91",
+      "reclab/competition/__main__.py": "6eeec374ecfaa1d5ef82b89b92816233dbd1756bc8b8bbde7cd2cfe5ad7a066a",
+      "reclab/competition/data.py": "a47146afd8cf4eaa2d95b9fc4bdd5e1a4689a0ba05970a81b1926a3484be7bc7",
+      "reclab/competition/experiment.py": "a53e35bc5883b3346724ab01fc72b2236bfe8b13ef8ff8663d30f29c75bc4141",
+      "reclab/competition/graph.py": "0f967fff636591b38d3445531be8f9a31a6f0f905e8f22d80f1cd92657f66171",
+      "reclab/competition/memory.py": "87e56548f1cfcb0ae868732b22d724fe8ecee23480a0ddcc690a1398595ece46",
+      "reclab/competition/metrics.py": "490be84607940cb5698aad08d1aca0bceecee302f836487ab89e4aeee0099be7",
+      "reclab/competition/ranking.py": "d92e9fa2ccaf5b0a7f1c761826f25a495c864175ba2cf27b08b0922cf9438f99",
+      "reclab/competition/reference.py": "1a6da6a386cab532efce06d4fbd2ecbef5dc914073669a09af1275888cdf4dbe",
+      "reclab/competition/teaching.py": "5405646dbcdaa238fd33acfebbe1090533f66279aa2e05e7fb86710fce4d5128"
+    },
+    "lightgbm_threads": 1
+  },
+  "selection": {
+    "selected": "lgb_memory",
+    "selection_scores": {
+      "lgb_stats": 0.38162450881408494,
+      "lgb_memory": 0.6354650235702426,
+      "lgb_all": 0.6347095741441938,
+      "lgb_neg9": 0.6328948513583263
+    },
+    "criterion": "combined select nDCG@10, user weighted; audit metrics not consulted"
+  }
+}

@@ -1,0 +1,582 @@
+{
+  "baselines": {
+    "dataset_version": "2772cab0aca8cb81",
+    "models": {
+      "popular": {
+        "split": "valid",
+        "audit": {
+          "eligible_users": 339,
+          "evaluated_users": 339,
+          "distinct_user_item_targets_before_filter": 10343,
+          "cold_oov_targets_excluded": 7669,
+          "previously_seen_targets_excluded": 601,
+          "context": "Frozen train-cutoff history for both validation and test; validation events never update the test history."
+        },
+        "candidate_policy": "Every training-catalog item except training-seen items; deterministic item-index tie break.",
+        "catalog_items": 5000,
+        "metrics": {
+          "recall@10": 0.017768356798409258,
+          "ndcg@10": 0.01862995583186202,
+          "mrr@10": 0.03742566839911973,
+          "hit_rate@10": 0.06784660766961652,
+          "recall@20": 0.020754076338784892,
+          "ndcg@20": 0.017910018656483572,
+          "mrr@20": 0.03797171622043537,
+          "hit_rate@20": 0.07669616519174041,
+          "recall@50": 0.042065548940458476,
+          "ndcg@50": 0.021776983771339242,
+          "mrr@50": 0.03902253852320637,
+          "hit_rate@50": 0.11799410029498525,
+          "recall@100": 0.059079179028890254,
+          "ndcg@100": 0.024876508444600445,
+          "mrr@100": 0.03957094255598432,
+          "hit_rate@100": 0.1592920353982301,
+          "catalog_coverage@20": 0.0092
+        }
+      },
+      "itemcf": {
+        "split": "valid",
+        "audit": {
+          "eligible_users": 339,
+          "evaluated_users": 339,
+          "distinct_user_item_targets_before_filter": 10343,
+          "cold_oov_targets_excluded": 7669,
+          "previously_seen_targets_excluded": 601,
+          "context": "Frozen train-cutoff history for both validation and test; validation events never update the test history."
+        },
+        "candidate_policy": "Every training-catalog item except training-seen items; deterministic item-index tie break.",
+        "catalog_items": 5000,
+        "metrics": {
+          "recall@10": 0.09662694983646784,
+          "ndcg@10": 0.06583100560861642,
+          "mrr@10": 0.07562859952240483,
+          "hit_rate@10": 0.17404129793510326,
+          "recall@20": 0.14516723724214914,
+          "ndcg@20": 0.07987437369822994,
+          "mrr@20": 0.0811429258335338,
+          "hit_rate@20": 0.25958702064896755,
+          "recall@50": 0.20017719784482957,
+          "ndcg@50": 0.09422142672105548,
+          "mrr@50": 0.08340028348272453,
+          "hit_rate@50": 0.3274336283185841,
+          "recall@100": 0.2566769000051432,
+          "ndcg@100": 0.10538004041792565,
+          "mrr@100": 0.08443874599593522,
+          "hit_rate@100": 0.40412979351032446,
+          "catalog_coverage@20": 0.5662
+        }
+      }
+    },
+    "itemcf_variant": "Binary user-item cosine with inverse log user activity and top-100 neighbors; last-50 recency weights."
+  },
+  "runs": {
+    "ablation-history64": {
+      "run_id": "ablation-history64",
+      "state": "complete",
+      "config": {
+        "name": "history64 / 增加维度",
+        "dim": 64,
+        "history_len": 20,
+        "use_history": true,
+        "logq_correction": false,
+        "epochs": 8,
+        "batch_size": 256,
+        "learning_rate": 0.003,
+        "temperature": 0.1,
+        "dropout": 0.1,
+        "seed": 42,
+        "max_samples": 120000,
+        "eval_users": 1000,
+        "device": "cpu"
+      },
+      "dataset_version": "2772cab0aca8cb81",
+      "feature_version": "history-id-v1",
+      "parameter_count": 792384,
+      "training_samples": 54392,
+      "best_epoch": 5,
+      "selection": "Highest validation NDCG@20; test not read during training or selection.",
+      "curve": [
+        {
+          "epoch": 1,
+          "loss": 5.54626693268316,
+          "gradient_norm_before_clip": 0.29661086803310915,
+          "validation_ndcg@20": 0.013135358163701318,
+          "validation_recall@20": 0.027782402721437956,
+          "elapsed_seconds": 4.88
+        },
+        {
+          "epoch": 2,
+          "loss": 5.234681226239693,
+          "gradient_norm_before_clip": 0.5232059630989468,
+          "validation_ndcg@20": 0.02528471558601601,
+          "validation_recall@20": 0.044968929387947186,
+          "elapsed_seconds": 6.74
+        },
+        {
+          "epoch": 3,
+          "loss": 4.806498636444065,
+          "gradient_norm_before_clip": 0.6749017080510726,
+          "validation_ndcg@20": 0.03017582321670159,
+          "validation_recall@20": 0.0533141248509032,
+          "elapsed_seconds": 8.55
+        },
+        {
+          "epoch": 4,
+          "loss": 4.475934132633358,
+          "gradient_norm_before_clip": 0.7789759714278817,
+          "validation_ndcg@20": 0.035062985403556374,
+          "validation_recall@20": 0.07206928822318122,
+          "elapsed_seconds": 10.35
+        },
+        {
+          "epoch": 5,
+          "loss": 4.207378310374538,
+          "gradient_norm_before_clip": 0.8121289901890105,
+          "validation_ndcg@20": 0.03977761791230614,
+          "validation_recall@20": 0.0782767484129423,
+          "elapsed_seconds": 12.15
+        },
+        {
+          "epoch": 6,
+          "loss": 3.9960228276087935,
+          "gradient_norm_before_clip": 0.818228540286212,
+          "validation_ndcg@20": 0.03537493388197732,
+          "validation_recall@20": 0.06763287349353116,
+          "elapsed_seconds": 13.93
+        },
+        {
+          "epoch": 7,
+          "loss": 3.8182169078886377,
+          "gradient_norm_before_clip": 0.8174819602093226,
+          "validation_ndcg@20": 0.03449412243328663,
+          "validation_recall@20": 0.07263712358802672,
+          "elapsed_seconds": 15.72
+        },
+        {
+          "epoch": 8,
+          "loss": 3.677821852456368,
+          "gradient_norm_before_clip": 0.8072421959308391,
+          "validation_ndcg@20": 0.03917404930847841,
+          "validation_recall@20": 0.07042212542885326,
+          "elapsed_seconds": 17.53
+        }
+      ],
+      "validation": {
+        "split": "valid",
+        "audit": {
+          "eligible_users": 339,
+          "evaluated_users": 339,
+          "distinct_user_item_targets_before_filter": 10343,
+          "cold_oov_targets_excluded": 7669,
+          "previously_seen_targets_excluded": 601,
+          "context": "Frozen train-cutoff history for both validation and test; validation events never update the test history."
+        },
+        "candidate_policy": "Every training-catalog item except training-seen items; deterministic item-index tie break.",
+        "catalog_items": 5000,
+        "metrics": {
+          "recall@10": 0.04811603363931183,
+          "ndcg@10": 0.0303550687377263,
+          "mrr@10": 0.031381982488177175,
+          "hit_rate@10": 0.07669616519174041,
+          "recall@20": 0.0782767484129423,
+          "ndcg@20": 0.03977761791230614,
+          "mrr@20": 0.03476830246912988,
+          "hit_rate@20": 0.12684365781710916,
+          "recall@50": 0.11259156039115929,
+          "ndcg@50": 0.048429686773555365,
+          "mrr@50": 0.03654212977575568,
+          "hit_rate@50": 0.18584070796460178,
+          "recall@100": 0.1423439957009427,
+          "ndcg@100": 0.05549086836584399,
+          "mrr@100": 0.03747234974783468,
+          "hit_rate@100": 0.25073746312684364,
+          "catalog_coverage@20": 0.6046
+        }
+      },
+      "elapsed_seconds": 17.88,
+      "reproduction_scope": "Educational two-tower retrieval + in-batch sampled softmax. Optional LogQ uses exact empirical target frequency in this training subset, not the paper's streaming estimator. Not an original-paper dataset/scale/results reproduction.",
+      "architecture": "user ID embedding + masked mean recent item-ID embeddings -> MLP -> L2; item ID embedding -> MLP -> L2; dot similarity."
+    },
+    "ablation-logq": {
+      "run_id": "ablation-logq",
+      "state": "complete",
+      "config": {
+        "name": "logq / 采样纠偏",
+        "dim": 32,
+        "history_len": 20,
+        "use_history": true,
+        "logq_correction": true,
+        "epochs": 8,
+        "batch_size": 256,
+        "learning_rate": 0.003,
+        "temperature": 0.1,
+        "dropout": 0.1,
+        "seed": 42,
+        "max_samples": 120000,
+        "eval_users": 1000,
+        "device": "cpu"
+      },
+      "dataset_version": "2772cab0aca8cb81",
+      "feature_version": "history-id-v1",
+      "parameter_count": 385952,
+      "training_samples": 54392,
+      "best_epoch": 8,
+      "selection": "Highest validation NDCG@20; test not read during training or selection.",
+      "curve": [
+        {
+          "epoch": 1,
+          "loss": 5.885106650743963,
+          "gradient_norm_before_clip": 0.7694712218264459,
+          "validation_ndcg@20": 0.011743416073527054,
+          "validation_recall@20": 0.017641778578535786,
+          "elapsed_seconds": 4.54
+        },
+        {
+          "epoch": 2,
+          "loss": 5.644288008204978,
+          "gradient_norm_before_clip": 0.7159527211401944,
+          "validation_ndcg@20": 0.01801765581604323,
+          "validation_recall@20": 0.016873178732600993,
+          "elapsed_seconds": 6.07
+        },
+        {
+          "epoch": 3,
+          "loss": 5.369115988810916,
+          "gradient_norm_before_clip": 0.7792890430056433,
+          "validation_ndcg@20": 0.02721444997298961,
+          "validation_recall@20": 0.048832451426573324,
+          "elapsed_seconds": 7.53
+        },
+        {
+          "epoch": 4,
+          "loss": 5.062947093712826,
+          "gradient_norm_before_clip": 0.867603750575876,
+          "validation_ndcg@20": 0.034269217825525396,
+          "validation_recall@20": 0.0528556276499902,
+          "elapsed_seconds": 9.0
+        },
+        {
+          "epoch": 5,
+          "loss": 4.824513025328699,
+          "gradient_norm_before_clip": 0.9126718970531589,
+          "validation_ndcg@20": 0.03329461675357775,
+          "validation_recall@20": 0.059435488952563675,
+          "elapsed_seconds": 10.47
+        },
+        {
+          "epoch": 6,
+          "loss": 4.633245104462772,
+          "gradient_norm_before_clip": 0.9613171175052303,
+          "validation_ndcg@20": 0.03517496780251644,
+          "validation_recall@20": 0.06737156478954229,
+          "elapsed_seconds": 11.93
+        },
+        {
+          "epoch": 7,
+          "loss": 4.454753146590266,
+          "gradient_norm_before_clip": 0.9939595449698363,
+          "validation_ndcg@20": 0.038639089382392064,
+          "validation_recall@20": 0.07126719968427424,
+          "elapsed_seconds": 13.38
+        },
+        {
+          "epoch": 8,
+          "loss": 4.307423491638572,
+          "gradient_norm_before_clip": 1.0128319344610115,
+          "validation_ndcg@20": 0.03899826181932854,
+          "validation_recall@20": 0.07108660219418164,
+          "elapsed_seconds": 14.86
+        }
+      ],
+      "validation": {
+        "split": "valid",
+        "audit": {
+          "eligible_users": 339,
+          "evaluated_users": 339,
+          "distinct_user_item_targets_before_filter": 10343,
+          "cold_oov_targets_excluded": 7669,
+          "previously_seen_targets_excluded": 601,
+          "context": "Frozen train-cutoff history for both validation and test; validation events never update the test history."
+        },
+        "candidate_policy": "Every training-catalog item except training-seen items; deterministic item-index tie break.",
+        "catalog_items": 5000,
+        "metrics": {
+          "recall@10": 0.04764635647470183,
+          "ndcg@10": 0.0320903366276235,
+          "mrr@10": 0.03961113452263895,
+          "hit_rate@10": 0.10619469026548672,
+          "recall@20": 0.07108660219418164,
+          "ndcg@20": 0.03899826181932854,
+          "mrr@20": 0.04225829329462305,
+          "hit_rate@20": 0.14454277286135694,
+          "recall@50": 0.11760548890485276,
+          "ndcg@50": 0.05005289510811038,
+          "mrr@50": 0.04473968315129626,
+          "hit_rate@50": 0.22418879056047197,
+          "recall@100": 0.1716579895941757,
+          "ndcg@100": 0.0612713929030553,
+          "mrr@100": 0.04591397332983174,
+          "hit_rate@100": 0.30678466076696165,
+          "catalog_coverage@20": 0.2896
+        }
+      },
+      "elapsed_seconds": 15.2,
+      "reproduction_scope": "Educational two-tower retrieval + in-batch sampled softmax. Optional LogQ uses exact empirical target frequency in this training subset, not the paper's streaming estimator. Not an original-paper dataset/scale/results reproduction.",
+      "architecture": "user ID embedding + masked mean recent item-ID embeddings -> MLP -> L2; item ID embedding -> MLP -> L2; dot similarity."
+    },
+    "ablation-no-history": {
+      "run_id": "ablation-no-history",
+      "state": "complete",
+      "config": {
+        "name": "no-history / 序列消融",
+        "dim": 32,
+        "history_len": 20,
+        "use_history": false,
+        "logq_correction": false,
+        "epochs": 8,
+        "batch_size": 256,
+        "learning_rate": 0.003,
+        "temperature": 0.1,
+        "dropout": 0.1,
+        "seed": 42,
+        "max_samples": 120000,
+        "eval_users": 1000,
+        "device": "cpu"
+      },
+      "dataset_version": "2772cab0aca8cb81",
+      "feature_version": "history-id-v1",
+      "parameter_count": 385952,
+      "training_samples": 54392,
+      "best_epoch": 8,
+      "selection": "Highest validation NDCG@20; test not read during training or selection.",
+      "curve": [
+        {
+          "epoch": 1,
+          "loss": 5.561827320091022,
+          "gradient_norm_before_clip": 0.30773389241505117,
+          "validation_ndcg@20": 0.0024500945514226323,
+          "validation_recall@20": 0.0023501073010992256,
+          "elapsed_seconds": 4.49
+        },
+        {
+          "epoch": 2,
+          "loss": 5.5347771688075005,
+          "gradient_norm_before_clip": 0.21602364905843152,
+          "validation_ndcg@20": 0.0022936464754605462,
+          "validation_recall@20": 0.0038195416763664295,
+          "elapsed_seconds": 5.92
+        },
+        {
+          "epoch": 3,
+          "loss": 5.513740995979113,
+          "gradient_norm_before_clip": 0.31654076676973153,
+          "validation_ndcg@20": 0.002634961816006844,
+          "validation_recall@20": 0.0030717347432514565,
+          "elapsed_seconds": 7.29
+        },
+        {
+          "epoch": 4,
+          "loss": 5.457137032105022,
+          "gradient_norm_before_clip": 0.45014942405929026,
+          "validation_ndcg@20": 0.0034275544972373756,
+          "validation_recall@20": 0.00905301134045997,
+          "elapsed_seconds": 8.66
+        },
+        {
+          "epoch": 5,
+          "loss": 5.339195078024883,
+          "gradient_norm_before_clip": 0.6019302938185948,
+          "validation_ndcg@20": 0.010980018371978784,
+          "validation_recall@20": 0.012962547365202233,
+          "elapsed_seconds": 10.03
+        },
+        {
+          "epoch": 6,
+          "loss": 5.178710246335094,
+          "gradient_norm_before_clip": 0.7285794554182061,
+          "validation_ndcg@20": 0.012669597579336899,
+          "validation_recall@20": 0.016080717045304425,
+          "elapsed_seconds": 11.42
+        },
+        {
+          "epoch": 7,
+          "loss": 5.0087834993764435,
+          "gradient_norm_before_clip": 0.8182996170061855,
+          "validation_ndcg@20": 0.012802473539448666,
+          "validation_recall@20": 0.02340336761813145,
+          "elapsed_seconds": 12.79
+        },
+        {
+          "epoch": 8,
+          "loss": 4.839124961361533,
+          "gradient_norm_before_clip": 0.8972747057256564,
+          "validation_ndcg@20": 0.01988004379578232,
+          "validation_recall@20": 0.03069240956789673,
+          "elapsed_seconds": 14.16
+        }
+      ],
+      "validation": {
+        "split": "valid",
+        "audit": {
+          "eligible_users": 339,
+          "evaluated_users": 339,
+          "distinct_user_item_targets_before_filter": 10343,
+          "cold_oov_targets_excluded": 7669,
+          "previously_seen_targets_excluded": 601,
+          "context": "Frozen train-cutoff history for both validation and test; validation events never update the test history."
+        },
+        "candidate_policy": "Every training-catalog item except training-seen items; deterministic item-index tie break.",
+        "catalog_items": 5000,
+        "metrics": {
+          "recall@10": 0.021506654915504363,
+          "ndcg@10": 0.0176533856481808,
+          "mrr@10": 0.02220115184716955,
+          "hit_rate@10": 0.05604719764011799,
+          "recall@20": 0.03069240956789673,
+          "ndcg@20": 0.01988004379578232,
+          "mrr@20": 0.02326482225623298,
+          "hit_rate@20": 0.07079646017699115,
+          "recall@50": 0.04531256899075454,
+          "ndcg@50": 0.022696278120921735,
+          "mrr@50": 0.024359773522194123,
+          "hit_rate@50": 0.10914454277286136,
+          "recall@100": 0.05928040336590342,
+          "ndcg@100": 0.025517113121731407,
+          "mrr@100": 0.024875820487077187,
+          "hit_rate@100": 0.14454277286135694,
+          "catalog_coverage@20": 0.6138
+        }
+      },
+      "elapsed_seconds": 14.51,
+      "reproduction_scope": "Educational two-tower retrieval + in-batch sampled softmax. Optional LogQ uses exact empirical target frequency in this training subset, not the paper's streaming estimator. Not an original-paper dataset/scale/results reproduction.",
+      "architecture": "user ID embedding + masked mean recent item-ID embeddings -> MLP -> L2; item ID embedding -> MLP -> L2; dot similarity."
+    },
+    "baseline-history32": {
+      "run_id": "baseline-history32",
+      "state": "complete",
+      "config": {
+        "name": "history32 / 基础双塔",
+        "dim": 32,
+        "history_len": 20,
+        "use_history": true,
+        "logq_correction": false,
+        "epochs": 8,
+        "batch_size": 256,
+        "learning_rate": 0.003,
+        "temperature": 0.1,
+        "dropout": 0.1,
+        "seed": 42,
+        "max_samples": 120000,
+        "eval_users": 1000,
+        "device": "cpu"
+      },
+      "dataset_version": "2772cab0aca8cb81",
+      "feature_version": "history-id-v1",
+      "parameter_count": 385952,
+      "training_samples": 54392,
+      "best_epoch": 6,
+      "selection": "Highest validation NDCG@20; test not read during training or selection.",
+      "curve": [
+        {
+          "epoch": 1,
+          "loss": 5.560806353314166,
+          "gradient_norm_before_clip": 0.31621508314296115,
+          "validation_ndcg@20": 0.0007904414175060725,
+          "validation_recall@20": 0.000609776941282452,
+          "elapsed_seconds": 7.29
+        },
+        {
+          "epoch": 2,
+          "loss": 5.492199620528683,
+          "gradient_norm_before_clip": 0.3283431567776371,
+          "validation_ndcg@20": 0.008092865280543902,
+          "validation_recall@20": 0.014427202969790203,
+          "elapsed_seconds": 8.8
+        },
+        {
+          "epoch": 3,
+          "loss": 5.232908413574649,
+          "gradient_norm_before_clip": 0.5570250773373904,
+          "validation_ndcg@20": 0.01700333691787301,
+          "validation_recall@20": 0.031168373965094427,
+          "elapsed_seconds": 10.24
+        },
+        {
+          "epoch": 4,
+          "loss": 4.913705252429846,
+          "gradient_norm_before_clip": 0.710633332740533,
+          "validation_ndcg@20": 0.01770588887167005,
+          "validation_recall@20": 0.03708102259575747,
+          "elapsed_seconds": 11.69
+        },
+        {
+          "epoch": 5,
+          "loss": 4.669147560431302,
+          "gradient_norm_before_clip": 0.7901449032792462,
+          "validation_ndcg@20": 0.022034316711874367,
+          "validation_recall@20": 0.04166223959523874,
+          "elapsed_seconds": 13.13
+        },
+        {
+          "epoch": 6,
+          "loss": 4.490555811847092,
+          "gradient_norm_before_clip": 0.8301772044298235,
+          "validation_ndcg@20": 0.02930947035359181,
+          "validation_recall@20": 0.06752908243675274,
+          "elapsed_seconds": 14.65
+        },
+        {
+          "epoch": 7,
+          "loss": 4.341472294071454,
+          "gradient_norm_before_clip": 0.8680696624545424,
+          "validation_ndcg@20": 0.026243835586458455,
+          "validation_recall@20": 0.05662693864620569,
+          "elapsed_seconds": 16.09
+        },
+        {
+          "epoch": 8,
+          "loss": 4.208477244304899,
+          "gradient_norm_before_clip": 0.886942337936079,
+          "validation_ndcg@20": 0.02739419892493364,
+          "validation_recall@20": 0.05987128257242544,
+          "elapsed_seconds": 17.55
+        }
+      ],
+      "validation": {
+        "split": "valid",
+        "audit": {
+          "eligible_users": 339,
+          "evaluated_users": 339,
+          "distinct_user_item_targets_before_filter": 10343,
+          "cold_oov_targets_excluded": 7669,
+          "previously_seen_targets_excluded": 601,
+          "context": "Frozen train-cutoff history for both validation and test; validation events never update the test history."
+        },
+        "candidate_policy": "Every training-catalog item except training-seen items; deterministic item-index tie break.",
+        "catalog_items": 5000,
+        "metrics": {
+          "recall@10": 0.04247821385170057,
+          "ndcg@10": 0.021860944618271816,
+          "mrr@10": 0.025241138736713957,
+          "hit_rate@10": 0.08259587020648967,
+          "recall@20": 0.06752908243675274,
+          "ndcg@20": 0.02930947035359181,
+          "mrr@20": 0.027449201591986327,
+          "hit_rate@20": 0.11504424778761062,
+          "recall@50": 0.09142863940001537,
+          "ndcg@50": 0.03576440273928501,
+          "mrr@50": 0.02942646459824404,
+          "hit_rate@50": 0.17699115044247787,
+          "recall@100": 0.11861417634429292,
+          "ndcg@100": 0.04187828364718711,
+          "mrr@100": 0.030082838669372912,
+          "hit_rate@100": 0.22418879056047197,
+          "catalog_coverage@20": 0.5696
+        }
+      },
+      "elapsed_seconds": 17.9,
+      "reproduction_scope": "Educational two-tower retrieval + in-batch sampled softmax. Optional LogQ uses exact empirical target frequency in this training subset, not the paper's streaming estimator. Not an original-paper dataset/scale/results reproduction.",
+      "architecture": "user ID embedding + masked mean recent item-ID embeddings -> MLP -> L2; item ID embedding -> MLP -> L2; dot similarity."
+    }
+  }
+}

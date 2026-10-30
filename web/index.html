@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recommendation Lab</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/refinements.css?v=course1" />
+  </head>
+  <body>
+    <aside class="rail">
+      <div class="brand">RECOMMENDATION<br /><strong>LAB / 01</strong></div>
+      <div class="rail-note">从数据到向量，从向量到推荐。</div>
+      <a
+        class="rail-course-link"
+        href="/notebooks?target=course"
+        target="_blank"
+        rel="noopener"
+        >打开 Notebook 课程 ↗</a
+      >
+      <nav aria-label="工作台导航">
+        <button data-tab="overview" class="active">01　实验概览</button
+        ><button data-tab="trace">02　推荐过程</button
+        ><button data-tab="features">03　特征与样本</button
+        ><button data-tab="experiments">04　训练与实验</button
+        ><button data-tab="course">05　课程地图</button
+        ><button data-tab="code">06　代码与 Notebook</button>
+      </nav>
+      <div class="rail-foot">
+        LOCAL · OFFLINE<br />Retailrocket / PyTorch<br /><span
+          id="version"
+        ></span
+        ><br />实时链路尚未接入
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div class="eyebrow">REBUILD INTUITION · RUN EXPERIMENTS</div>
+        <h1 id="page-title">实验概览</h1>
+        <p id="page-desc">
+          用真实行为重建你的推荐系统直觉。每一个分数，都能回到特征、样本与代码。
+        </p>
+      </header>
+      <div id="notice" role="status" aria-live="polite"></div>
+      <section id="overview" class="tab active">
+        <div id="overview-content"><p>正在读取真实数据与训练结果…</p></div>
+      </section>
+      <section id="code" class="tab">
+        <p>
+          <a href="/notebooks?target=course" target="_blank" rel="noopener"
+            ><strong>从 00 · Notebook 课程导航开始 ↗</strong></a
+          >
+        </p>
+        <div class="note">
+          <strong>推荐系统的核心是 Python / PyTorch</strong>
+          <p>
+            数据与样本在 data.py，网络在 models.py，优化与验证在
+            train.py。网页调用这些 Python 服务。
+          </p>
+          <p>
+            下面直接查看当前运行项目的源码；进入 JupyterLab 后，可以编辑 .py
+            文件，也可以逐格运行 Notebook。
+          </p>
+        </div>
+        <p><a href="/notebooks?target=xmrec_start" target="_blank" rel="noopener">新增：11～15 · WSDM Cup 2022 冠军核心复现</a> · 从数据、特征和采样开始，亲手重训并评估。</p>
+        <p id="notebook-list-summary" class="muted" aria-live="polite"></p>
+        <div id="notebook-list" class="notebook-links" aria-live="polite">
+          <p>正在读取完整 Notebook 课程目录…</p>
+        </div>
+        <p class="muted">
+          JupyterLab 使用项目独立 Python 3.12
+          内核；首次打开会启动本地服务，稍等片刻即可。
+        </p>
+        <div class="toolbar">
+          <label
+            >Python 模块<select id="source-module">
+              <option value="models">models.py · 双塔网络与损失</option>
+              <option value="data">data.py · 数据与样本</option>
+              <option value="retrieval">retrieval.py · ItemCF / MMR</option>
+              <option value="train">train.py · 训练循环</option>
+              <option value="service">service.py · 推荐服务</option>
+              <option value="xmrec_data">竞赛 · data.py · 官方数据</option>
+              <option value="xmrec_memory">竞赛 · memory.py · ItemCF</option>
+              <option value="xmrec_graph">竞赛 · graph.py · 采样与 LightGCN</option>
+              <option value="xmrec_ranking">竞赛 · ranking.py · LightGBM</option>
+              <option value="xmrec_experiment">竞赛 · experiment.py · 完整实验</option>
+              <option value="xmrec_metrics">竞赛 · metrics.py · 评估</option>
+
+            </select></label
+          >
+          <a
+            id="edit-source"
+            href="/notebooks?target=models"
+            target="_blank"
+            rel="noopener"
+            >在 JupyterLab 编辑此文件 ↗</a
+          >
+        </div>
+        <p id="source-caption" class="muted"></p>
+        <div
+          id="source-content"
+          class="source-panel"
+          aria-label="当前 Python 源码"
+        >
+          选择模块后读取源码…
+        </div>
+      </section>
+      <section id="trace" class="tab">
+        <div class="toolbar">
+          <label>测试用户<select id="trace-user"></select></label
+          ><label>模型版本<select id="trace-run"></select></label
+          ><label
+            >召回通道<select id="channel">
+              <option value="hybrid">三路融合 / RRF</option>
+              <option value="two_tower">双塔</option>
+              <option value="itemcf">ItemCF</option>
+              <option value="popular">热门</option>
+            </select></label
+          ><label
+            >候选预算<input
+              id="budget"
+              type="number"
+              min="20"
+              max="500"
+              value="100" /></label
+          ><label
+            >MMR 相关性 λ<input
+              id="lambda"
+              type="number"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1" /></label
+          ><button id="recommend" class="primary">执行推荐</button>
+        </div>
+        <div class="experiment-strip">
+          <label
+            ><input
+              type="checkbox"
+              id="clear-history"
+            />反事实：清空序列特征</label
+          ><span
+            >保留用户 ID
+            向量和真实已看过滤；不修改数据，不代表真实用户反馈。</span
+          >
+        </div>
+        <div id="trace-content" class="empty">
+          选择用户，执行一次推荐。这里将展开每一步的候选与分数。
+        </div>
+      </section>
+      <section id="features" class="tab">
+        <div class="toolbar">
+          <label>测试用户<select id="feature-user"></select></label
+          ><label>向量所用模型<select id="feature-run"></select></label
+          ><button class="primary" id="inspect">读取特征快照</button>
+        </div>
+        <div id="feature-content" class="empty">
+          读取用户的训练截止快照，查看模型实际使用的输入。
+        </div>
+        <div class="section-head">
+          <h2>训练样本与损失诊断</h2>
+          <button id="samples">读取真实样本</button>
+        </div>
+        <p class="muted">
+          正样本是用户首次交互的新物品；此前行为构成上下文。负样本来自同一批中的其他目标，重复目标会被屏蔽。
+        </p>
+        <div id="sample-content"></div>
+      </section>
+      <section id="experiments" class="tab">
+        <div id="experiment-results"></div>
+        <div class="section-head">
+          <h2>启动一次可比较的实验</h2>
+          <span>单个训练任务 · CPU 4 线程</span>
+        </div>
+        <p>先写下假设，再只改变一个变量。所有配置和模型都另存为新版本。</p>
+        <form id="train-form">
+          <div class="form-grid">
+            <label
+              >实验名称<input
+                name="name"
+                required
+                maxlength="60"
+                value="我的序列长度实验" /></label
+            ><label
+              >Embedding 维度<input
+                name="dim"
+                type="number"
+                min="8"
+                max="128"
+                value="32"
+                required /></label
+            ><label
+              >序列长度<input
+                name="history_len"
+                type="number"
+                min="2"
+                max="100"
+                value="20"
+                required /></label
+            ><label
+              >训练轮数<input
+                name="epochs"
+                type="number"
+                min="1"
+                max="30"
+                value="8"
+                required /></label
+            ><label
+              >Batch size<input
+                name="batch_size"
+                type="number"
+                min="32"
+                max="512"
+                value="256"
+                required /></label
+            ><label
+              >学习率<input
+                name="learning_rate"
+                type="number"
+                min="0.00001"
+                max="0.03"
+                step="0.00001"
+                value="0.003"
+                required /></label
+            ><label
+              >温度 τ<input
+                name="temperature"
+                type="number"
+                min="0.02"
+                max="1"
+                step="0.01"
+                value="0.1"
+                required /></label
+            ><label
+              >Dropout<input
+                name="dropout"
+                type="number"
+                min="0"
+                max="0.6"
+                step="0.05"
+                value="0.1"
+                required /></label
+            ><label
+              >随机种子<input
+                name="seed"
+                type="number"
+                min="0"
+                max="100000"
+                value="42"
+                required
+            /></label>
+          </div>
+          <div class="checks">
+            <label
+              ><input
+                name="use_history"
+                type="checkbox"
+                checked
+              />使用历史序列</label
+            ><label
+              ><input name="logq_correction" type="checkbox" />启用 LogQ
+              采样纠偏</label
+            >
+          </div>
+          <button type="submit" class="primary" id="train-button">
+            保存配置并训练新模型
+          </button>
+        </form>
+        <div id="job-status" aria-live="polite"></div>
+        <div class="note">
+          <strong>模型代码入口</strong><code>reclab/models.py → TwoTower</code>
+          <p>
+            改变网络结构后，用命令行训练并重启服务；工作台参数只控制现有结构。历史均值不是
+            DIN；隐藏层 Dropout 不是讲义中的多值特征自监督增强。
+          </p>
+        </div>
+      </section>
+      <section id="course" class="tab"><div id="course-content"></div></section>
+      <footer>
+        所有数据留在本机。行为日志不包含完整曝光，离线 Recall / NDCG 不等于 CTR
+        或线上收益。<a href="/api/summary" target="_blank" rel="noopener"
+          >原始实验结果 JSON ↗</a
+        >
+      </footer>
+    </main>
+    <script src="/static/app.js?v=xmrec1"></script>
+  </body>
+</html>

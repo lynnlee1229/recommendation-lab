@@ -1,0 +1,6 @@
+{
+  "name": "logq / 采样纠偏",
+  "dim": 32,
+  "epochs": 8,
+  "logq_correction": true
+}

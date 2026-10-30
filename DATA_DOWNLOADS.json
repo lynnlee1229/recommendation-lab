@@ -1,0 +1,413 @@
+{
+  "source_revision": "a35c112d74cec16780ec539f059afd77e30b0dfc",
+  "assets": [
+    {
+      "destination": "data/raw/retailrocket.zip",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/retailrocket/ecommerce-dataset",
+      "bytes": 304719974,
+      "sha256": "5dc06173eaa4a4d3b0a5f6afc4daffb0218d95e409aaacba5fdaa0214eacf2a2"
+    },
+    {
+      "destination": "data/xmrec/raw/s1/train.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s1/train.tsv",
+      "bytes": 20165109,
+      "sha256": "5ec09e8655e4fc6869474bedd05649b326640c09085c28f2a0ad42c130725238"
+    },
+    {
+      "destination": "data/xmrec/raw/s1/train_5core.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s1/train_5core.tsv",
+      "bytes": 1852173,
+      "sha256": "20e099564c6760299fb4266823f1e78d15a31c3bcf34e59000d5e1b2a5847400"
+    },
+    {
+      "destination": "data/xmrec/raw/s1/valid_qrel.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s1/valid_qrel.tsv",
+      "bytes": 142273,
+      "sha256": "c8e59e0f24e5dff4a4e3d0775bc9beead9af891ff42312cd0094d2c7e88f6e68"
+    },
+    {
+      "destination": "data/xmrec/raw/s1/valid_run.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s1/valid_run.tsv",
+      "bytes": 5890526,
+      "sha256": "9d66a8b08ccb8bdd5b8f900cab73dd8dab6ddf428603642d6394fa509cedcf06"
+    },
+    {
+      "destination": "data/xmrec/raw/s2/train.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s2/train.tsv",
+      "bytes": 2773197,
+      "sha256": "5e0ccc7966c5cfa72013293ada7a1c1ae1bc518c190758e6686a90660eb8b24c"
+    },
+    {
+      "destination": "data/xmrec/raw/s2/train_5core.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s2/train_5core.tsv",
+      "bytes": 1159269,
+      "sha256": "ca80ec9723d0cb2864f0c7ce104ef78a722ea441dda48042bd792e997f9b3e37"
+    },
+    {
+      "destination": "data/xmrec/raw/s2/valid_qrel.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s2/valid_qrel.tsv",
+      "bytes": 156419,
+      "sha256": "998fabebfc1bef764de80377a493b3829007693c00b946aa4b0c05b8eed7f567"
+    },
+    {
+      "destination": "data/xmrec/raw/s2/valid_run.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s2/valid_run.tsv",
+      "bytes": 6476299,
+      "sha256": "2927c441a966f14d899a785567147867716347323f2dbe1ae1b7bcae4d13b77a"
+    },
+    {
+      "destination": "data/xmrec/raw/s3/train.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s3/train.tsv",
+      "bytes": 1300869,
+      "sha256": "eb2c0553655fa635c9e853754a9b9f25ebfb10fde390ff4aa23ceec7119db466"
+    },
+    {
+      "destination": "data/xmrec/raw/s3/train_5core.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s3/train_5core.tsv",
+      "bytes": 560829,
+      "sha256": "844b4a0c00baed1738da0b7760e272ac05dbb46c7eefb661b2cb8a08175e9ba7"
+    },
+    {
+      "destination": "data/xmrec/raw/s3/valid_qrel.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s3/valid_qrel.tsv",
+      "bytes": 73237,
+      "sha256": "fc035e19278139ebba2185b4b17b37738870857d3fe8494251997c37053d4e69"
+    },
+    {
+      "destination": "data/xmrec/raw/s3/valid_run.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/s3/valid_run.tsv",
+      "bytes": 3031808,
+      "sha256": "507ba8f8298097f4039bcd09858fb9c37ce25849305c59ef1809a8dacbb2087d"
+    },
+    {
+      "destination": "data/xmrec/raw/t1/test_run.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t1/test_run.tsv",
+      "bytes": 2456967,
+      "sha256": "68bbafa3723fd47058c405b7e2eaeb4b79ebba8e34a2209c35e5e31e57d8b5e0"
+    },
+    {
+      "destination": "data/xmrec/raw/t1/train.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t1/train.tsv",
+      "bytes": 1444053,
+      "sha256": "d106a0f44641de9f3e86758773dd455d7a0fd8c423747571583371e3d8475fb5"
+    },
+    {
+      "destination": "data/xmrec/raw/t1/train_5core.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t1/train_5core.tsv",
+      "bytes": 470781,
+      "sha256": "3937826a1d22b8d1866bdd3cb7b686a9ef9bf837cdb7acf469c7d42e6d363802"
+    },
+    {
+      "destination": "data/xmrec/raw/t1/valid_qrel.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t1/valid_qrel.tsv",
+      "bytes": 59355,
+      "sha256": "9338c6ee00539b81950a6d866ef6ab0546eb93184ef6734aa26243a53bc37e91"
+    },
+    {
+      "destination": "data/xmrec/raw/t1/valid_run.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t1/valid_run.tsv",
+      "bytes": 2456967,
+      "sha256": "82a110329da25cf2ad76c8cfba37cde4385c8585bb46304e37e06c94b0cf23ed"
+    },
+    {
+      "destination": "data/xmrec/raw/t2/test_run.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t2/test_run.tsv",
+      "bytes": 4994102,
+      "sha256": "4ed30840f9628cdd3fdf2c953e94e6ec5ab98af7fed00c3720b31d147c02c17c"
+    },
+    {
+      "destination": "data/xmrec/raw/t2/train.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t2/train.tsv",
+      "bytes": 2887701,
+      "sha256": "4ed722dbef2a7ae8c86bc48fc399cb8f2b10d9262e448d634dc0d2637691c5f5"
+    },
+    {
+      "destination": "data/xmrec/raw/t2/train_5core.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t2/train_5core.tsv",
+      "bytes": 989445,
+      "sha256": "9e1ab3683ee8cae2bb0a950b438891e6b21c34ba4780b6f61f38e40bd5908730"
+    },
+    {
+      "destination": "data/xmrec/raw/t2/valid_qrel.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t2/valid_qrel.tsv",
+      "bytes": 120625,
+      "sha256": "56fc20ae4384dc00c86dedf72ad91493c255731b88020964c744a3d9afbf10b1"
+    },
+    {
+      "destination": "data/xmrec/raw/t2/valid_run.tsv",
+      "url": "https://raw.githubusercontent.com/hamedrab/wsdm22_cup_xmrec/f5b1f087a4054537cd8f46bf346f978094b8467e/DATA/t2/valid_run.tsv",
+      "bytes": 4994102,
+      "sha256": "04e47b0f4d769a2a588de2837ff2743311b817dfbd6ae9c89400bd23a0a5062c"
+    },
+    {
+      "destination": "resources/slides/01_Basics_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/01_Basics_01.pdf",
+      "bytes": 1672996,
+      "sha256": "d23a0caa227611db938d3bcf76a7e3ca2a490d68576442cbf8c0ce01e92cf26c"
+    },
+    {
+      "destination": "resources/slides/01_Basics_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/01_Basics_02.pdf",
+      "bytes": 626369,
+      "sha256": "a32c09d483e7fb5cd6153908a24b815734adfe46bc1660dfc13d3cb4b9b211a5"
+    },
+    {
+      "destination": "resources/slides/01_Basics_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/01_Basics_03.pdf",
+      "bytes": 266510,
+      "sha256": "dbee3488e562538e7cbb613cdf9173f3c2146c47c0de79fbcd9d2cc53418088b"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_01.pdf",
+      "bytes": 852699,
+      "sha256": "7de5aacde1346afdef0bf26f46b5bb1553d8547207f547eb92ebf3f4e38764ee"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_02.pdf",
+      "bytes": 291622,
+      "sha256": "97b42ae8236932ca7e538ed034305918928103e11de3fc218c561e0f6d7af50d"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_03.pdf",
+      "bytes": 1351829,
+      "sha256": "9c6c00e7d0be6da5f75d5c5e24f1f654746baaefa55ed0c11f576ced3739fa1d"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_04.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_04.pdf",
+      "bytes": 297263,
+      "sha256": "63af0c9f5da02d607ad63d18ed55659ef904c77a78a2839c0944847fcccd5f6e"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_05.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_05.pdf",
+      "bytes": 543895,
+      "sha256": "22990683dda183daea6bca1fc890d09445178719f1774f1599819c901a6dd617"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_06.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_06.pdf",
+      "bytes": 1361968,
+      "sha256": "c427779656a2b201b4f6adf0ae9528f543d8f5ddf6be9d64d8f68c774ae87a4c"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_07.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_07.pdf",
+      "bytes": 735429,
+      "sha256": "740a12227624597d26414cd32c5dafaf7e4976ea14202f10c082be7f85416b75"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_08.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_08.pdf",
+      "bytes": 523894,
+      "sha256": "5073f9b13b5c824faf266129698d8dad08ca2059ef4ad5313f4675183fae2689"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_09.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_09.pdf",
+      "bytes": 1059856,
+      "sha256": "8ef93ee0f7465eb6ca0697f8e69a420a75d8f37d260c9f3408c72049b534da76"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_10.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_10.pdf",
+      "bytes": 592969,
+      "sha256": "681f360e0e5c8693485e17aaf186facee08ca58bd4180101bd1ee030e4b8200f"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_11.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_11.pdf",
+      "bytes": 587891,
+      "sha256": "a06a9d64de7de8eacb9f84144d4dfb755ca0cd9eb3f02da66f3e589da25c0ee2"
+    },
+    {
+      "destination": "resources/slides/02_Retrieval_12.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/02_Retrieval_12.pdf",
+      "bytes": 308791,
+      "sha256": "efca308181b32850dae7d0d8f24c468b385fa9daa66b8e841f29ddb809887b29"
+    },
+    {
+      "destination": "resources/slides/03_Rank_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/03_Rank_01.pdf",
+      "bytes": 627582,
+      "sha256": "add718799e2f5b7427cbec5f40645e0657ca03521e1aa9ffbb495bdf50942ee6"
+    },
+    {
+      "destination": "resources/slides/03_Rank_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/03_Rank_02.pdf",
+      "bytes": 1022947,
+      "sha256": "8d4c798b2eba1fe43e1052dff045b90f8df970c99e1ecd9ef1fbccee990993e3"
+    },
+    {
+      "destination": "resources/slides/03_Rank_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/03_Rank_03.pdf",
+      "bytes": 104556,
+      "sha256": "041e2f0f036dd0b894205ecaa9101c16eb8aa32893a0e6ac86604c7c7dee1c86"
+    },
+    {
+      "destination": "resources/slides/03_Rank_04.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/03_Rank_04.pdf",
+      "bytes": 300170,
+      "sha256": "c29310e9e0a425060d1cb41438174304c59d4636021bcfbb3f948e626119c7cb"
+    },
+    {
+      "destination": "resources/slides/03_Rank_05.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/03_Rank_05.pdf",
+      "bytes": 187919,
+      "sha256": "acf80f78cea38534c6e5ab34b998af5cec98a4d9c924bac7b82adc0762d5ef1d"
+    },
+    {
+      "destination": "resources/slides/03_Rank_06.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/03_Rank_06.pdf",
+      "bytes": 574895,
+      "sha256": "556502ad59f4a7516a4e781f9ee79eb8be7a872acdcd529c721ad9391998cc8f"
+    },
+    {
+      "destination": "resources/slides/04_Cross_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/04_Cross_01.pdf",
+      "bytes": 112703,
+      "sha256": "14eb66c2f1cb61c1285dbc9bb349614d8b477f0e5d83d8a74be9bc3b5d204b10"
+    },
+    {
+      "destination": "resources/slides/04_Cross_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/04_Cross_02.pdf",
+      "bytes": 1660584,
+      "sha256": "7fa6a6ab88b909aac832a31a70f5b65102593b628063eaa36ef90456959a903d"
+    },
+    {
+      "destination": "resources/slides/04_Cross_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/04_Cross_03.pdf",
+      "bytes": 576035,
+      "sha256": "e430e69514aeee28bfbb26b387c71132afed22323bb84aa1e26ed0f8a20f0bdd"
+    },
+    {
+      "destination": "resources/slides/04_Cross_04.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/04_Cross_04.pdf",
+      "bytes": 549559,
+      "sha256": "d27d50c11da197224026b49b60981f971157bcf631edb9d3e012b7dc91298b6e"
+    },
+    {
+      "destination": "resources/slides/05_LastN_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/05_LastN_01.pdf",
+      "bytes": 395581,
+      "sha256": "c842e8550c6a098731c65dae9c7245ee1672d47d1388e03bb37da66b79a1fb24"
+    },
+    {
+      "destination": "resources/slides/05_LastN_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/05_LastN_02.pdf",
+      "bytes": 427133,
+      "sha256": "eb31258e4df95358eec2d75ecf7f5d5b795eca7927cb0a27b9854db7d21b201c"
+    },
+    {
+      "destination": "resources/slides/05_LastN_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/05_LastN_03.pdf",
+      "bytes": 292014,
+      "sha256": "0b7d04128b2b6767a392307d8ba59c7a820c786eab3b27b94cde8f41b2223e30"
+    },
+    {
+      "destination": "resources/slides/06_Rerank_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/06_Rerank_01.pdf",
+      "bytes": 850719,
+      "sha256": "4d29b903d001b6750fa11e214e80b3d99902848fd34cb7965f0c6cf883a310a0"
+    },
+    {
+      "destination": "resources/slides/06_Rerank_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/06_Rerank_02.pdf",
+      "bytes": 260584,
+      "sha256": "7a20d9e97c21654ed88101ac1d1bbd07a644932c4a4f846b3c4087037452c798"
+    },
+    {
+      "destination": "resources/slides/06_Rerank_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/06_Rerank_03.pdf",
+      "bytes": 123429,
+      "sha256": "9aa508bc4f6e23859f9737d869fb881809a1833e11b1c0940629036800b2fa86"
+    },
+    {
+      "destination": "resources/slides/06_Rerank_04.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/06_Rerank_04.pdf",
+      "bytes": 174269,
+      "sha256": "be9da03c3b8614bd5edeab98064b1db42d1a2550e6cd94479744e0c68f18cfce"
+    },
+    {
+      "destination": "resources/slides/06_Rerank_05.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/06_Rerank_05.pdf",
+      "bytes": 290480,
+      "sha256": "329c38000d1b57daf19ad3d58853c14d5c9cf2b22bd5a19f396be7aa66fdfc6e"
+    },
+    {
+      "destination": "resources/slides/07_ColdStart_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/07_ColdStart_01.pdf",
+      "bytes": 227944,
+      "sha256": "d84ac6bbba1ee759bcec08d1c821704c86bc284d8a4b0fe84e0b62b0e189696c"
+    },
+    {
+      "destination": "resources/slides/07_ColdStart_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/07_ColdStart_02.pdf",
+      "bytes": 903200,
+      "sha256": "1c41ebb9c3cc7ca7a8f1a31b24a3760369b6ce61c4073df038cd9795bfb961d1"
+    },
+    {
+      "destination": "resources/slides/07_ColdStart_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/07_ColdStart_03.pdf",
+      "bytes": 1292569,
+      "sha256": "2bbafc81c1e64cd6c4f7d132e3db1f124361a9c20409e9093d89ffa8431fa3b4"
+    },
+    {
+      "destination": "resources/slides/07_ColdStart_04.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/07_ColdStart_04.pdf",
+      "bytes": 589295,
+      "sha256": "431a8767a65f7c84ba16c403e9dfb6eb63129384d6708b1a7a9003d00538afb8"
+    },
+    {
+      "destination": "resources/slides/07_ColdStart_05.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/07_ColdStart_05.pdf",
+      "bytes": 440344,
+      "sha256": "4de7cdf2fe860886cebdf0efb496b19f624e397cb34362ba4a19942681699a8b"
+    },
+    {
+      "destination": "resources/slides/07_ColdStart_06.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/07_ColdStart_06.pdf",
+      "bytes": 235892,
+      "sha256": "af65f80cf114d24d484482454c96a5b6b2070d3cd9c09165f74e5144ab6bf589"
+    },
+    {
+      "destination": "resources/slides/08_Improvement_01.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/08_Improvement_01.pdf",
+      "bytes": 129116,
+      "sha256": "eaf97307d8bc39068ddc6cf2d1826bda38efdc9ca3909ae22b42db7de272429e"
+    },
+    {
+      "destination": "resources/slides/08_Improvement_02.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/08_Improvement_02.pdf",
+      "bytes": 228372,
+      "sha256": "a006cfef6f490bfd0f40e00eb1af16e992f9f3e4cf1470698d9393738c8d383b"
+    },
+    {
+      "destination": "resources/slides/08_Improvement_03.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/08_Improvement_03.pdf",
+      "bytes": 484498,
+      "sha256": "f372e57af9fe42a4a1554199cd27f218fcff6cb4172a732edc11cb7d362af06f"
+    },
+    {
+      "destination": "resources/slides/08_Improvement_04.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/08_Improvement_04.pdf",
+      "bytes": 238957,
+      "sha256": "d0f3e66e16463bfe475a651c0fa61b0deaf9d70c4cb8fcc600a460d4b341a9bb"
+    },
+    {
+      "destination": "resources/slides/08_Improvement_05.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/08_Improvement_05.pdf",
+      "bytes": 306314,
+      "sha256": "77593c009aea02f7efc24841f5744fb7647b8acd173a1337bbcd4484fcbde2ce"
+    },
+    {
+      "destination": "resources/slides/08_Improvement_06.pdf",
+      "url": "https://raw.githubusercontent.com/wangshusen/RecommenderSystem/8c8796c560c13059b19b51f5b5b963137f4ef287/Slides/08_Improvement_06.pdf",
+      "bytes": 271824,
+      "sha256": "cb957dda61d4d4da137e079196ebf7a31ea2abb37cc6b950c25e0c6c45c1ce48"
+    }
+  ]
+}

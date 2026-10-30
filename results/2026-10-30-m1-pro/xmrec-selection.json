@@ -1,0 +1,10 @@
+{
+  "selected": "lgb_memory",
+  "selection_scores": {
+    "lgb_stats": 0.38162450881408494,
+    "lgb_memory": 0.6354650235702426,
+    "lgb_all": 0.6332501801243621,
+    "lgb_neg9": 0.6328948513583263
+  },
+  "criterion": "combined select nDCG@10, user weighted; audit metrics not consulted"
+}

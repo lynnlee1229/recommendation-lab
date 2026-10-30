@@ -1,0 +1,76 @@
+/* Keep numeric comparisons readable inside a horizontally scrollable table. */
+.metrics table {
+  min-width: 840px;
+}
+.metrics td:first-child {
+  min-width: 210px;
+}
+.metrics .mono {
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+.notebook-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 22px 0 12px;
+}
+.rail-course-link {
+  display: block;
+  color: #e7efeb;
+  padding: 10px 9px;
+  margin-bottom: 14px;
+  border: 1px solid #829d92;
+  text-decoration: none;
+  font-size: 13px;
+}
+.notebook-entry {
+  display: block;
+  padding: 16px 0;
+  border-block: 1px solid var(--line);
+  text-decoration: none;
+}
+.notebook-entry strong {
+  display: block;
+  font-size: 17px;
+}
+.notebook-entry span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+.source-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  max-height: 660px;
+  overflow: auto;
+}
+.source-panel ol {
+  margin: 0;
+  padding: 18px 18px 18px 54px;
+  min-width: max-content;
+}
+.source-panel li {
+  padding-left: 12px;
+  color: #71817c;
+  font: 12px/1.8 var(--mono);
+}
+.source-panel code {
+  background: transparent;
+  padding: 0;
+  color: var(--ink);
+  white-space: pre;
+  font: 12px/1.8 var(--mono);
+}
+@media (max-width: 700px) {
+  .notebook-links {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

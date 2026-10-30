@@ -1,0 +1,5 @@
+{
+  "name": "history64 / 增加维度",
+  "dim": 64,
+  "epochs": 8
+}
