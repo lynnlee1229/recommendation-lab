@@ -42,7 +42,7 @@ SOURCE_FILES = {
     "data": ("reclab/data.py", "真实数据、时间切分与因果训练样本"),
     "retrieval": ("reclab/retrieval.py", "ItemCF、过滤、排名指标和 MMR"),
     "train": ("reclab/train.py", "训练循环、优化器、checkpoint 与验证"),
-    "service": ("reclab/service.py", "Python 推荐服务与工作台 API"),
+    "service": ("reclab/service.py", "统一工作台 API：推荐、搜索、点击预测与模拟决策"),
 }
 job_lock = threading.Lock()
 job_state = {"state": "idle"}

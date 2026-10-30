@@ -30,42 +30,58 @@ function notice(s = "") {
 function table(head, rows, className = "") {
   return `<div class="table-wrap ${className}"><table><thead><tr>${head.map((h) => `<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
-const labels = {
-  home: ["搜推广告学习 Lab", "从一个问题开始：先预测，只改一个变量，运行，再解释结果。"],
-  search: ["搜索工作区", "真实 SciFact 文档上的检索、融合与重排。"],
-  ads: ["广告工作区", "真实点击概率与独立模拟市场，分别观察与解释。"],
-  research: ["共享实验记录", "同一系统的推荐、搜索与广告；各领域独立评估。"],
-  overview: ["实验概览", "先建立可信的比较口径，再观察模型学到了什么。"],
-  trace: ["推荐工作区", "追踪召回、过滤、融合与 MMR。每个候选都保留来源和分数。"],
-  features: ["特征与样本", "检查时间边界、Embedding 输入和真实训练样本。"],
-  experiments: ["训练与实验", "一次改变一个变量，让假设接受真实数据检验。"],
-  course: [
-    "课程地图",
-    "45 份讲义的实验路线。区分机制复现、待实现内容与数据缺口。",
-  ],
-  code: ["学习路径与源码", "读真实 Python 源码，在独立内核里逐格运行实验。"],
-};
-document.querySelectorAll("nav button").forEach((b) =>
-  b.addEventListener("click", () => {
-    document
-      .querySelectorAll("nav button,.tab")
-      .forEach((e) => e.classList.remove("active"));
-    b.classList.add("active");
-    document.querySelectorAll("nav button").forEach(x => x.setAttribute("aria-current", x === b ? "page" : "false"));
-    location.hash = b.dataset.tab;
-    $(b.dataset.tab).classList.add("active");
-    $("page-title").textContent = labels[b.dataset.tab][0];
-    $("page-desc").textContent = labels[b.dataset.tab][1];
-    notice();
-    window.scrollTo({ top: 0, behavior: "auto" });
-    if (b.dataset.tab === "code") {
-      loadCode();
-      loadNotebookCatalog();
-    }
-  }),
-);
+let currentRoute = {module: 'common', page: 'start'};
+function renderRoute() {
+  const previous = currentRoute;
+  currentRoute = resolveRoute(location.hash);
+  const config = LAB_MODULES[currentRoute.module];
+  const page = config.pages.find(p => p[0] === currentRoute.page);
+  const canonical = `#${currentRoute.module}/${currentRoute.page}`;
+  if (location.hash !== canonical) history.replaceState(null, '', canonical);
+  document.querySelectorAll('#module-nav a').forEach(a => {
+    const active = a.dataset.route.split('/')[0] === currentRoute.module;
+    a.classList.toggle('active', active);
+    if (active) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+  $('module-pages').innerHTML = config.pages.map(([id, label]) =>
+    `<a href="#${currentRoute.module}/${id}" data-route="${currentRoute.module}/${id}" ${id === currentRoute.page ? 'aria-current="page" class="active"' : ''}>${esc(label)}</a>`
+  ).join('');
+  $('module-pages').setAttribute('aria-label', `${config.title}模块内导航`);
+  $('module-pages').querySelector('[aria-current=page]').scrollIntoView({block:'nearest', inline:'nearest'});
+  $('breadcrumb').textContent = `${config.code} / ${config.title} / ${page[1]}`;
+  $('page-title').textContent = `${config.title} · ${page[1]}`;
+  $('page-desc').textContent = config.description;
+  document.querySelectorAll('.tab').forEach(section => section.classList.toggle('active', section.id === page[2]));
+  $('research-domain-control').hidden = currentRoute.module !== 'common';
+  $('research-domain').value = currentRoute.module === 'common' ? 'all' : currentRoute.module;
+  filterResearch();
+  notice();
+  if (page[2] === 'code') {
+    if (previous.module !== currentRoute.module) $('course-query').value = '';
+    $('path-intro').textContent = config.description + ' 先读综合章建立全景，再沿链路逐节运行。';
+    loadNotebookCatalog();
+  }
+  if (page[2] === 'source') {
+    if (sourceDomain !== currentRoute.module) { $('source-module').innerHTML = ''; $('source-content').textContent = '正在读取本模块源码…'; $('source-caption').textContent = ''; $('edit-source').hidden = true; }
+    $('source-intro').textContent = `这里只展示${config.title}模块的源码。跨领域共用的记录、概率评估与服务入口收在公用模块。`;
+    loadCode();
+  }
+  window.scrollTo({top: 0, behavior: 'auto'});
+}
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[data-route]');
+  if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  const hash = `#${link.dataset.route}`;
+  if (location.hash !== hash) history.pushState(null, '', hash);
+  renderRoute();
+  $('page-title').focus({preventScroll: true});
+});
+window.addEventListener('hashchange', renderRoute);
+window.addEventListener('popstate', renderRoute);
 let notebookCatalog = [];
 async function loadNotebookCatalog() {
+  renderNotebookCatalog();
   try {
     const result = await api("/api/notebooks");
     notebookCatalog = result.notebooks;
@@ -76,51 +92,39 @@ async function loadNotebookCatalog() {
       `<p role="alert">课程目录加载失败：${esc(error.message)}。请刷新重试。</p>`;
   }
 }
-const pathInfo = {
- foundation: ['基础与导览', '00 导览 → 01 数据 → 02 双塔 → 03 评估基础；再选择一个领域深入。'],
- recommendation: ['推荐', '04–10 机制 → 11–15 XMRec 竞赛 → 16 综合对照；机制练习不等于论文完整复现。'],
- search: ['搜索', '17 综合实验先看全景，再按 25–30 拆解任务、词法、语义、索引、重排与误差。'],
- ads: ['广告', '18 综合实验 → 19–22 真实点击建模与校准 → 23–24 独立模拟拍卖和预算。']
-};
-function chapterDomain(item) {
- const n = parseInt(item.file, 10);
- return n <= 3 ? 'foundation' : n <= 16 ? 'recommendation' : n === 17 || n >= 25 ? 'search' : 'ads';
-}
 function renderNotebookCatalog() {
- const q = $('course-query').value.trim().toLowerCase();
- const domain = $('course-domain').value;
- const items = notebookCatalog.filter(x => (domain === 'all' || chapterDomain(x) === domain) && `${x.file} ${x.title} ${x.mode}`.toLowerCase().includes(q));
- $('notebook-list-summary').textContent = `显示 ${items.length} / ${notebookCatalog.length} 本 Notebook · 综合章与深入章共享同一实验`;
- $('notebook-list').innerHTML = Object.entries(pathInfo).map(([key,[title,desc]]) => {
-  const group = items.filter(x => chapterDomain(x) === key);
-  if (!group.length) return '';
-  return `<section class="learning-path"><h2>${title} <small>${group.length} 章</small></h2><p>${desc}</p><div class="chapter-grid">${group.map(item => {
-   const n = parseInt(item.file,10);
-   const evidence = n === 0 ? '学习导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
-   const content = `<span class="badge">${evidence}</span><strong>${esc(item.title)}</strong><span>${esc(item.mode)}</span>`;
-   return item.available ? `<a class="notebook-entry" href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${content}</a>` : `<div class="notebook-entry">${content}<span>文件暂不可用</span></div>`;
-  }).join('')}</div></section>`;
- }).join('') || '<div class="empty">没有匹配章节。试试其他关键词或切回全部路径。</div>';
+  if (!notebookCatalog.length) { $('notebook-list-summary').textContent = '正在读取本模块课程…'; $('notebook-list').textContent = ''; return; }
+  const q = $('course-query').value.trim().toLowerCase();
+  const phases = COURSE_PATHS[currentRoute.module] || [];
+  const all = phases.flatMap(p => p.chapters);
+  const catalog = notebookCatalog.filter(x => all.includes(parseInt(x.file, 10)));
+  const items = catalog.filter(x => `${x.file} ${x.title} ${x.mode}`.toLowerCase().includes(q));
+  $('notebook-list-summary').textContent = `本模块 ${catalog.length} 本 · 当前显示 ${items.length} 本`;
+  $('notebook-list').innerHTML = phases.map(({title, description, chapters}) => {
+    const group = chapters.flatMap(n => items.filter(x => parseInt(x.file, 10) === n));
+    if (!group.length) return '';
+    return `<section class="learning-path"><h2>${esc(title)} <small>${group.length} 章</small></h2><p>${esc(description)}</p><div class="chapter-grid">${group.map(item => {
+      const n = parseInt(item.file, 10);
+      const evidence = n === 0 ? '旧版推荐导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
+      const content = `<span class="badge">${evidence}</span><strong>${esc(item.title)}</strong><span>${esc(item.mode)}</span>`;
+      return item.available ? `<a class="notebook-entry" href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${content}</a>` : `<div class="notebook-entry">${content}<span>文件暂不可用</span></div>`;
+    }).join('')}</div></section>`;
+  }).join('') || '<div class="empty">没有匹配章节。清除关键词再试。</div>';
 }
 $('course-query').addEventListener('input', renderNotebookCatalog);
-$('course-domain').addEventListener('change', renderNotebookCatalog);
-document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => document.querySelector(`nav button[data-tab="${b.dataset.open}"]`).click()));
-let codeCatalogReady = false;
+let sourceCatalog = [];
+let sourceDomain;
 async function loadCode() {
-  if (!codeCatalogReady) {
-    try {
-      const catalog = await api('/api/code');
-      const selector = $('source-module');
-      for (const item of catalog.files) {
-        if (!Array.from(selector.options).some(option => option.value === item.id)) {
-          const option = document.createElement('option');
-          option.value = item.id; option.textContent = `${item.path} · ${item.description}`;
-          selector.appendChild(option);
-        }
-      }
-      codeCatalogReady = true;
-    } catch (error) { notice(error.message); }
-  }
+  try {
+    if (!sourceCatalog.length) sourceCatalog = (await api('/api/code')).files;
+    const selector = $('source-module');
+    const files = LAB_MODULES[currentRoute.module].sources.flatMap(id => sourceCatalog.filter(item => item.id === id));
+    if (sourceDomain !== currentRoute.module || !files.some(f => f.id === selector.value)) {
+      selector.innerHTML = files.map(item => `<option value="${esc(item.id)}">${esc(item.path)} · ${esc(item.description)}</option>`).join('');
+      sourceDomain = currentRoute.module;
+    }
+    if (!files.length) { $('source-content').textContent = '本模块尚无可查看源码。'; return; }
+  } catch (error) { notice(`源码目录读取失败：${error.message}`); return; }
   const module = $("source-module").value;
   try {
     const result = await api(`/api/code/${module}`);
@@ -154,8 +158,7 @@ async function loadCode() {
   }
 }
 $("source-module").addEventListener("change", loadCode);
-if (location.hash === "#code")
-  document.querySelector('[data-tab="code"]').click();
+
 function chart(curve, field, title) {
   if (!curve.length) return "";
   const w = 660,
@@ -236,7 +239,7 @@ function drawOverview() {
       ["词表外的新物品目标", number(audit.cold_oov_targets_excluded)],
       ["训练期已看过的目标", number(audit.previously_seen_targets_excluded)],
     ],
-  )}<p class="muted">这些是用户-物品对数量；指标只描述所选活跃用户群的新物品、暖商品推荐，不能外推全站或冷启动。</p></div></div><div class="note"><strong>第一轮动手：历史真的有用吗？</strong><p>进入“推荐过程”，固定用户和模型，先正常推荐，再清空序列特征。预测哪些商品会变化，然后查看实际结果。注意：用户 ID Embedding 仍然保留。</p></div><h3>当前链路的真实边界</h3><p>已实现：热门 / ItemCF / 双塔召回、已看过滤、RRF 融合、MMR 重排、特征和样本检查。粗排、精排、多目标模型和实时特征尚未接入。</p><p class="muted">数据来源：<a href="${esc(m.source_card)}" target="_blank" rel="noopener">Retailrocket 发布页 ↗</a> · SHA-256 <span class="mono">${esc(m.archive_sha256)}</span></p>`;
+  )}<p class="muted">这些是用户-物品对数量；指标只描述所选活跃用户群的新物品、暖商品推荐，不能外推全站或冷启动。</p></div></div><div class="note"><strong>第一轮动手：历史真的有用吗？</strong><p>进入推荐模块的“召回与重排”，固定用户和模型，先正常推荐，再清空序列特征。预测哪些商品会变化，然后查看实际结果。注意：用户 ID Embedding 仍然保留。</p></div><h3>当前链路的真实边界</h3><p>已实现：热门 / ItemCF / 双塔召回、已看过滤、RRF 融合、MMR 重排、特征和样本检查。粗排、精排、多目标模型和实时特征尚未接入。</p><p class="muted">数据来源：<a href="${esc(m.source_card)}" target="_blank" rel="noopener">Retailrocket 发布页 ↗</a> · SHA-256 <span class="mono">${esc(m.archive_sha256)}</span></p>`;
 }
 function populate() {
   for (const id of ["trace-user", "feature-user"]) {
@@ -497,7 +500,7 @@ async function drawResearch() {
       const panel = document.createElement('details');
       panel.open = false;
       panel.dataset.domain = run.domain;
-      panel.innerHTML = `<summary>${esc(run.domain)} · ${esc(run.run_id)}</summary><p>${esc(result.scope || '')}</p>`;
+      panel.innerHTML = `<summary>${esc(LAB_MODULES[run.domain]?.title || run.domain)} · ${result.kind === 'workshop' ? '教学 select' : '正式实验'} · ${esc(run.run_id)}</summary><p>${esc(result.scope || '')}</p>`;
       if (run.domain === 'recommendation') {
         panel.innerHTML += table(['编码器','负采样','种子','NDCG@20','Recall@20','打乱历史NDCG','覆盖率','训练秒'], result.rows.map(r => [esc(r.encoder),esc(r.sampler),r.seed,fmt(r['ndcg@20']),fmt(r['recall@20']),fmt(r.shuffled['ndcg@20']),fmt(r['coverage@20']),r.seconds.toFixed(1)]));
         panel.innerHTML += '<p>短训练与有限样本的教学对照；参数量不同，不能声称模型结构普遍优劣。loss不是点击概率，不跨采样策略比较loss绝对值。</p>';
@@ -533,14 +536,8 @@ drawResearch();
 $('research-domain').addEventListener('change', filterResearch);
 $('research-refresh').addEventListener('click', drawResearch);
 function filterResearch() { const d = $('research-domain').value; document.querySelectorAll('#research-results > details').forEach(p => p.hidden = d !== 'all' && p.dataset.domain !== d); }
-async function loadHome() {
- try { const {experiments} = await api('/api/experiments'); for (const [id,domain] of [['trace','recommendation'],['search','search'],['ads','ads']]) { const runs = experiments.filter(r => r.domain === domain && r.state === 'completed' && !r.annotation?.superseded); $(`status-${id}`).textContent = runs.length ? `${runs.length} 条已完成记录 · 打开工作区运行真实交互` : '尚无完成记录 · 请按工作区提示准备数据与模型'; } }
- catch(e) { ['trace','search','ads'].forEach(id => $(`status-${id}`).textContent = `状态读取失败：${e.message}`); }
-}
-loadHome();
 document.querySelectorAll('#search-output,#ads-output,#auction-output').forEach(x => { x.setAttribute('role','status'); x.setAttribute('aria-live','polite'); });
-const initialTab = location.hash.slice(1);
-if (labels[initialTab]) document.querySelector(`nav button[data-tab="${initialTab}"]`).click();
+renderRoute();
 
 $('search-form').addEventListener('submit', async (event) => {
   event.preventDefault();

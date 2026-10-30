@@ -1,0 +1,35 @@
+{
+  "structure": [
+    "common",
+    "search",
+    "ads",
+    "recommendation"
+  ],
+  "notebooks": {
+    "recommendation": 17,
+    "search": 7,
+    "ads": 7,
+    "common": 0
+  },
+  "gap": "Standalone common foundations course; original 00 and 01-03 remain recommendation",
+  "checks": {
+    "pytest": 83,
+    "frontend_invariants": 4,
+    "legacy_experiments": "recommendation/two-tower",
+    "browser": [
+      "module-only source options",
+      "domain-only experiment records",
+      "course search limited to current module",
+      "browser back and forward",
+      "nested route reload",
+      "real RRF search",
+      "real recommendation",
+      "real CTR prediction",
+      "independent auction budget checks",
+      "390px viewport, page width 390"
+    ]
+  },
+  "console": "Runtime exception traced to Zotero chrome-extension inject.js; no application exception observed",
+  "notebooks_modified": false,
+  "retraining": false
+}

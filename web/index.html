@@ -5,33 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>搜推广告学习 Lab · Search Recommendation Ads Lab</title>
     <link rel="stylesheet" href="/static/style.css" />
-    <link rel="stylesheet" href="/static/refinements.css?v=unified2" />
+    <link rel="stylesheet" href="/static/refinements.css?v=modules1" />
   </head>
   <body>
     <a class="skip-link" href="#page-title">跳到主要内容</a>
     <aside class="rail">
       <div class="brand">SEARCH · REC · ADS<br /><strong>学习 LAB</strong></div>
       <div class="rail-note">理解机制，运行实验，追溯证据。</div>
-      <a
-        class="rail-course-link"
-        href="/notebooks?target=course"
-        target="_blank"
-        rel="noopener"
-        >打开 Notebook 课程 ↗</a
-      >
-      <nav aria-label="工作台导航">
-        <button data-tab="home" class="active">学习总览</button>
-        <button data-tab="trace">推荐工作区</button>
-        <button data-tab="search">搜索工作区</button>
-        <button data-tab="ads">广告工作区</button>
-        <button data-tab="code">学习路径与源码</button>
-        <button data-tab="research">共享实验记录</button>
-        <span class="nav-label">推荐诊断与参考</span>
-        <button data-tab="overview">推荐数据总览</button>
-        <button data-tab="features">推荐特征与样本</button>
-        <button data-tab="experiments">双塔训练</button>
-        <button data-tab="course">讲义与论文</button>
+      <nav id="module-nav" aria-label="一级模块">
+        <a href="#common/start" data-route="common/start"><span>公用</span><small>COMMON</small></a>
+        <a href="#search/path" data-route="search/path"><span>搜索</span><small>SEARCH</small></a>
+        <a href="#ads/path" data-route="ads/path"><span>广告</span><small>ADS</small></a>
+        <a href="#recommendation/path" data-route="recommendation/path"><span>推荐</span><small>REC</small></a>
       </nav>
+      <p class="rail-context">课程、工具与实验记录<br>在各自模块内查看。</p>
       <div class="rail-foot">
         LOCAL · OFFLINE<br />Retailrocket · SciFact · Criteo<br /><span
           id="version"
@@ -41,42 +28,47 @@
     </aside>
     <main>
       <header>
-        <div class="eyebrow">REBUILD INTUITION · RUN EXPERIMENTS</div>
+        <div id="breadcrumb" class="eyebrow">公用 / 起步</div>
         <h1 id="page-title" tabindex="-1">搜推广告学习 Lab</h1>
         <p id="page-desc">
           从一个问题开始：先预测，只改一个变量，运行，再解释结果。
         </p>
       </header>
+      <nav id="module-pages" aria-label="模块内导航"></nav>
       <div id="notice" role="status" aria-live="polite"></div>
       <section id="overview" class="tab">
         <div id="overview-content"><p>正在读取真实数据与训练结果…</p></div>
       </section>
       <section id="home" class="tab active">
-        <div class="hero"><span class="eyebrow">ONE LAB · THREE LEARNING PATHS</span><h2>从候选到排序，<br>从概率到决策。</h2><p>真实数据建立判断，短实验拆解机制。推荐、搜索与广告共享课程、源码和可追溯的实验记录。</p><button data-open="code" class="primary">选择学习路径 →</button></div>
-        <div class="domain-grid">
-<article class="domain-card"><span class="eyebrow">Retailrocket / XMRec</span><h2>推荐</h2><p>用户历史如何变成候选与排序？</p><p class="muted">01–16 · 基础、机制、竞赛与综合实验</p><p id="status-trace" role="status">读取实验状态…</p><button data-open="trace">进入推荐工作区 →</button> <a href="/notebooks?target=deep_recommendation" target="_blank" rel="noopener">综合 Notebook ↗</a></article><article class="domain-card"><span class="eyebrow">BEIR SciFact</span><h2>搜索</h2><p>词法、语义与重排分别解决什么问题？</p><p class="muted">17 总览 → 25–30 深入六章</p><p id="status-search" role="status">读取实验状态…</p><button data-open="search">进入搜索工作区 →</button> <a href="/notebooks?target=search" target="_blank" rel="noopener">综合 Notebook ↗</a></article><article class="domain-card"><span class="eyebrow">Criteo / 独立模拟市场</span><h2>广告</h2><p>点击概率如何连接校准与预算决策？</p><p class="muted">18 总览 → 19–24 深入六章</p><p id="status-ads" role="status">读取实验状态…</p><button data-open="ads">进入广告工作区 →</button> <a href="/notebooks?target=ads" target="_blank" rel="noopener">综合 Notebook ↗</a></article></div><div class="note"><strong>先分清证据，再比较结果</strong><p>推荐日志缺少完整曝光；SciFact 相关性判断不完整；Criteo 概率属于抽样分布。拍卖与预算使用独立模拟市场，模拟收入不能证明线上收益。各领域指标不作横向排名。</p></div></section>
+        <div class="intro-copy"><h2>先建立方法，再进入领域。</h2><p>公用模块放三领域共享的学习方法、评估口径和实验基础设施。具体模型、领域数据与课程留在搜索、广告、推荐各自模块中。</p></div>
+        <div class="module-map">
+          <a href="#common/method" data-route="common/method"><span class="map-number">00</span><div><h2>公用</h2><p>实验约定、证据边界、全局台账与公共源码。</p></div><span>→</span></a>
+          <a href="#search/path" data-route="search/path"><span class="map-number">01</span><div><h2>搜索</h2><p>查询与文档 → 相关性评估 → 检索 → 融合与重排。</p></div><span>→</span></a>
+          <a href="#ads/path" data-route="ads/path"><span class="map-number">02</span><div><h2>广告</h2><p>曝光与点击 → 概率与校准 → 拍卖与预算。</p></div><span>→</span></a>
+          <a href="#recommendation/path" data-route="recommendation/path"><span class="map-number">03</span><div><h2>推荐</h2><p>行为与样本 → 召回与排序 → 双塔与竞赛实践。</p></div><span>→</span></a>
+        </div>
+        <aside class="content-gap"><strong>公用基础课 · 待补充</strong><p>目前尚无独立于领域的数学、张量与优化入门路径。现有01–03章仍归推荐；原00章也是推荐导览。这里先保留清楚的课程边界，后续单独补齐公用基础。</p></aside>
+      </section>
+      <section id="method" class="tab">
+        <h2>一个实验，先回答四件事</h2>
+        <ol class="method-steps"><li><strong>预测</strong><p>写下问题、预期变化与失败条件，再看结果。</p></li><li><strong>控制变量</strong><p>固定输入、切分、种子与预算，只改变一个变量。</p></li><li><strong>运行</strong><p>先完整运行，再重跑改动格与下游；正式实验另存新记录。</p></li><li><strong>解释</strong><p>检查误差、资源与负结果；只在同一任务和评估口径内比较。</p></li></ol>
+        <h2>共享的是方法，指标取决于任务</h2>
+        <div class="table-wrap"><table><thead><tr><th scope="col">任务</th><th scope="col">实际证据</th><th scope="col">评估口径与局限</th></tr></thead><tbody>
+        <tr><td>搜索</td><td>真实查询、文档与qrels</td><td>NDCG / MRR / Recall；未判断文档不等于已验证负例。</td></tr>
+        <tr><td>广告预测</td><td>真实抽样曝光与点击</td><td>AUC / logloss / Brier / 校准；抽样概率不代表线上CTR。</td></tr>
+        <tr><td>广告决策</td><td>独立生成的市场</td><td>模拟支付、价值与预算约束；不能证明真实增收。</td></tr>
+        <tr><td>推荐</td><td>行为日志与时间边界</td><td>Recall / NDCG / 覆盖；未交互不是真实负曝光。</td></tr></tbody></table></div>
+        <h2>同一套实验基础设施</h2><p>公开输入按固定版本与SHA校验；实验新建记录，保留配置、来源、失败与负结果；教学select与正式评估分开。数据、模型和逐条预测保留本机。</p><p><a href="#common/records" data-route="common/records">查看全局台账 →</a>　<a href="#common/source" data-route="common/source">查看公共源码 →</a></p>
+      </section>
 <section id="search" class="tab"><div class="workspace-intro"><span class="badge">真实语料 · 冻结小模型与训练重排</span><h2>检索一条科学声明</h2><p>输入英文声明，比较词法、语义、融合与重排。分数表示文档排序，不表示声明成立概率。</p><a href="/notebooks?target=search_task_qrels" target="_blank" rel="noopener">深入路径：任务 → BM25 → 语义 → 索引 → 重排 → 误差 ↗</a></div><form id="search-form"><label>在真实 SciFact 语料检索（英文科学声明）<input id="search-query" maxlength="1000" required value="Vitamin D deficiency is associated with cardiovascular disease."></label><label>方法<select id="search-method"><option value="bm25">BM25</option><option value="dense">MiniLM 向量</option><option value="hybrid_rrf" selected>混合 RRF</option><option value="linear_rerank">训练线性重排</option><option value="tinybert_rerank">TinyBERT 重排</option></select></label><button type="submit">检索论文</button></form><div id="search-output"></div><div class="note">首次使用：先按 README 运行 <code>.venv/bin/python -m reclab.search --download</code> 准备数据与正式模型。首次神经查询需加载本机模型。</div></section>
 <section id="ads" class="tab"><div class="workspace-intro"><span class="badge">真实概率预测 / 独立模拟决策</span><h2>先检查概率，再研究出价</h2><p>预测层读取真实训练模型；决策层使用独立生成的市场。两者的结果不能当作真实竞价回放。</p><a href="/notebooks?target=ads_19" target="_blank" rel="noopener">深入路径：数据 → 特征 → 容量 → 校准 → 拍卖 → 预算 ↗</a></div><details open><summary>真实点击模型：修改匿名特征</summary><p>从本机审计样本载入13个数值、26个匿名类别；可修改一个变量。概率仅针对抽样后的公开日志分布。</p><button id="ads-example" type="button">载入真实样本</button><form id="ads-form"><textarea id="ads-input" rows="8" style="width:100%" required aria-label="广告匿名特征JSON"></textarea><button type="submit">计算点击概率</button></form><div id="ads-output"></div></details>
-        <details><summary>独立模拟市场：出价与预算 pacing</summary><p>3个模拟广告主、6000次请求、二价按曝光支付。与Criteo无因果或收益联系；所有货币与收入均为模拟。</p><form id="auction-form"><label>策略<select id="auction-strategy"><option value="value">估计点击率 × 点击价值</option><option value="flat">固定曝光出价</option></select></label><label>每广告主预算<input id="auction-budget" type="number" min="0.01" max="10000" step="0.01" value="60"></label><label>出价倍数<input id="auction-multiplier" type="number" min="0.01" max="10" step="0.01" value="1"></label><label><input id="auction-paced" type="checkbox" checked>均匀预算pacing</label><button type="submit">运行相同seed模拟</button></form><div id="auction-output"></div></details>
         <div class="note">首次使用：运行 <code>.venv/bin/python -m reclab.ads --download</code> 准备真实点击模型。模拟市场可独立运行。</div></section>
-<section id="research" class="tab"><p>同一实验目录，按领域与阶段查看；教学 select 与正式评估独立呈现。</p><label>实验领域<select id="research-domain"><option value="all">全部领域</option><option value="recommendation">推荐</option><option value="search">搜索</option><option value="ads">广告</option></select></label><button id="research-refresh">刷新记录</button><div id="research-results" aria-live="polite">正在读取实验…</div></section>
+<section id="auction" class="tab"><div class="workspace-intro"><span class="badge">独立模拟市场</span><h2>在相同市场里比较出价与预算</h2><p>这一层研究决策机制，与Criteo的真实点击数据分开。先固定潜在市场，再只改变出价倍数或pacing。</p></div>        <details open><summary>独立模拟市场：出价与预算 pacing</summary><p>3个模拟广告主、6000次请求、二价按曝光支付。与Criteo无因果或收益联系；所有货币与收入均为模拟。</p><form id="auction-form"><label>策略<select id="auction-strategy"><option value="value">估计点击率 × 点击价值</option><option value="flat">固定曝光出价</option></select></label><label>每广告主预算<input id="auction-budget" type="number" min="0.01" max="10000" step="0.01" value="60"></label><label>出价倍数<input id="auction-multiplier" type="number" min="0.01" max="10" step="0.01" value="1"></label><label><input id="auction-paced" type="checkbox" checked>均匀预算pacing</label><button type="submit">运行相同seed模拟</button></form><div id="auction-output"></div></details>
+</section>
+<section id="research" class="tab"><p>同一实验目录，按领域与阶段查看；教学 select 与正式评估独立呈现。</p><label id="research-domain-control">实验领域<select id="research-domain"><option value="all">全部领域</option><option value="recommendation">推荐</option><option value="search">搜索</option><option value="ads">广告</option></select></label><button id="research-refresh">刷新记录</button><div id="research-results" aria-live="polite">正在读取实验…</div></section>
       <section id="code" class="tab">
-        <p>
-          <a href="/notebooks?target=course" target="_blank" rel="noopener"
-            ><strong>从 00 · Notebook 课程导航开始 ↗</strong></a
-          >
-        </p>
-        <div class="note">
-          <strong>Notebook 学机制，工作区验证交互，源码追溯实现</strong>
-          <p>
-            推荐从 data.py / models.py 开始，搜索在 search.py，点击预测在 ads.py，模拟决策在 auction.py。网页复用同一 Python 服务。
-          </p>
-          <p>
-            下面直接查看当前运行项目的源码；进入 JupyterLab 后，可以编辑 .py
-            文件，也可以逐格运行 Notebook。
-          </p>
-        </div>
-        <div class="toolbar"><label>学习领域<select id="course-domain"><option value="all">全部路径</option><option value="foundation">基础与导览</option><option value="recommendation">推荐</option><option value="search">搜索</option><option value="ads">广告</option></select></label><label>查找章节<input id="course-query" type="search" placeholder="标题、编号或实验类型"></label></div>
+        <p id="path-intro"></p>
+        <div class="toolbar"><label>查找本模块章节<input id="course-query" type="search" placeholder="标题、编号或实验类型"></label></div>
         <p id="notebook-list-summary" class="muted" aria-live="polite"></p>
         <div id="notebook-list" class="notebook-links" aria-live="polite">
           <p>正在读取完整 Notebook 课程目录…</p>
@@ -85,6 +77,8 @@
           JupyterLab 使用项目独立 Python 3.12
           内核；首次打开会启动本地服务，稍等片刻即可。
         </p>
+      </section>
+      <section id="source" class="tab"><p id="source-intro"></p>
         <div class="toolbar">
           <label
             >Python 模块<select id="source-module">
@@ -292,10 +286,11 @@
       <section id="course" class="tab"><div id="course-content"></div></section>
       <footer>
         所有数据留在本机。推荐日志不含完整曝光；广告概率仅针对公开抽样分布；模拟收益不等于线上收益。<a href="/api/summary" target="_blank" rel="noopener"
-          >原始实验结果 JSON ↗</a
+          >推荐数据快照 JSON ↗</a
         >
       </footer>
     </main>
-    <script src="/static/app.js?v=unified2"></script>
+    <script src="/static/navigation.js?v=modules1"></script>
+    <script src="/static/app.js?v=modules1"></script>
   </body>
 </html>
