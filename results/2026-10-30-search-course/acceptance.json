@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "serial_predecessor_sha": "234bb4a076475ae5dfa6c23ae01b98f872db0e56",
+  "notebooks": 31,
+  "new_chapters": [
+    {
+      "file": "25_Search_Task_Qrels.ipynb",
+      "sha256": "5f7a171f430ed683b2d1ee5efb57339810cf8196ca971b3f958309d62ac0363c",
+      "code_cells": 5,
+      "figures": 0,
+      "seconds": 4.68,
+      "state": "PASS"
+    },
+    {
+      "file": "26_Search_BM25.ipynb",
+      "sha256": "4835c00e575d503bc4563be246c501f602444a398db059c56308b5b253bfd5aa",
+      "code_cells": 6,
+      "figures": 1,
+      "seconds": 5.84,
+      "state": "PASS"
+    },
+    {
+      "file": "27_Search_Semantic.ipynb",
+      "sha256": "01d360c775963b27ee1ddd853966f489fbd4b1f2b1edba6989ed0199922f0a52",
+      "code_cells": 5,
+      "figures": 1,
+      "seconds": 6.71,
+      "state": "PASS"
+    },
+    {
+      "file": "28_Search_ANN.ipynb",
+      "sha256": "034b224bd967ebc425a0dcb9bce63df5e56eaa47cdde214fa5c6ec9bac255d47",
+      "code_cells": 5,
+      "figures": 2,
+      "seconds": 6.75,
+      "state": "PASS"
+    },
+    {
+      "file": "29_Search_Fusion_Ranking.ipynb",
+      "sha256": "e4ae8bd431c8cea66a07a4a7e6d848fd15eebdc954184385ef7ab8afd8101317",
+      "code_cells": 6,
+      "figures": 0,
+      "seconds": 8.58,
+      "state": "PASS"
+    },
+    {
+      "file": "30_Search_Errors_Service.ipynb",
+      "sha256": "eec0189a142b3dad9b38c1e5e4243571291851f44462a7a0c248e728b218954a",
+      "code_cells": 5,
+      "figures": 1,
+      "seconds": 6.27,
+      "state": "PASS"
+    }
+  ],
+  "code_cells": 32,
+  "figures_inspected": 5,
+  "tests_passed": 83,
+  "search_http": {
+    "status": "PASS",
+    "search_run_id": "20261030T124927-d1467622",
+    "methods": [
+      {
+        "method": "bm25",
+        "documents": 10,
+        "matches_offline_top10": true,
+        "milliseconds": 2.4281250007334165
+      },
+      {
+        "method": "dense",
+        "documents": 10,
+        "matches_offline_top10": true,
+        "milliseconds": 15.618792000168469
+      },
+      {
+        "method": "hybrid_rrf",
+        "documents": 10,
+        "matches_offline_top10": true,
+        "milliseconds": 11.492416999317356
+      },
+      {
+        "method": "linear_rerank",
+        "documents": 10,
+        "matches_offline_top10": true,
+        "milliseconds": 12.6047079993441
+      },
+      {
+        "method": "tinybert_rerank",
+        "documents": 10,
+        "matches_offline_top10": true,
+        "milliseconds": 43.62616699836508
+      }
+    ],
+    "notebooks": 31,
+    "recommendations_preserved": 10,
+    "note": "Only this project workbench was restarted; Jupyter left running."
+  },
+  "ads_regression": {
+    "run_id": "20261030T125738-f82b6582",
+    "status": "PASS",
+    "offline_online_probability_rows": 30,
+    "probability_tolerance": 1e-10,
+    "tree_export_golden_rows": 500,
+    "saved_metrics_recomputed": true,
+    "feature_group_overlap": 0,
+    "notebooks": 31,
+    "recommendation_versions": [
+      "ablation-history64",
+      "ablation-logq",
+      "ablation-no-history",
+      "baseline-history32"
+    ],
+    "itemcf": true,
+    "simulation_budget_all_seeds": true
+  },
+  "workshop_run_id": "20261030T131425-ebe3235e",
+  "workshop": {
+    "kind": "workshop",
+    "scope": "Query-grouped search teaching fits: 160/40 training queries; select only; frozen official serving model unchanged.",
+    "rows": [
+      {
+        "method": "bm25_only",
+        "features": 1,
+        "fit_seconds": 0.02911754200067662,
+        "select": {
+          "recall@10": 0.825,
+          "ndcg@10": 0.6702445869227466,
+          "mrr@10": 0.6220436507936509,
+          "hit_rate@10": 0.825
+        }
+      },
+      {
+        "method": "five_features",
+        "features": 5,
+        "fit_seconds": 0.005466832999445614,
+        "select": {
+          "recall@10": 0.7625,
+          "ndcg@10": 0.6678392235417807,
+          "mrr@10": 0.6396527777777777,
+          "hit_rate@10": 0.8
+        }
+      }
+    ]
+  },
+  "formal_search_run_unchanged": "20261030T124927-d1467622",
+  "note": "No original notebook overwritten; search.py change filters workshops in latest(), no official evaluation/training algorithm changed. Models/data/individual predictions remain ignored."
+}

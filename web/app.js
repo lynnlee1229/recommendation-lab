@@ -78,7 +78,22 @@ async function loadNotebookCatalog() {
       `<p role="alert">课程目录加载失败：${esc(error.message)}。请刷新重试。</p>`;
   }
 }
+let codeCatalogReady = false;
 async function loadCode() {
+  if (!codeCatalogReady) {
+    try {
+      const catalog = await api('/api/code');
+      const selector = $('source-module');
+      for (const item of catalog.files) {
+        if (!Array.from(selector.options).some(option => option.value === item.id)) {
+          const option = document.createElement('option');
+          option.value = item.id; option.textContent = `${item.path} · ${item.description}`;
+          selector.appendChild(option);
+        }
+      }
+      codeCatalogReady = true;
+    } catch (error) { notice(error.message); }
+  }
   const module = $("source-module").value;
   try {
     const result = await api(`/api/code/${module}`);
@@ -89,6 +104,9 @@ async function loadCode() {
       .map((line) => `<li><code>${esc(line) || " "}</code></li>`)
       .join("")}</ol>`;
     const editorTarget = {
+      search: "search_code",
+      search_lessons: "search_lessons_code",
+      ads: "ads_code",
       models: "models",
       data: "sampling",
       retrieval: "retrieval",
@@ -102,7 +120,8 @@ async function loadCode() {
       xmrec_metrics: "xmrec_code_metrics",
 
     }[module];
-    $("edit-source").href = `/notebooks?target=${editorTarget}`;
+    $("edit-source").hidden = !editorTarget;
+    if (editorTarget) $("edit-source").href = `/notebooks?target=${editorTarget}`;
   } catch (error) {
     notice(error.message);
   }
@@ -455,10 +474,14 @@ async function drawResearch() {
         panel.innerHTML += table(['编码器','负采样','种子','NDCG@20','Recall@20','打乱历史NDCG','覆盖率','训练秒'], result.rows.map(r => [esc(r.encoder),esc(r.sampler),r.seed,fmt(r['ndcg@20']),fmt(r['recall@20']),fmt(r.shuffled['ndcg@20']),fmt(r['coverage@20']),r.seconds.toFixed(1)]));
         panel.innerHTML += '<p>短训练与有限样本的教学对照；参数量不同，不能声称模型结构普遍优劣。loss不是点击概率，不跨采样策略比较loss绝对值。</p>';
       }
-      if (run.domain === 'search') {
+      if (run.domain === 'search' && result.kind !== 'workshop') {
         panel.innerHTML += table(['方法','NDCG@10','MRR@10','Recall@10','Recall@100','P50毫秒','P95毫秒'], result.rows.map(r => [esc(r.method),fmt(r['ndcg@10']),fmt(r['mrr@10']),fmt(r['recall@10']),fmt(r['recall@100']),r.latency_p50_ms.toFixed(1),r.latency_p95_ms.toFixed(1)]));
         panel.innerHTML += `<p>重排候选Recall@20：${fmt(result['rerank_candidate_recall@20'])}。未判断文档按不相关计算，真实相关性可能不完整。延迟包含查询编码与重排，不含离线建索引。<a href="/notebooks?target=search">打开搜索实验 Notebook ↗</a></p>`;
         panel.innerHTML += table(['失败查询ID','BM25 NDCG','TinyBERT NDCG'],result.failures.slice(0,5).map(r => [esc(r.qid),fmt(r.metrics.bm25['ndcg@10']),fmt(r.metrics.tinybert_rerank['ndcg@10'])]));
+      }
+      if (run.domain === 'search' && result.kind === 'workshop') {
+        panel.innerHTML += table(['教学重排特征','select NDCG@10','select MRR@10','select Recall@10','维度','拟合秒'], result.rows.map(r=>[esc(r.method),fmt(r.select['ndcg@10']),fmt(r.select['mrr@10']),fmt(r.select['recall@10']),r.features,r.fit_seconds.toFixed(3)]));
+        panel.innerHTML += '<p>训练查询按160/40分组的局部练习；select成绩，不替换正式搜索服务。</p>';
       }
       if (run.domain === 'ads' && result.kind === 'workshop') {
         panel.innerHTML += table(['教学方法','select AUC','select logloss','特征维度','拟合秒'],result.rows.map(r=>[esc(r.method),fmt(r.select.auc),fmt(r.select.logloss),r.features,r.fit_seconds.toFixed(2)]));

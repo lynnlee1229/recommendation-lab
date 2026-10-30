@@ -20,6 +20,14 @@ RUNTIME = ROOT / "logs/jupyter-runtime"
 PID_FILE = ROOT / "logs/notebook.pid"
 PYTHON = ROOT / ".venv/bin/python"
 TARGETS = {
+    "search_lessons_code": "reclab/search_lessons.py",
+    "search_task_qrels": "notebooks/25_Search_Task_Qrels.ipynb",
+    "search_bm25": "notebooks/26_Search_BM25.ipynb",
+    "search_semantic": "notebooks/27_Search_Semantic.ipynb",
+    "search_ann": "notebooks/28_Search_ANN.ipynb",
+    "search_fusion_ranking": "notebooks/29_Search_Fusion_Ranking.ipynb",
+    "search_errors_service": "notebooks/30_Search_Errors_Service.ipynb",
+
     "ads_19": "notebooks/19_Ads_Data_Splits.ipynb",
     "ads_20": "notebooks/20_Ads_Linear_Features.ipynb",
     "ads_21": "notebooks/21_Ads_Nonlinearity.ipynb",

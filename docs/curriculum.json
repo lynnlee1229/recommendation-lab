@@ -1062,6 +1062,42 @@
       "file": "24_Ads_Pacing_Integration.ipynb",
       "title": "预算pacing、约束与整合误差分析",
       "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "search_task_qrels",
+      "file": "25_Search_Task_Qrels.ipynb",
+      "title": "真实搜索任务与相关性评估",
+      "mode": "深入搜索 · 真实语料/明确子集 · 公式与单变量实验 · 共享服务"
+    },
+    {
+      "target": "search_bm25",
+      "file": "26_Search_BM25.ipynb",
+      "title": "倒排索引与BM25",
+      "mode": "深入搜索 · 真实语料/明确子集 · 公式与单变量实验 · 共享服务"
+    },
+    {
+      "target": "search_semantic",
+      "file": "27_Search_Semantic.ipynb",
+      "title": "语义编码与向量检索",
+      "mode": "深入搜索 · 真实语料/明确子集 · 公式与单变量实验 · 共享服务"
+    },
+    {
+      "target": "search_ann",
+      "file": "28_Search_ANN.ipynb",
+      "title": "近似索引的召回、候选与延迟",
+      "mode": "深入搜索 · 真实语料/明确子集 · 公式与单变量实验 · 共享服务"
+    },
+    {
+      "target": "search_fusion_ranking",
+      "file": "29_Search_Fusion_Ranking.ipynb",
+      "title": "混合召回与真实重排训练",
+      "mode": "深入搜索 · 真实语料/明确子集 · 公式与单变量实验 · 共享服务"
+    },
+    {
+      "target": "search_errors_service",
+      "file": "30_Search_Errors_Service.ipynb",
+      "title": "失败分析、延迟口径与统一服务",
+      "mode": "深入搜索 · 真实语料/明确子集 · 公式与单变量实验 · 共享服务"
     }
   ]
 }

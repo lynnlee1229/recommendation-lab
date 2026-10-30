@@ -253,7 +253,7 @@ def _run(config, folder):
 
 def latest():
     from .experiments import catalog, result
-    rows=[r for r in catalog() if r['domain']=='search' and r['state']=='completed' and not r.get('annotation',{}).get('superseded')]
+    rows=[r for r in catalog() if r['domain']=='search' and r['state']=='completed' and not r.get('config',{}).get('workshop') and not r.get('annotation',{}).get('superseded')]
     if not rows: raise FileNotFoundError('Run python -m reclab.search first')
     row=rows[-1]
     return row, result('search',row['run_id'])
