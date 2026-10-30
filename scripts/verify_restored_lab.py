@@ -20,7 +20,7 @@ def main():
         health = client.get('/api/health').json()
         assert health['project'] == str(ROOT) and health['data_ready']
         books = client.get('/api/notebooks').json()['notebooks']
-        assert len(books) == 16 and all(x['available'] for x in books)
+        assert len(books) >= 16 and all(x['available'] for x in books)
         lessons = client.get('/api/curriculum').json()['lessons']
         assert len(lessons) == 45
         for lesson in lessons:

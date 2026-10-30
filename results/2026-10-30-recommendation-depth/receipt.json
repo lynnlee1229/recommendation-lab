@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "domain": "recommendation",
+  "run_id": "20261030T123443-578def14",
+  "state": "completed",
+  "config": {
+    "epochs": 4,
+    "samples": 12000,
+    "dim": 24,
+    "history": 20,
+    "seeds": [
+      42,
+      2026
+    ]
+  },
+  "provenance": {
+    "dataset_version": "2772cab0aca8cb81",
+    "evaluation": "warm novel full-catalog validation; no final-test",
+    "audit": {
+      "eligible_users": 339,
+      "evaluated_users": 339,
+      "distinct_user_item_targets_before_filter": 10343,
+      "cold_oov_targets_excluded": 7669,
+      "previously_seen_targets_excluded": 601,
+      "context": "Frozen train-cutoff history for both validation and test; validation events never update the test history."
+    }
+  },
+  "python": "3.12.16",
+  "code_sha256": {
+    "reclab/__init__.py": "6cb354292ba1c7e3e58e4c0b76456bb6e2539f728b13b2ca40318e898852b6f2",
+    "reclab/cli.py": "21e0119262f0a264a59b1f118ef4411e6b3e3cc2403d8d9a66cd4d781291dfb4",
+    "reclab/competition/__init__.py": "567cb080d46155bfe0929081c9f38cf1120dc1a05c3381e27cdb7edae5a61d91",
+    "reclab/competition/__main__.py": "6eeec374ecfaa1d5ef82b89b92816233dbd1756bc8b8bbde7cd2cfe5ad7a066a",
+    "reclab/competition/data.py": "a4ebb6c098c0f57ae0018abebdc6345aa8f5b268fc2492bf526199b29ec0bb10",
+    "reclab/competition/experiment.py": "a53e35bc5883b3346724ab01fc72b2236bfe8b13ef8ff8663d30f29c75bc4141",
+    "reclab/competition/graph.py": "0f967fff636591b38d3445531be8f9a31a6f0f905e8f22d80f1cd92657f66171",
+    "reclab/competition/memory.py": "87e56548f1cfcb0ae868732b22d724fe8ecee23480a0ddcc690a1398595ece46",
+    "reclab/competition/metrics.py": "490be84607940cb5698aad08d1aca0bceecee302f836487ab89e4aeee0099be7",
+    "reclab/competition/ranking.py": "d92e9fa2ccaf5b0a7f1c761826f25a495c864175ba2cf27b08b0922cf9438f99",
+    "reclab/competition/reference.py": "1a6da6a386cab532efce06d4fbd2ecbef5dc914073669a09af1275888cdf4dbe",
+    "reclab/competition/teaching.py": "5405646dbcdaa238fd33acfebbe1090533f66279aa2e05e7fb86710fce4d5128",
+    "reclab/data.py": "3f8f1c46075f1a515397e4157c8cd32b51b7988fc0d1672af6860753e4aa5b0e",
+    "reclab/deep_recommendation.py": "3d1718fefeb78edd7d37e3c5cae42af935f065d1f73ed002787ebd2bf7fa713e",
+    "reclab/experiments.py": "166f63ace9e43fa69b9612f8062f9e2448e6d472a867475d8b2b68b6a803011d",
+    "reclab/learning/__init__.py": "7eab040f7409cf5bf9df0305cede25f8e917515ecfc2e326c61903a6bf551449",
+    "reclab/learning/networks.py": "8a428482a1b156d43992f24d7ce887306cf4d61f4a504b7e3265bfacf39f0cd7",
+    "reclab/learning/retrieval.py": "9fbe80853aa34c26d9c3ca8fa24b1878bb00109f18c95e862f4e39db34dfccc1",
+    "reclab/learning/systems.py": "cb5fae1eb68d367f61846f607e0e63c232ee45ea12a662a156bdfc5bca5794a3",
+    "reclab/models.py": "871396e16116eb30e25902385b07192f330525f652cd1117b5e2c542a392a54c",
+    "reclab/notebook.py": "d5e7dbeb6807b8df1065a4cb101cfebb86bcb1e64be7ff02d791a4a6030965c5",
+    "reclab/paths.py": "d392a24a80a2c1181ad8c977c82c386ff507acd75e2f46935a73d81002b42e5b",
+    "reclab/retrieval.py": "435ce0a310111fc030476fc97d6bee53430309d1307a1a374e7363494f52841f",
+    "reclab/service.py": "c02e93acbded73ed6186dabe45d8e67a68b08d1bdddc16d0ec8916650a112f2e",
+    "reclab/train.py": "f8fbe705ff407284e9de8777d0f0fbce4137bd29e3ddf77bd335b8ff974ecbed"
+  }
+}

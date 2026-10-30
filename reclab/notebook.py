@@ -20,6 +20,7 @@ RUNTIME = ROOT / "logs/jupyter-runtime"
 PID_FILE = ROOT / "logs/notebook.pid"
 PYTHON = ROOT / ".venv/bin/python"
 TARGETS = {
+    "deep_recommendation": "notebooks/16_Recommendation_Experiments.ipynb",
     "course": "notebooks/00_Course_Map.ipynb",
     "xmrec_start": "notebooks/11_XMRec_Start.ipynb",
     "xmrec_features": "notebooks/12_XMRec_Features.ipynb",

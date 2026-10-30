@@ -22,7 +22,7 @@ def test_source_catalog_is_real_and_whitelisted(client):
         "retrieval",
         "service",
         "xmrec_data", "xmrec_memory", "xmrec_graph", "xmrec_ranking",
-        "xmrec_experiment", "xmrec_metrics",
+        "xmrec_experiment", "xmrec_metrics", "experiments", "deep_recommendation",
     }
     response = client.get("/api/code/models")
     assert response.status_code == 200

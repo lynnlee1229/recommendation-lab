@@ -23,6 +23,8 @@ app = FastAPI(title="Recommendation Lab", docs_url=None, redoc_url=None)
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 SOURCE_FILES = {
+    "experiments": ("reclab/experiments.py", "跨搜索推荐广告共用实验记录"),
+    "deep_recommendation": ("reclab/deep_recommendation.py", "真实推荐：负采样、序列与索引对照"),
     "xmrec_data": ("reclab/competition/data.py", "竞赛复现：官方数据与标签边界"),
     "xmrec_memory": ("reclab/competition/memory.py", "竞赛复现：冠军 ItemCF 公式移植"),
     "xmrec_graph": ("reclab/competition/graph.py", "竞赛复现：负采样、LightGCN 与 BPR"),
@@ -518,3 +520,18 @@ def start_training(config: TrainConfig):
 
     threading.Thread(target=worker, daemon=True).start()
     return dict(job_state)
+
+
+@app.get('/api/experiments')
+def experiment_catalog():
+    from .experiments import catalog
+    return {'experiments': catalog()}
+
+
+@app.get('/api/experiments/{domain}/{run_id}')
+def experiment_result(domain: str, run_id: str):
+    from .experiments import result
+    try:
+        return result(domain, run_id)
+    except (ValueError, FileNotFoundError):
+        raise HTTPException(404, 'Unknown experiment')

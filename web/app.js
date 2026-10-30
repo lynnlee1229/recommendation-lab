@@ -31,6 +31,7 @@ function table(head, rows, className = "") {
   return `<div class="table-wrap ${className}"><table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
 const labels = {
+  research: ["实验对照", "同一系统中比较负采样、序列与索引；结果来自已完成的本机实验。"],
   overview: ["实验概览", "先建立可信的比较口径，再观察模型学到了什么。"],
   trace: ["推荐过程", "追踪召回、过滤、融合与 MMR。每个候选都保留来源和分数。"],
   features: ["特征与样本", "检查时间边界、Embedding 输入和真实训练样本。"],
@@ -439,3 +440,25 @@ refresh()
     pollJob();
   })
   .catch((e) => notice("工作台数据尚未就绪：" + e.message));
+
+async function drawResearch() {
+  const target = $("research-results");
+  try {
+    const {experiments} = await api('/api/experiments');
+    target.innerHTML = '';
+    for (const run of experiments.filter(x => x.state === 'completed' && !x.annotation?.superseded).reverse()) {
+      const result = await api(`/api/experiments/${encodeURIComponent(run.domain)}/${encodeURIComponent(run.run_id)}`);
+      const panel = document.createElement('details');
+      panel.open = true;
+      panel.innerHTML = `<summary>${esc(run.domain)} · ${esc(run.run_id)}</summary><p>${esc(result.scope || '')}</p>`;
+      if (run.domain === 'recommendation') {
+        panel.innerHTML += table(['编码器','负采样','种子','NDCG@20','Recall@20','打乱历史NDCG','覆盖率','训练秒'], result.rows.map(r => [esc(r.encoder),esc(r.sampler),r.seed,fmt(r['ndcg@20']),fmt(r['recall@20']),fmt(r.shuffled['ndcg@20']),fmt(r['coverage@20']),r.seconds.toFixed(1)]));
+        panel.innerHTML += '<p>短训练与有限样本的教学对照；参数量不同，不能声称模型结构普遍优劣。loss不是点击概率，不跨采样策略比较loss绝对值。</p>';
+      }
+      panel.innerHTML += `<p><a href="/api/experiments/${encodeURIComponent(run.domain)}/${encodeURIComponent(run.run_id)}" target="_blank" rel="noopener">完整实验记录 JSON ↗</a></p>`;
+      target.appendChild(panel);
+    }
+    if (!target.children.length) target.textContent = '尚无完成实验。运行对应的项目实验命令后刷新。';
+  } catch (e) { target.textContent = `实验读取失败：${e.message}`; }
+}
+drawResearch();

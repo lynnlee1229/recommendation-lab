@@ -1009,6 +1009,11 @@
       "file": "15_XMRec_Evaluation.ipynb",
       "title": "竞赛：评估与误差分析",
       "mode": "WSDM Cup 2022 · 完整真实数据 · 冠军核心复现"
+    },
+    {
+      "file": "16_Recommendation_Experiments.ipynb",
+      "title": "深入推荐：负例、序列与索引",
+      "mode": "真实数据、同预算对照、共享实验记录"
     }
   ]
 }

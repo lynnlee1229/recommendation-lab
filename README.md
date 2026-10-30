@@ -1,6 +1,6 @@
 # Recommendation Lab · 搜推学习实验室
 
-以 Notebook 为主线的本地推荐学习项目：真实数据、PyTorch 双塔、ItemCF、可追溯推荐过程，以及 WSDM Cup 2022 XMRec 冠军核心方法的教学复现。共16本 Notebook，配套45份公开讲义。
+以 Notebook 为主线的本地推荐学习项目：真实数据、PyTorch 双塔、ItemCF、可追溯推荐过程，以及 WSDM Cup 2022 XMRec 冠军核心方法的教学复现。共17本 Notebook，配套45份公开讲义。
 
 ## 克隆后，一条命令配置
 
@@ -71,3 +71,12 @@ Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)�
 - [王树森推荐系统讲义](https://github.com/wangshusen/RecommenderSystem)
 
 固定版本、下载地址、哈希分别记录在DATA_DOWNLOADS.json和docs/xmrec_sources.json。数据与讲义仍受原发布方条款约束，仓库不再分发它们。课程目录覆盖不等于完整论文复现；更多方法边界见[XMREC_REPRODUCTION.md](docs/XMREC_REPRODUCTION.md)。
+
+## 新增：同一系统中的深入实验
+
+```bash
+.venv/bin/python -m reclab.deep_recommendation
+.venv/bin/python scripts/execute_notebooks.py --only 16_Recommendation_Experiments
+```
+
+16章对比均匀/热门/难负例、mean/GRU/带位置注意力、精确/12簇粗索引；默认12000条真实因果样本、4轮、2个种子。正式旧双塔不覆盖。结果进入同一工作台“07 实验对照”，共用实验记录/API，后续搜索和广告沿用该接口。详细协议见[推荐深化](docs/RECOMMENDATION_DEPTH.md)。
