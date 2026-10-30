@@ -1014,6 +1014,12 @@
       "file": "16_Recommendation_Experiments.ipynb",
       "title": "深入推荐：负例、序列与索引",
       "mode": "真实数据、同预算对照、共享实验记录"
+    },
+    {
+      "target": "search",
+      "file": "17_Search_Experiments.ipynb",
+      "title": "真实搜索：词法、语义、融合与重排",
+      "mode": "SciFact真实标注 · 冻结小模型 · 训练线性排序 · 同一实验目录"
     }
   ]
 }

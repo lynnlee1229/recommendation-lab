@@ -24,7 +24,17 @@
 - 现有reclab/service.py FastAPI、web/app.js、web/index.html、Notebook TARGETS和docs/curriculum.json统一目录；新增课程后更新目录及验证脚本，不写死17。
 - docs/NOTEBOOK_FIRST.md：先预测→改一个变量→执行→解释；真实数据/构造机制/模拟市场分清；不覆盖用户编辑Notebook、不重建旧章节。
 
-## 搜索阶段期望
+## 搜索阶段已完成（本轮）
+
+同一checkout、同一main已实现reclab/search.py；真实BEIR SciFact完整5183文档、300测试查询，200/809训练查询，4000对真实训练LogisticRegression。冻结MiniLM和TinyBERT，BM25/向量/RRF/线性/交叉编码器及共享12簇索引探测2/12，共7组。完成run `20261030T124927-d1467622`；精简结果results/2026-10-30-search，完整本机artifacts/experiments/search。首轮旧命名run有superseded注释，保留原记录。
+
+NDCG@10：BM25 .6617、dense .6484、RRF .6855、linear .7034、TinyBERT .6670；负结果不隐藏。完整来源许可、四个提交版本及20项SHA见docs/search_sources.json（总114658540字节，约109.35MiB）。只用本地safetensors、不下载远程代码。新增transformers4.57.6/safetensors等已锁uv.lock，已有.venv保留。
+
+POST /api/search五种方式已实际比对离线前10完全一致，统一07页面可输入英文声明；来源白名单和notebook TARGETS/curriculum已接入。18本Notebook，第17章4格、1张双面板图干净执行与渲染检查。pytest71通过，原推荐验收通过。原Jupyter18581/用户内核不动，仅正常重启本项目18580。重跑命令 `.venv/bin/python -m reclab.search --download`（新建运行，不覆盖）。具体边界见docs/SEARCH_EXPERIMENTS.md。
+
+后续广告必须接着迭代这里，不重新建Lab。复用刚新增的SHA来源清单+download_public_assets.fetch（支持固定HF来源与curl下载）及原实验/API/Notebook。数据下载是显式搜索命令，原setup默认不额外跑搜索，以控制安装预算。下一对话仅广告阶段，不必重跑搜索或改其固定测试协议。
+
+## 搜索阶段原验收范围（已达成）
 
 在同一系统中建立实际可复现的小型搜索任务：BM25、语义/向量检索、混合融合及可行的小型重排对照；查询—文档—qrels要有真实公开来源、下载固定版本和SHA，不从Retailrocket凭空造查询标签。资源适配M1，允许冻结小模型embedding或小样本明确标注，不承诺大模型训练。指标至少MRR/NDCG、召回覆盖、实测延迟、失败案例；子集限制和未判断文档处理说清。先调研数据/模型许可和大小，再实施。复用已有registry、指标、索引、工作台、依赖、下载和教学形式；数据领域adapter可新增但不可另建服务器或另repo。
 

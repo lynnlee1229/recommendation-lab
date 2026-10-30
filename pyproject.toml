@@ -16,6 +16,8 @@ dependencies = [
   "lightgbm>=4.7,<5",
   "threadpoolctl>=3.5,<4",
   "scikit-learn>=1.6,<2",
+  "transformers>=4.48,<5",
+  "safetensors>=0.5,<1",
 ]
 
 [dependency-groups]

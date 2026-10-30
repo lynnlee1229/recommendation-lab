@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "search_run_id": "20261030T124927-d1467622",
+  "methods": [
+    {
+      "method": "bm25",
+      "documents": 10,
+      "matches_offline_top10": true,
+      "milliseconds": 2.1849999993719393
+    },
+    {
+      "method": "dense",
+      "documents": 10,
+      "matches_offline_top10": true,
+      "milliseconds": 15.410833999339957
+    },
+    {
+      "method": "hybrid_rrf",
+      "documents": 10,
+      "matches_offline_top10": true,
+      "milliseconds": 11.612667000008514
+    },
+    {
+      "method": "linear_rerank",
+      "documents": 10,
+      "matches_offline_top10": true,
+      "milliseconds": 12.168833000032464
+    },
+    {
+      "method": "tinybert_rerank",
+      "documents": 10,
+      "matches_offline_top10": true,
+      "milliseconds": 44.987291999859735
+    }
+  ],
+  "notebooks": 18,
+  "recommendations_preserved": 10,
+  "note": "Only this project workbench was restarted; Jupyter left running.",
+  "pytest_passed": 71,
+  "notebook_code_cells": 4,
+  "notebook_figures": 1,
+  "notebook_clean_kernel": "PASS",
+  "notebook_visual_inspection": "Rendered Jupyter notebook and extracted two-panel figure inspected; browser form submitted and real results visible."
+}

@@ -1,7 +1,7 @@
 """Download public, checksummed inputs only; no training or cloud account credentials."""
 from pathlib import Path, PurePosixPath
 from concurrent.futures import ThreadPoolExecutor
-import hashlib,json,shutil,time,urllib.request
+import hashlib,json,shutil,time,urllib.request,subprocess
 ROOT=Path(__file__).resolve().parent
 
 def sha(path):
@@ -18,7 +18,7 @@ def fetch(row):
  if destination.is_file():
   if sha(destination)!=row['sha256']:raise ValueError('Existing file mismatch: '+str(relative))
   return str(relative)
- if not row['url'].startswith(('https://www.kaggle.com/','https://raw.githubusercontent.com/')):
+ if not row['url'].startswith(('https://www.kaggle.com/','https://raw.githubusercontent.com/','https://huggingface.co/')):
   raise ValueError('Unexpected public source')
  destination.parent.mkdir(parents=True,exist_ok=True)
  partial=destination.with_suffix(destination.suffix+'.part')
@@ -30,6 +30,11 @@ def fetch(row):
    offset=partial.stat().st_size if partial.is_file() else 0
    if offset>row['bytes']:
     partial.unlink();offset=0
+   if row.get('downloader')=='curl':
+    subprocess.run(['curl','-fLsS','--retry','2','--max-time','180','-o',str(partial),row['url']],check=True)
+    if partial.stat().st_size!=row['bytes'] or sha(partial)!=row['sha256']:
+     raise ValueError('Downloaded file differs from frozen data: '+str(relative))
+    break
    request=urllib.request.Request(row['url'],headers={'Range':f'bytes={offset}-'} if offset else {})
    with urllib.request.urlopen(request,timeout=90) as response:
     resume=response.status==206 and response.headers.get('Content-Range','').startswith(f'bytes {offset}-')

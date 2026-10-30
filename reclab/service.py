@@ -23,6 +23,7 @@ app = FastAPI(title="Recommendation Lab", docs_url=None, redoc_url=None)
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 SOURCE_FILES = {
+    "search": ("reclab/search.py", "真实查询与文档：检索、融合和重排"),
     "experiments": ("reclab/experiments.py", "跨搜索推荐广告共用实验记录"),
     "deep_recommendation": ("reclab/deep_recommendation.py", "真实推荐：负采样、序列与索引对照"),
     "xmrec_data": ("reclab/competition/data.py", "竞赛复现：官方数据与标签边界"),
@@ -535,3 +536,27 @@ def experiment_result(domain: str, run_id: str):
         return result(domain, run_id)
     except (ValueError, FileNotFoundError):
         raise HTTPException(404, 'Unknown experiment')
+
+
+class SearchRequest(BaseModel):
+    query: str = Field(min_length=1, max_length=1000)
+    method: str = 'hybrid_rrf'
+    limit: int = Field(default=10, ge=1, le=20)
+
+
+@lru_cache(maxsize=1)
+def search_index(run_id):
+    from .search import SearchIndex
+    return SearchIndex(read_json(ARTIFACTS / 'experiments/search' / run_id / 'receipt.json'))
+
+
+@app.post('/api/search')
+def search_documents(request: SearchRequest):
+    from .search import latest
+    if request.method not in ('bm25','dense','hybrid_rrf','linear_rerank','tinybert_rerank') or not request.query.strip():
+        raise HTTPException(422, 'Choose a supported method and nonempty query')
+    try:
+        receipt, _ = latest()
+        return search_index(receipt['run_id']).search(request.query,request.method,request.limit)
+    except (FileNotFoundError, ValueError) as exc:
+        raise HTTPException(503, 'Search inputs unavailable; run python -m reclab.search --download') from exc

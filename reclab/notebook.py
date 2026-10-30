@@ -20,6 +20,8 @@ RUNTIME = ROOT / "logs/jupyter-runtime"
 PID_FILE = ROOT / "logs/notebook.pid"
 PYTHON = ROOT / ".venv/bin/python"
 TARGETS = {
+    "search": "notebooks/17_Search_Experiments.ipynb",
+    "search_code": "reclab/search.py",
     "deep_recommendation": "notebooks/16_Recommendation_Experiments.ipynb",
     "course": "notebooks/00_Course_Map.ipynb",
     "xmrec_start": "notebooks/11_XMRec_Start.ipynb",

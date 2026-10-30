@@ -1,6 +1,6 @@
 # Recommendation Lab · 搜推学习实验室
 
-以 Notebook 为主线的本地推荐学习项目：真实数据、PyTorch 双塔、ItemCF、可追溯推荐过程，以及 WSDM Cup 2022 XMRec 冠军核心方法的教学复现。共17本 Notebook，配套45份公开讲义。
+以 Notebook 为主线的本地推荐学习项目：真实数据、PyTorch 双塔、ItemCF、可追溯推荐过程，以及 WSDM Cup 2022 XMRec 冠军核心方法的教学复现。共18本 Notebook，配套45份公开讲义。
 
 ## 克隆后，一条命令配置
 
@@ -46,7 +46,7 @@ Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)�
 
 ## 仓库包含什么
 
-- Python源码、前端、16本带教学输出的Notebook、锁文件、测试、公开下载清单。
+- Python源码、前端、18本带教学输出的Notebook、锁文件、测试、公开下载清单。
 - [M1 Pro实测结果](results/2026-10-30-m1-pro/README.md)：聚合指标、训练曲线、配置和校验来源。
 - 数据集、讲义PDF、模型权重、逐用户预测、日志、环境、缓存和认证信息均不上传。`data/`和`artifacts/`由配置脚本在本机生成。
 
@@ -80,3 +80,13 @@ Notebook代码和项目源码可编辑，使用Recommendation Lab (Python 3.12)�
 ```
 
 16章对比均匀/热门/难负例、mean/GRU/带位置注意力、精确/12簇粗索引；默认12000条真实因果样本、4轮、2个种子。正式旧双塔不覆盖。结果进入同一工作台“07 实验对照”，共用实验记录/API，后续搜索和广告沿用该接口。详细协议见[推荐深化](docs/RECOMMENDATION_DEPTH.md)。
+
+
+## 新增：同一系统的真实搜索
+
+```bash
+.venv/bin/python -m reclab.search --download
+.venv/bin/python scripts/execute_notebooks.py --only 17_Search_Experiments
+```
+
+第17章使用公开 SciFact 的完整5,183篇文档与300测试查询，实际比较BM25、冻结MiniLM、RRF、训练线性重排、小型TinyBERT重排及共享粗索引。下载约110MiB固定版本数据/权重，逐项SHA校验；无需账号。未判断文档按不相关计分，神经模型没有微调。每次新建共享实验记录，工作台07可实际输入查询检索，推荐功能保留。详见[搜索协议与来源](docs/SEARCH_EXPERIMENTS.md)。搜索是显式可选命令，原setup流程保持推荐/XMRec，避免首次设置自动增加模型下载与推理预算。

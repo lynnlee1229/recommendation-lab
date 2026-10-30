@@ -31,7 +31,7 @@ function table(head, rows, className = "") {
   return `<div class="table-wrap ${className}"><table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
 const labels = {
-  research: ["实验对照", "同一系统中比较负采样、序列与索引；结果来自已完成的本机实验。"],
+  research: ["实验对照", "同一系统中比较推荐与搜索；结果来自已完成的本机实验。"],
   overview: ["实验概览", "先建立可信的比较口径，再观察模型学到了什么。"],
   trace: ["推荐过程", "追踪召回、过滤、融合与 MMR。每个候选都保留来源和分数。"],
   features: ["特征与样本", "检查时间边界、Embedding 输入和真实训练样本。"],
@@ -455,6 +455,11 @@ async function drawResearch() {
         panel.innerHTML += table(['编码器','负采样','种子','NDCG@20','Recall@20','打乱历史NDCG','覆盖率','训练秒'], result.rows.map(r => [esc(r.encoder),esc(r.sampler),r.seed,fmt(r['ndcg@20']),fmt(r['recall@20']),fmt(r.shuffled['ndcg@20']),fmt(r['coverage@20']),r.seconds.toFixed(1)]));
         panel.innerHTML += '<p>短训练与有限样本的教学对照；参数量不同，不能声称模型结构普遍优劣。loss不是点击概率，不跨采样策略比较loss绝对值。</p>';
       }
+      if (run.domain === 'search') {
+        panel.innerHTML += table(['方法','NDCG@10','MRR@10','Recall@10','Recall@100','P50毫秒','P95毫秒'], result.rows.map(r => [esc(r.method),fmt(r['ndcg@10']),fmt(r['mrr@10']),fmt(r['recall@10']),fmt(r['recall@100']),r.latency_p50_ms.toFixed(1),r.latency_p95_ms.toFixed(1)]));
+        panel.innerHTML += `<p>重排候选Recall@20：${fmt(result['rerank_candidate_recall@20'])}。未判断文档按不相关计算，真实相关性可能不完整。延迟包含查询编码与重排，不含离线建索引。<a href="/notebooks?target=search">打开搜索实验 Notebook ↗</a></p>`;
+        panel.innerHTML += table(['失败查询ID','BM25 NDCG','TinyBERT NDCG'],result.failures.slice(0,5).map(r => [esc(r.qid),fmt(r.metrics.bm25['ndcg@10']),fmt(r.metrics.tinybert_rerank['ndcg@10'])]));
+      }
       panel.innerHTML += `<p><a href="/api/experiments/${encodeURIComponent(run.domain)}/${encodeURIComponent(run.run_id)}" target="_blank" rel="noopener">完整实验记录 JSON ↗</a></p>`;
       target.appendChild(panel);
     }
@@ -462,3 +467,13 @@ async function drawResearch() {
   } catch (e) { target.textContent = `实验读取失败：${e.message}`; }
 }
 drawResearch();
+
+$('search-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const output = $('search-output');
+  output.textContent = '正在检索；首次请求需要加载本机小模型…';
+  try {
+    const result = await api('/api/search', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({query:$('search-query').value, method:$('search-method').value, limit:5})});
+    output.innerHTML = `<p>${esc(result.method)} · ${result.latency_ms.toFixed(1)} 毫秒 · 分数是排序分数，不能解释为科学声明成立概率。</p>` + result.items.map(x => `<details><summary>${esc(x.document_id)} · ${esc(x.title)}</summary><p>${esc(x.text)}</p><p>score: ${fmt(x.score)}</p></details>`).join('');
+  } catch (e) { output.textContent = `检索失败：${e.message}`; }
+});

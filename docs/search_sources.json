@@ -1,0 +1,185 @@
+{
+  "description": "Publisher-hosted BEIR SciFact export and frozen public model snapshots; hashes established from downloaded bytes, not independent authenticity proof.",
+  "assets": [
+    {
+      "url": "https://huggingface.co/datasets/BeIR/scifact/resolve/b3b5335604bf5ee3c4447671af975ea25143d4f5/corpus/corpus-00000-of-00001.parquet",
+      "destination": "data/search/scifact/corpus/corpus-00000-of-00001.parquet",
+      "bytes": 4469916,
+      "sha256": "243324b35f03d82bd6d98a5f575966876e86cad7ce16e5333a35b1b793dc4f45",
+      "revision": "b3b5335604bf5ee3c4447671af975ea25143d4f5",
+      "license": "CC-BY-SA-4.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/datasets/BeIR/scifact/resolve/b3b5335604bf5ee3c4447671af975ea25143d4f5/queries/queries-00000-of-00001.parquet",
+      "destination": "data/search/scifact/queries/queries-00000-of-00001.parquet",
+      "bytes": 64982,
+      "sha256": "1c37956c5dc8b810b60302323c24d1a9e79e26411ba8f5ad9d0888642e2a9034",
+      "revision": "b3b5335604bf5ee3c4447671af975ea25143d4f5",
+      "license": "CC-BY-SA-4.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/datasets/BeIR/scifact/resolve/b3b5335604bf5ee3c4447671af975ea25143d4f5/README.md",
+      "destination": "data/search/scifact/README.md",
+      "bytes": 10407,
+      "sha256": "b5f57be1839fdb75867073986a019a78afe0a149950f79d1165509efc5e5cf2f",
+      "revision": "b3b5335604bf5ee3c4447671af975ea25143d4f5",
+      "license": "CC-BY-SA-4.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/datasets/BeIR/scifact-qrels/resolve/2938d17dc3b09882fdb8c12bbbe2e2dc0e75a029/test.tsv",
+      "destination": "data/search/qrels/test.tsv",
+      "bytes": 5389,
+      "sha256": "0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c",
+      "revision": "2938d17dc3b09882fdb8c12bbbe2e2dc0e75a029",
+      "license": "CC-BY-SA-4.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/datasets/BeIR/scifact-qrels/resolve/2938d17dc3b09882fdb8c12bbbe2e2dc0e75a029/train.tsv",
+      "destination": "data/search/qrels/train.tsv",
+      "bytes": 14502,
+      "sha256": "a53f2114831916c096b6c37d9e54da68cef4efdcdbd5ed46533601af972acf1d",
+      "revision": "2938d17dc3b09882fdb8c12bbbe2e2dc0e75a029",
+      "license": "CC-BY-SA-4.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/datasets/BeIR/scifact-qrels/resolve/2938d17dc3b09882fdb8c12bbbe2e2dc0e75a029/README.md",
+      "destination": "data/search/qrels/README.md",
+      "bytes": 13995,
+      "sha256": "fd34a2830e557f1e32d46d0b34a218d280c9800ee4071579610d4ff587b4fd45",
+      "revision": "2938d17dc3b09882fdb8c12bbbe2e2dc0e75a029",
+      "license": "CC-BY-SA-4.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json",
+      "destination": "artifacts/search/models/minilm/config.json",
+      "bytes": 612,
+      "sha256": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors",
+      "destination": "artifacts/search/models/minilm/model.safetensors",
+      "bytes": 90868376,
+      "sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json",
+      "destination": "artifacts/search/models/minilm/tokenizer.json",
+      "bytes": 466247,
+      "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json",
+      "destination": "artifacts/search/models/minilm/tokenizer_config.json",
+      "bytes": 350,
+      "sha256": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json",
+      "destination": "artifacts/search/models/minilm/special_tokens_map.json",
+      "bytes": 112,
+      "sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt",
+      "destination": "artifacts/search/models/minilm/vocab.txt",
+      "bytes": 231508,
+      "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md",
+      "destination": "artifacts/search/models/minilm/README.md",
+      "bytes": 10502,
+      "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L-2-v2/resolve/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc/config.json",
+      "destination": "artifacts/search/models/reranker/config.json",
+      "bytes": 787,
+      "sha256": "2144195e107cd7ea61556478e7add12986ebfbc3085f924fc0b90c2410604879",
+      "revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L-2-v2/resolve/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc/model.safetensors",
+      "destination": "artifacts/search/models/reranker/model.safetensors",
+      "bytes": 17552980,
+      "sha256": "a0e7364ddf91ff7028f1102e1b91ac7a72e3db4061241bd84efe45c72c9af03a",
+      "revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L-2-v2/resolve/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc/tokenizer.json",
+      "destination": "artifacts/search/models/reranker/tokenizer.json",
+      "bytes": 711396,
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L-2-v2/resolve/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc/tokenizer_config.json",
+      "destination": "artifacts/search/models/reranker/tokenizer_config.json",
+      "bytes": 1330,
+      "sha256": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+      "revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L-2-v2/resolve/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc/special_tokens_map.json",
+      "destination": "artifacts/search/models/reranker/special_tokens_map.json",
+      "bytes": 132,
+      "sha256": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L-2-v2/resolve/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc/vocab.txt",
+      "destination": "artifacts/search/models/reranker/vocab.txt",
+      "bytes": 231508,
+      "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    },
+    {
+      "url": "https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L-2-v2/resolve/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc/README.md",
+      "destination": "artifacts/search/models/reranker/README.md",
+      "bytes": 3509,
+      "sha256": "f131d0239b7c3e3c96fd8190c8c282630664521396ea83b8711899b90ed3dcdb",
+      "revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "license": "Apache-2.0",
+      "downloader": "curl"
+    }
+  ]
+}
