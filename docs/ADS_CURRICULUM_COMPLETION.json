@@ -1,0 +1,580 @@
+{
+  "status": "complete",
+  "writer_released": true,
+  "core_scope": "A01–A18 bounded teaching acceptance targets in ADS_LEARNING_ROADMAP; explicit mechanisms permitted; not industrial systems, all papers or modern production replication",
+  "checkout": "/Users/lynnlee/Documents/Codex/2026-10-30/task/soutui-lab",
+  "baseline": "31c2a8ce6bfa9a7956d2dc7b7184b90abe7ba8c1",
+  "release_commit": "the commit containing this marker",
+  "predecessor": {
+    "thread_id": "01a18d29-527f-7440-8599-129555d585d3",
+    "wait_snapshot": "idle/completed, cursor ada326c2-0fc0-4f53-a819-cfad6c3bbfe0:34",
+    "committed_marker": "docs/SEARCH_CURRICULUM_COMPLETION.json",
+    "writer_released": true,
+    "status": "complete",
+    "git_status_before_writing": "empty",
+    "unfinished_carried_forward": []
+  },
+  "new_chapters": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+  ],
+  "last_occupied_number": 62,
+  "next_available_number": 63,
+  "units": [
+    {
+      "id": "A01",
+      "topic": "广告参与方、产品与交易全貌",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 市场/产品；A-CCR 第8章",
+      "acceptance_target": "以广告主/媒体/用户/平台解释合约、竞价、搜索、原生、程序化产品；贯通一次请求和结算，先讲目标再讲模型。",
+      "deliverables": [
+        {
+          "file": "notebooks/47_Ads_Products.ipynb",
+          "sha256": "9b2fff1619af0da73385f845041a9d1c822f915c0649537831a700a657b29b7e",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.62
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "产品与角色的构造链路；非完整协议或品牌效果评估。"
+    },
+    {
+      "id": "A02",
+      "topic": "计费单位、指标与三方目标",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 基础；A-CCR 优化目标",
+      "acceptance_target": "补CPM/CPC/CPA、CTR/CVR/CTCVR、eCPM/ROAS单位换算和分母；用可检查账本避免把出价、支付、收入、利润混为一谈。",
+      "deliverables": [
+        {
+          "file": "notebooks/48_Ads_Billing.ipynb",
+          "sha256": "7e57935353cde92f3ba23eafac41478b89bc29545fca05a9018febeb16918976",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.33
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "无手续费的构造账本；收入减广告费未计其他成本，不是净利润。"
+    },
+    {
+      "id": "A03",
+      "topic": "合约广告、库存预测与在线分配",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 合约/核心技术；A-NJU 匹配",
+      "acceptance_target": "构造库存与合约，做离线最优小规模枚举/LP与在线贪心对照，检查保量、欠投和机会成本；不用虚构真实订单。",
+      "deliverables": [
+        {
+          "file": "notebooks/49_Ads_Contracts.ipynb",
+          "sha256": "b0e896c803a0886c212793b88bc4d1216b64d35f6c050e84811c6584e3a913cf",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.77
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "3份库存的穷举与在线贪心、历史均值预测；不是工业库存模型或在线最优保证。"
+    },
+    {
+      "id": "A04",
+      "topic": "搜索广告、定向资格与质量排序",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 搜索竞价；A-NJU 搜索广告市场",
+      "acceptance_target": "讲关键词/广告/落地页匹配、资格过滤与质量分；同请求中区分自然结果与商业候选，缺质量日志用机制例。",
+      "deliverables": [
+        {
+          "file": "notebooks/50_Ads_SponsoredSearch.ipynb",
+          "sha256": "7b1319ae1548cb1ce0fe67c3bc97b37af04f832eea50819dacf0b2b39f74a2b3",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.34
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "关键词OR与规则资格、人工质量；无真实关键词/落地页质量日志。"
+    },
+    {
+      "id": "A05",
+      "topic": "GFP/GSP/VCG与多广告位拍卖",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-CCR/A-NJU 拍卖；A-RTB auction",
+      "acceptance_target": "增加位置外部性、多广告位GSP/VCG支付与效用可枚举验算；不把现单物品二价叫GSP/VCG，不承诺真实最优。",
+      "deliverables": [
+        {
+          "file": "notebooks/51_Ads_MultiSlot.ipynb",
+          "sha256": "19da2c30eea582b13ee86e4663c7e0ccc1edb7bc23d64e46ac25f375dca46dc1",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.37
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "同质质量、可分离位置CTR、无预算；VCG数值核验不替代理论假设。"
+    },
+    {
+      "id": "A06",
+      "topic": "程序化RTB、底价与市场反馈",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 程序化；A-RTB 系统/底价",
+      "acceptance_target": "串联DSP/SSP/ADX的请求和反馈；区分底价、竞价对手、支付、输标和截尾市场价；把制度设定写入实验配置。",
+      "deliverables": [
+        {
+          "file": "notebooks/52_Ads_RTB.ipynb",
+          "sha256": "936b6e096eb81d8c1098b90cbdc96ecf080c4eed8e0ebf5f204a77edef35fbb2",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.77
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "最小角色/反馈状态；不实现OpenRTB，未达底价与竞争输标分别处理。"
+    },
+    {
+      "id": "A07",
+      "topic": "受众定向、上下文、扩量与DMP",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 定向/数据；A-RTB targeting",
+      "acceptance_target": "以构造人群/上下文做约束匹配与扩量、覆盖和误投；解释冷启动、数据最小化与跨域限制，不能把匿名编码解释为真实属性。",
+      "deliverables": [
+        {
+          "file": "notebooks/53_Ads_Targeting.ipynb",
+          "sha256": "32d96274b6df27f15aaa9877743b5a209350b81c6a7b38b8ac58b00efec1b685",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.28
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "人工上下文及相关标签；无真实画像、DMP跨域或扩量效果。"
+    },
+    {
+      "id": "A08",
+      "topic": "广告候选检索与约束匹配",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 定向/竞价技术；Lab教学展开",
+      "acceptance_target": "建小广告库存与AND/OR约束索引、候选top-k；向量检索可复用共享组件，但必须检验资格约束，不能借文档搜索冒充广告引擎。",
+      "deliverables": [
+        {
+          "file": "notebooks/54_Ads_CandidateIndex.ipynb",
+          "sha256": "5c70cdb73ec64353bd3aa1516ff94e4eb26017f91c9f247e83e1072acfd747df",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.29
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "小广告库倒排与穷举oracle；无分布式服务与并发预算一致性。"
+    },
+    {
+      "id": "A09",
+      "topic": "真实曝光、标签、切分与线性CTR",
+      "status": "covered",
+      "evidence_type": "真实采样曝光实验",
+      "source": "A-LIU CTR；A-RTB response",
+      "acceptance_target": "复用，不重新训练200k正式实验；把抽样、训练先验和未知字段语义放进数据契约。",
+      "deliverables": [
+        {
+          "file": "notebooks/19_Ads_Data_Splits.ipynb",
+          "sha256": "2e09b9cc509a619940a6eaf712d9108100ac8913a7dd47043880ede0b9bbdd6d",
+          "code_cell_indices_0_based": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "executed_code_cells": 5,
+          "execution": {
+            "state": "executed",
+            "code_cells": 5,
+            "seconds": 3.29
+          },
+          "rendering": "Previously accepted original chapter; byte-identical to31c2a8c"
+        },
+        {
+          "file": "notebooks/20_Ads_Linear_Features.ipynb",
+          "sha256": "e0ad62b716466a6b38627a455898b17270e8ab06dfc17a41ea01a31b07324f8d",
+          "code_cell_indices_0_based": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "executed_code_cells": 5,
+          "execution": {
+            "state": "executed",
+            "code_cells": 5,
+            "seconds": 4.12
+          },
+          "rendering": "Previously accepted original chapter; byte-identical to31c2a8c"
+        }
+      ],
+      "run_evidence": "20261030T125738-f82b6582; original19/20/22 teaching receipts retained",
+      "limitations": "真实抽样曝光、匿名字段、特征组分区；不是用户/时间切分或总体CTR。"
+    },
+    {
+      "id": "A10",
+      "topic": "特征交叉与非线性响应模型",
+      "status": "covered",
+      "evidence_type": "真实采样曝光实验",
+      "source": "A-LIU CTR；A-RTB response",
+      "acceptance_target": "复用推荐06机制代码而非复制；选少量有代表性的交叉/embedding对照进行实际小预算拟合，单变量与参数预算清楚，不堆论文名字。",
+      "deliverables": [
+        {
+          "file": "notebooks/55_Ads_FM.ipynb",
+          "sha256": "154a45a718adeae35a061bd36c0c362df8268d1bc850c7f175b768232b737dff",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 3.0
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "20261030T143314-b0538124",
+      "limitations": "10k真实曝光、类别字段、单种子8epoch；select开发诊断，FM过拟合负结果保留。"
+    },
+    {
+      "id": "A11",
+      "topic": "转化预估、延迟反馈与样本选择",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-RTB response/attribution；Lab展开",
+      "acceptance_target": "讲CTR×CVR与CTCVR、延迟删失与选择偏差；要么找许可清楚的小真实转换数据，要么明确构造日志做机制，绝不从click捏造conversion。",
+      "deliverables": [
+        {
+          "file": "notebooks/56_Ads_Conversion.ipynb",
+          "sha256": "3340af774878f53af1e2cfb7ad78e241c687570cdb538b2caa0d92908e916734",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.49
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "明确构造转化与延迟，不从Criteo click制造真实conversion；无真实CVR/ESMM收益。"
+    },
+    {
+      "id": "A12",
+      "topic": "概率校准、评分与分段审计",
+      "status": "covered",
+      "evidence_type": "真实采样曝光实验",
+      "source": "A-LIU CTR；Lab概率方法展开",
+      "acceptance_target": "保留负结果和计数，说明calibration/audit独立性与抽样先验限制；不把ECE最小当唯一选型。",
+      "deliverables": [
+        {
+          "file": "notebooks/22_Ads_Calibration.ipynb",
+          "sha256": "ecace3fa439f00cad4a49c75a99cee1d8e80eeaaebe3264da856fdb8b7ff1c38",
+          "code_cell_indices_0_based": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "executed_code_cells": 5,
+          "execution": {
+            "state": "executed",
+            "code_cells": 5,
+            "seconds": 2.94
+          },
+          "rendering": "Previously accepted original chapter; byte-identical to31c2a8c"
+        }
+      ],
+      "run_evidence": "20261030T125738-f82b6582; original19/20/22 teaching receipts retained",
+      "limitations": "原独立calibration/audit与负结果保持；未知抽样先验，不推断线上校准。"
+    },
+    {
+      "id": "A13",
+      "topic": "出价目标、竞价函数与智能投放",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-RTB learning to bid；A-LIU 程序化",
+      "acceptance_target": "从CPC/CPA/ROAS目标推导报价、约束和最优反应的依赖假设；至少固定市场比较价值报价与约束策略，不承诺实投利润。",
+      "deliverables": [
+        {
+          "file": "notebooks/57_Ads_Bidding.ipynb",
+          "sha256": "d9616bcb4cd4fa629846f08ac921f1c5002a31f94dd289e5747fda12e0a2ccd9",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.33
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "固定构造二价市场与已知期望转化价值；硬预算与ROAS阈值非全局最优。"
+    },
+    {
+      "id": "A14",
+      "topic": "预算pacing与反馈控制",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-RTB pacing",
+      "acceptance_target": "先讲现门控，再加入反馈型节奏控制并比较突发、稀疏、漂移；逐请求断言花费不超预算，区分匀速花费与价值最大化。",
+      "deliverables": [
+        {
+          "file": "notebooks/58_Ads_FeedbackPacing.ipynb",
+          "sha256": "f0fddfa50d44f7f8c84a57944c9a9ed26470449feceb1cc78b38439c27cd301c",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.41
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "积分式误差反馈，不是完整PID；3情景价值/花费有取舍，不保证花完或最优。"
+    },
+    {
+      "id": "A15",
+      "topic": "归因与增量效果",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-RTB attribution；A-LIU 相关技术",
+      "acceptance_target": "构造多触点路径比last-click等记账；另用带已知随机分配的机制实验说明增量。没有propensity不能声称真实IPS/OPE或因果增收。",
+      "deliverables": [
+        {
+          "file": "notebooks/59_Ads_Attribution.ipynb",
+          "sha256": "57f01b0e502c442d0270b4934bd326f6896d52e879f2bf0a8deff71b626fead7",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.51
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "构造路径与已知随机化；无真实归因真值、propensity或IPS/OPE。"
+    },
+    {
+      "id": "A16",
+      "topic": "底价优化与供需策略",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-RTB reserve price",
+      "acceptance_target": "在相同构造报价分布下扫底价，计算填充、收入和广告主效用；明确分布/拍卖机制，不依据模拟选择真实价格。",
+      "deliverables": [
+        {
+          "file": "notebooks/60_Ads_ReservePrices.ipynb",
+          "sha256": "a49e0953c366a355bc45ed335c54254932733e0412d5c719b41c52cd55039742",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.53
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "固定U(0,2)报价、统一二价reserve；忽略长期战略响应，不选择真实底价。"
+    },
+    {
+      "id": "A17",
+      "topic": "实验、偏差、反作弊与数据边界",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "A-LIU 其他技术；Lab工程展开",
+      "acceptance_target": "通过机制例说明曝光选择、分桶干扰、异常流量与数据滥用；不可由特征哈希切分推断用户级独立或公平性；保留负结果。",
+      "deliverables": [
+        {
+          "file": "notebooks/61_Ads_ExperimentIntegrity.ipynb",
+          "sha256": "ee8f818b440dc3e603d3b313c96013aa652d7fbe896a286a2cd3d518baa4496f",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.42
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "构造混合偏差、预算干扰和规则误伤；非真实反作弊准确率/线上实验。"
+    },
+    {
+      "id": "A18",
+      "topic": "端到端账本与课程综合",
+      "status": "covered",
+      "evidence_type": "构造机制 / 模拟市场",
+      "source": "Lab教学设计，串联产品/预测/决策",
+      "acceptance_target": "用同一Lab中的可追溯小请求演示完整结构，始终将真实CTR证据和模拟决策证据分层；课程先产品/市场，再预测/优化，不从Criteo实验倒推主线。",
+      "deliverables": [
+        {
+          "file": "notebooks/62_Ads_Ledger.ipynb",
+          "sha256": "73d244f2a16f315f641971709855ee756126561125fc39d8fda174d29a536e31",
+          "code_cell_indices_0_based": [
+            2,
+            4,
+            7
+          ],
+          "executed_code_cells": 3,
+          "execution": {
+            "state": "executed",
+            "code_cells": 3,
+            "seconds": 1.33
+          },
+          "rendering": "Original Jupyter view inspected with saved outputs; final HTML exported/validated"
+        }
+      ],
+      "run_evidence": "saved constructed outputs in listed notebook cells",
+      "limitations": "单请求与单进程幂等机制；无并发事务、退款、真实点击或真实收入。"
+    }
+  ],
+  "acceptance": "results/2026-10-30-ads-curriculum/acceptance.json",
+  "source_verification": "docs/COURSE_AUDIT_SOURCES.json A-CCR updated after fixed blob download/full96-page text extraction; original file not redistributed",
+  "preserved": {
+    "old_notebooks_byte_identical": 47,
+    "formal_ads_run": "20261030T125738-f82b6582",
+    "formal_search_run": "20261030T124927-d1467622",
+    "all_old_models_and_data": "unchanged; workshop isolated from latest"
+  },
+  "advanced_not_claimed": [
+    "Real CVR/attribution/causal revenue without suitable logs",
+    "Production RTB protocol, concurrent billing/refunds and large-scale DMP",
+    "Industrial inventory forecasting, full PID/optimal control or all model families"
+  ],
+  "unfinished": [],
+  "push_authorization": "User explicitly authorized original origin/main push after acceptance; actual network outcome verified separately after committing."
+}

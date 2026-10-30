@@ -1,3 +1,11 @@
+## 广告核心课程已补齐（2026-10-30）
+
+在搜索31c2a8c结束、提交writer_released标记且工作区干净后接手同一checkout。新增47–62十六本，A01–A18按产品/计费/市场→资格候选→响应预测→投放反馈组织；原19–20支持A09、22支持A12，旧18/23/24后置参考。全Lab63本，广告23本；旧47本逐字节保留，正式模型不重训不替换。
+
+48格清洁执行并保存输出，逐本原Jupyter渲染检查，93 pytest、4导航测试、桌面/390px与原三领域API回归通过。真实10k Criteo类别LR/FM workshop `20261030T143314-b0538124`，select logloss .1323/.1783，FM过拟合负结果保留；两模型权重重载预测和重算指标一致。其余新增转化、画像、归因、拍卖与预算均显式构造机制，不称真实CVR、IPS/OPE或线上增收。中文GitHub第8章96页已核验固定blob并读取文字，原件仅链接；不是现代工程全套课。
+
+证据：ADS_CURRICULUM_GUIDE.md、ads_course.json、ADS_CURRICULUM_COMPLETION.json与results/2026-10-30-ads-curriculum。修复共享台账对已有BERT workshop缺少逐方法耗时的兼容，不改原实验记录；未知耗时明确显示未记录。同一18580正常重启，18581与用户内核未停止。用户已授权验收后推送原origin/main；最终网络结果以本聊天最终SHA为准。
+
 # 同一系统的真实广告点击与模拟决策
 
 广告 adapter 为 `reclab/ads.py`，共用 `experiments.begin/finish/catalog/result`、`download_public_assets.fetch`、FastAPI、工作台“共享实验记录”、源码白名单及 Notebook 目录。新增 `reclab/probability.py` 供二分类概率任务复用；AUC/logloss/Brier与检索NDCG分开。独立生成市场的 `reclab/auction.py` 可供其他预算分配练习复用，没有新增服务器或仓库。

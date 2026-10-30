@@ -1,0 +1,208 @@
+{
+  "status": "PASS",
+  "baseline": "31c2a8c",
+  "new_notebooks": 16,
+  "new_executed_code_cells": 48,
+  "all_notebooks": 63,
+  "ads_notebooks": 23,
+  "pytest": {
+    "passed": 93,
+    "warnings": "existing Starlette/httpx deprecation"
+  },
+  "navigation": "4 passed; JS syntax checks passed",
+  "browser": {
+    "desktop": [
+      "ads/path",
+      "ads/references",
+      "ads/source",
+      "ads/records",
+      "search/records"
+    ],
+    "mobile": {
+      "width": 390,
+      "document_scroll_width": 390,
+      "routes": [
+        "ads/path",
+        "ads/references"
+      ]
+    },
+    "filtering": [
+      "FM -> one",
+      "unknown -> empty",
+      "clear -> 23"
+    ],
+    "rendered_notebooks": [
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
+    "rendering": "Final saved outputs inspected in original Jupyter UI through CUA; nbconvert HTML generated and validated. file:// preview was policy-blocked, not used. No browser file-policy or same-origin protections weakened.",
+    "screenshots": "Inspected in CUA, not stored in repository."
+  },
+  "model": {
+    "training_run": "20261030T143314-b0538124",
+    "reload_checks": [
+      {
+        "method": "linear",
+        "reload_max_probability_error": 0.0,
+        "metrics_recomputed": true
+      },
+      {
+        "method": "fm",
+        "reload_max_probability_error": 0.0,
+        "metrics_recomputed": true
+      }
+    ],
+    "old_notebooks_unchanged": 47,
+    "formal_ads_latest": "20261030T125738-f82b6582"
+  },
+  "search_api": {
+    "official_run": "20261030T124927-d1467622",
+    "five_methods": "passed",
+    "trace_fallback": "passed",
+    "notebooks": 63
+  },
+  "recommendation": {
+    "project": "/Users/lynnlee/Documents/Codex/2026-10-30/task/soutui-lab",
+    "public_assets_verified": 68,
+    "lecture_api_verified": 45,
+    "notebook_entries": 63,
+    "retailrocket_runs": 4,
+    "feature_dimensions": 32,
+    "recommendations": 10,
+    "status": "PASS"
+  },
+  "ads": {
+    "run_id": "20261030T125738-f82b6582",
+    "status": "PASS",
+    "offline_online_probability_rows": 30,
+    "probability_tolerance": 1e-10,
+    "tree_export_golden_rows": 500,
+    "saved_metrics_recomputed": true,
+    "feature_group_overlap": 0,
+    "notebooks": 63,
+    "recommendation_versions": [
+      "ablation-history64",
+      "ablation-logq",
+      "ablation-no-history",
+      "baseline-history32"
+    ],
+    "itemcf": true,
+    "simulation_budget_all_seeds": true
+  },
+  "ui_repair": "Shared workshop renderer accepts BERT rows without per-method timing; missing timing remains explicitly unrecorded; no invented values.",
+  "notebook_hashes": {
+    "47_Ads_Products.ipynb": "9b2fff1619af0da73385f845041a9d1c822f915c0649537831a700a657b29b7e",
+    "48_Ads_Billing.ipynb": "7e57935353cde92f3ba23eafac41478b89bc29545fca05a9018febeb16918976",
+    "49_Ads_Contracts.ipynb": "b0e896c803a0886c212793b88bc4d1216b64d35f6c050e84811c6584e3a913cf",
+    "50_Ads_SponsoredSearch.ipynb": "7b1319ae1548cb1ce0fe67c3bc97b37af04f832eea50819dacf0b2b39f74a2b3",
+    "51_Ads_MultiSlot.ipynb": "19da2c30eea582b13ee86e4663c7e0ccc1edb7bc23d64e46ac25f375dca46dc1",
+    "52_Ads_RTB.ipynb": "936b6e096eb81d8c1098b90cbdc96ecf080c4eed8e0ebf5f204a77edef35fbb2",
+    "53_Ads_Targeting.ipynb": "32d96274b6df27f15aaa9877743b5a209350b81c6a7b38b8ac58b00efec1b685",
+    "54_Ads_CandidateIndex.ipynb": "5c70cdb73ec64353bd3aa1516ff94e4eb26017f91c9f247e83e1072acfd747df",
+    "55_Ads_FM.ipynb": "154a45a718adeae35a061bd36c0c362df8268d1bc850c7f175b768232b737dff",
+    "56_Ads_Conversion.ipynb": "3340af774878f53af1e2cfb7ad78e241c687570cdb538b2caa0d92908e916734",
+    "57_Ads_Bidding.ipynb": "d9616bcb4cd4fa629846f08ac921f1c5002a31f94dd289e5747fda12e0a2ccd9",
+    "58_Ads_FeedbackPacing.ipynb": "f0fddfa50d44f7f8c84a57944c9a9ed26470449feceb1cc78b38439c27cd301c",
+    "59_Ads_Attribution.ipynb": "57f01b0e502c442d0270b4934bd326f6896d52e879f2bf0a8deff71b626fead7",
+    "60_Ads_ReservePrices.ipynb": "a49e0953c366a355bc45ed335c54254932733e0412d5c719b41c52cd55039742",
+    "61_Ads_ExperimentIntegrity.ipynb": "ee8f818b440dc3e603d3b313c96013aa652d7fbe896a286a2cd3d518baa4496f",
+    "62_Ads_Ledger.ipynb": "73d244f2a16f315f641971709855ee756126561125fc39d8fda174d29a536e31"
+  },
+  "operating_boundary": "Same checkout/main/service/registry/.venv. Only owned18580 restarted.18581/Jupyter and existing user kernels were never stopped; browser viewing opened new idle notebook sessions.",
+  "final_execution": {
+    "47_Ads_Products.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.62
+    },
+    "48_Ads_Billing.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.33
+    },
+    "49_Ads_Contracts.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.77
+    },
+    "50_Ads_SponsoredSearch.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.34
+    },
+    "51_Ads_MultiSlot.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.37
+    },
+    "52_Ads_RTB.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.77
+    },
+    "53_Ads_Targeting.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.28
+    },
+    "54_Ads_CandidateIndex.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.29
+    },
+    "55_Ads_FM.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 3.0
+    },
+    "56_Ads_Conversion.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.49
+    },
+    "57_Ads_Bidding.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.33
+    },
+    "58_Ads_FeedbackPacing.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.41
+    },
+    "59_Ads_Attribution.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.51
+    },
+    "60_Ads_ReservePrices.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.53
+    },
+    "61_Ads_ExperimentIntegrity.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.42
+    },
+    "62_Ads_Ledger.ipynb": {
+      "state": "executed",
+      "code_cells": 3,
+      "seconds": 1.33
+    }
+  }
+}

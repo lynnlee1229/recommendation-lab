@@ -1,0 +1,17 @@
+{
+  "training_run": "20261030T143314-b0538124",
+  "reload_checks": [
+    {
+      "method": "linear",
+      "reload_max_probability_error": 0.0,
+      "metrics_recomputed": true
+    },
+    {
+      "method": "fm",
+      "reload_max_probability_error": 0.0,
+      "metrics_recomputed": true
+    }
+  ],
+  "old_notebooks_unchanged": 47,
+  "formal_ads_latest": "20261030T125738-f82b6582"
+}

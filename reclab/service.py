@@ -23,6 +23,7 @@ app = FastAPI(title="Search Recommendation Ads Lab", docs_url=None, redoc_url=No
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 SOURCE_FILES = {
+    "ads_curriculum": ("reclab/ads_curriculum.py", "广告产品、市场、资格与反馈机制及FM教学训练"),
     "search_curriculum": ("reclab/learning/search_curriculum.py", "搜索课程：查询、位置索引、缓存与建议机制"),
     "search_training": ("reclab/search_training_workshop.py", "搜索课程：独立TinyBERT真实微调"),
     "foundations": ("reclab/learning/foundations.py", "公用基础：梯度下降与训练集拟合的构造机制"),
@@ -639,3 +640,21 @@ def search_workshop_trace(request: SearchWorkshopRequest):
 @app.get('/api/search/course')
 def search_course():
     return read_json(ROOT / 'docs/search_course.json')
+
+
+@app.get('/api/ads/course')
+def ads_course():
+    return read_json(ROOT / 'docs/ads_course.json')
+
+
+class AdsLedgerRequest(BaseModel):
+    query: str = Field(default='跑鞋', min_length=1, max_length=100)
+    region: str = Field(default='上海', min_length=1, max_length=20)
+    budget: float = Field(default=2., ge=0., le=100.)
+
+
+@app.post('/api/ads/workshop/ledger')
+def ads_workshop_ledger(request: AdsLedgerRequest):
+    from .ads_curriculum import ledger
+    return {'evidence': 'constructed mechanism, NOT real revenue',
+            **ledger(request.query,request.region,request.budget)}

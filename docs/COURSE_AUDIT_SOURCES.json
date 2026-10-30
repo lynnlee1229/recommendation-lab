@@ -28,8 +28,10 @@
       "git_blob_sha1": "4bbd18bc89768e2f856d7529f577eb7bf5cfc411",
       "bytes": 3546790,
       "role": "作者配套GitHub中文课件，补广告目标与市场机制",
-      "verified": "GitHub API确认实际PPT文件、大小和blob；教材目录确认该章涉及优化目标、博弈、拍卖与匹配。本轮未逐页渲染PPT，不据此声称覆盖现代广告工程全链路。",
-      "availability": "确有GitHub PPT；单章而非完整广告课程，无明确再分发许可不复制进Lab"
+      "verified": "固定PPT已下载，大小与Git blob逐字节核验；解包读取全部96页幻灯片文字：3–5/14–41页产品与目标、42–94页博弈匹配拍卖、第95页说明未深入技术。未逐页视觉渲染原PPT，不据此声称工程全链路。",
+      "availability": "确有GitHub PPT；单章而非完整广告课程，无明确再分发许可不复制进Lab",
+      "slide_count": 96,
+      "sha256": "ec8275e490557345ad3c2291035ad0f828d4a57f9c65f7686aa500f3aad952eb"
     },
     {
       "id": "A-NJU",
@@ -359,5 +361,16 @@
         "acceptance": "用同一Lab中的可追溯小请求演示完整结构，始终将真实CTR证据和模拟决策证据分层；课程先产品/市场，再预测/优化，不从Criteo实验倒推主线。"
       }
     ]
+  },
+  "ads_implementation": {
+    "date": "2026-10-30",
+    "units": "A01–A18",
+    "new_chapters": [
+      47,
+      62
+    ],
+    "guide": "docs/ADS_CURRICULUM_GUIDE.md",
+    "acceptance": "results/2026-10-30-ads-curriculum/acceptance.json",
+    "source_boundary": "A-CCR full96 slide text parsed and blob verified; original PPT not redistributed; no claim of full modern engineering lecture release."
   }
 }

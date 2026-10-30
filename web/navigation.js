@@ -17,13 +17,13 @@ const LAB_MODULES = {
     sources: ['search', 'search_lessons', 'search_curriculum', 'search_training'],
   },
   ads: {
-    title: '广告', code: 'ADS', description: '从真实曝光点击学习概率预测，再进入独立模拟的出价与预算决策。',
+    title: '广告', code: 'ADS', description: '从产品、计费和市场开始，学习资格与候选、概率预测、拍卖、投放和反馈。',
     pages: [
-      ['path', '学习路径', 'code'], ['prediction', '点击预测', 'ads'],
+      ['path', '学习路径', 'code'], ['references', '讲义与路线', 'ads-course'], ['prediction', '点击预测', 'ads'],
       ['auction', '拍卖与预算', 'auction'], ['records', '广告实验记录', 'research'],
       ['source', '广告源码', 'source'],
     ],
-    sources: ['ads', 'ads_teaching', 'auction'],
+    sources: ['ads', 'ads_teaching', 'ads_curriculum', 'auction'],
   },
   recommendation: {
     title: '推荐', code: 'REC', description: '从用户行为与候选物品开始，学习召回、排序、训练和评估。',
@@ -57,9 +57,11 @@ const COURSE_PATHS = {
     {title: '参考 · 已有综合实验', chapters: [17], description: '学习主线后的真实SciFact综合参考；旧Notebook、正式模型和已见测试协议保持。'},
   ],
   ads: [
-    {title: '综合 · 预测与决策的边界', chapters: [18], description: '先看真实点击建模与模拟拍卖如何分层；两者不是同一条真实竞价日志。'},
-    {title: '深入 · 点击概率', chapters: [19, 20, 21, 22], description: '数据切分 → 线性特征 → 非线性容量 → 概率校准与审计。'},
-    {title: '深入 · 模拟市场决策', chapters: [23, 24], description: '拍卖与支付 → 出价 → 预算pacing → 预测偏差；所有收入均为模拟。'},
+    {"title": "产品与市场 · A01–A06", "chapters": [47, 48, 49, 50, 51, 52], "description": "先讲参与方、产品、计费、合约、搜索广告、多广告位拍卖和RTB。"},
+    {"title": "资格与候选 · A07–A08", "chapters": [53, 54], "description": "上下文、扩量、资格与倒排候选；构造机制。"},
+    {"title": "响应预测 · A09–A12", "chapters": [19, 20, 21, 55, 56, 22], "description": "真实曝光与线性基线 → 非线性FM对照 → 构造转化延迟 → 校准审计。"},
+    {"title": "投放与反馈 · A13–A18", "chapters": [57, 58, 59, 60, 61, 62], "description": "价值出价、反馈pacing、归因增量、底价、实验与账本。"},
+    {"title": "旧综合与决策参考", "chapters": [18, 23, 24], "description": "原实验保持原样，作为对照参考，不限制课程全貌。"},
   ],
 };
 const LEGACY_ROUTES = {

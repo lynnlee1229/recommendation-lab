@@ -1261,6 +1261,118 @@
       ],
       "source": "[王树森固定目录](https://github.com/wangshusen/SearchEngine/tree/7339c6b126e314abdb74a89adb033d39d8e3d37b)",
       "prerequisites": "35–45以及25–30"
+    },
+    {
+      "target": "ads_47",
+      "file": "47_Ads_Products.ipynb",
+      "title": "广告产品、参与方与交易链路",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_48",
+      "file": "48_Ads_Billing.ipynb",
+      "title": "计费、分母与三方账本",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_49",
+      "file": "49_Ads_Contracts.ipynb",
+      "title": "合约库存预测与在线分配",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_50",
+      "file": "50_Ads_SponsoredSearch.ipynb",
+      "title": "搜索广告匹配与质量排序",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_51",
+      "file": "51_Ads_MultiSlot.ipynb",
+      "title": "多广告位GFP、GSP与VCG",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_52",
+      "file": "52_Ads_RTB.ipynb",
+      "title": "RTB协议角色、底价与截尾反馈",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_53",
+      "file": "53_Ads_Targeting.ipynb",
+      "title": "上下文定向、扩量与数据边界",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_54",
+      "file": "54_Ads_CandidateIndex.ipynb",
+      "title": "广告候选索引与约束匹配",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_55",
+      "file": "55_Ads_FM.ipynb",
+      "title": "真实CTR：线性与FM交叉的预算对照",
+      "module": "ads",
+      "mode": "真实采样曝光的训练与select诊断"
+    },
+    {
+      "target": "ads_56",
+      "file": "56_Ads_Conversion.ipynb",
+      "title": "CVR、CTCVR、延迟与选择偏差",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_57",
+      "file": "57_Ads_Bidding.ipynb",
+      "title": "价值出价与预算、ROAS约束",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_58",
+      "file": "58_Ads_FeedbackPacing.ipynb",
+      "title": "预算节奏与反馈控制",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_59",
+      "file": "59_Ads_Attribution.ipynb",
+      "title": "多触点归因与随机增量",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_60",
+      "file": "60_Ads_ReservePrices.ipynb",
+      "title": "底价、填充率与供需效用",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_61",
+      "file": "61_Ads_ExperimentIntegrity.ipynb",
+      "title": "广告实验、偏差与反作弊",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_62",
+      "file": "62_Ads_Ledger.ipynb",
+      "title": "广告请求到结算的端到端账本",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
     }
   ],
   "search_units": [

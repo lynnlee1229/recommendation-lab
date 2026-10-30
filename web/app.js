@@ -58,7 +58,7 @@ function renderRoute() {
   notice();
   if (page[2] === 'code') {
     if (previous.module !== currentRoute.module) $('course-query').value = '';
-    $('path-intro').textContent = config.description + (currentRoute.module === 'common' ? ' 按31–34顺序运行，再选择领域路径。' : (currentRoute.module === 'search' ? ' 先修公用31–34，再按需求、查询、召回、排序与推荐依次运行；综合章为后置参考。' : ' 先读综合章建立全景，再沿链路逐节运行。'));
+    $('path-intro').textContent = config.description + (currentRoute.module === 'common' ? ' 按31–34顺序运行，再选择领域路径。' : (currentRoute.module === 'search' ? ' 先修公用31–34，再按需求、查询、召回、排序与推荐依次运行；综合章为后置参考。' : (currentRoute.module === 'ads' ? ' 按产品/需求主线逐节运行；旧综合实验留作参考。' : ' 先读综合章建立全景，再沿链路逐节运行。')));
     loadNotebookCatalog();
   }
   if (page[2] === 'source') {
@@ -105,7 +105,7 @@ function renderNotebookCatalog() {
     if (!group.length) return '';
     return `<section class="learning-path"><h2>${esc(title)} <small>${group.length} 章</small></h2><p>${esc(description)}</p><div class="chapter-grid">${group.map(item => {
       const n = parseInt(item.file, 10);
-      const evidence = n >= 35 && n <= 46 ? (n === 42 ? '真实小预算BERT微调' : '搜索构造机制实验') : n >= 31 && n <= 34 ? '公用构造机制实验' : n === 0 ? '旧版推荐导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
+      const evidence = n >= 47 ? item.mode : n >= 35 && n <= 46 ? (n === 42 ? '真实小预算BERT微调' : '搜索构造机制实验') : n >= 31 && n <= 34 ? '公用构造机制实验' : n === 0 ? '旧版推荐导览' : n === 23 || n === 24 ? '独立模拟市场' : n === 6 ? '张量机制练习' : n === 5 ? '受控机制模拟' : [3,9,10,18,21].includes(n) ? '真实数据与机制 / 模拟分层' : '真实数据实验';
       const content = `<span class="badge">${evidence}</span><strong>${esc(item.title)}</strong><span>${esc(item.mode)}</span>`;
       return item.available ? `<a class="notebook-entry" href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${content}</a>` : `<div class="notebook-entry">${content}<span>文件暂不可用</span></div>`;
     }).join('')}</div></section>`;
@@ -138,6 +138,7 @@ async function loadCode() {
       search: "search_code",
       search_lessons: "search_lessons_code",
       ads: "ads_code",
+      ads_curriculum: "ads_curriculum_code",
       models: "models",
       data: "sampling",
       retrieval: "retrieval",
@@ -511,11 +512,11 @@ async function drawResearch() {
         panel.innerHTML += table(['失败查询ID','BM25 NDCG','TinyBERT NDCG'],result.failures.slice(0,5).map(r => [esc(r.qid),fmt(r.metrics.bm25['ndcg@10']),fmt(r.metrics.tinybert_rerank['ndcg@10'])]));
       }
       if (run.domain === 'search' && result.kind === 'workshop') {
-        panel.innerHTML += table(['教学重排特征','select NDCG@10','select MRR@10','select Recall@10','维度','拟合秒'], result.rows.map(r=>[esc(r.method),fmt(r.select['ndcg@10']),fmt(r.select['mrr@10']),fmt(r.select['recall@10']),r.features,r.fit_seconds.toFixed(3)]));
-        panel.innerHTML += '<p>训练查询按160/40分组的局部练习；select成绩，不替换正式搜索服务。</p>';
+        panel.innerHTML += table(['教学重排特征','select NDCG@10','select MRR@10','select Recall@10','维度','拟合秒'], result.rows.map(r=>[esc(r.method),fmt(r.select['ndcg@10']),fmt(r.select['mrr@10']),fmt(r.select['recall@10']),r.features ?? '未记录',Number.isFinite(r.fit_seconds) ? r.fit_seconds.toFixed(3) : '未按方法记录']));
+        panel.innerHTML += '<p>按各条记录scope说明的query分组与训练预算；select成绩，不替换正式搜索服务。</p>';
       }
       if (run.domain === 'ads' && result.kind === 'workshop') {
-        panel.innerHTML += table(['教学方法','select AUC','select logloss','特征维度','拟合秒'],result.rows.map(r=>[esc(r.method),fmt(r.select.auc),fmt(r.select.logloss),r.features,r.fit_seconds.toFixed(2)]));
+        panel.innerHTML += table(['教学方法','select AUC','select logloss','字段/特征维度','参数量','拟合秒'],result.rows.map(r=>[esc(r.method),fmt(r.select.auc),fmt(r.select.logloss),r.features,r.parameters ?? '未记录',r.fit_seconds.toFixed(2)]));
         panel.innerHTML += '<p>小前缀教学训练，只报告select；不替换正式200k实验，不混比audit。</p>';
       }
       if (run.domain === 'ads' && result.kind !== 'workshop') {
@@ -582,3 +583,13 @@ async function loadSearchCourse() {
   } catch(e) { $('search-course-content').textContent = '路线加载失败：'+e.message; }
 }
 loadSearchCourse();
+
+
+async function loadAdsCourse() {
+  try {
+    const c = await api('/api/ads/course');
+    const chapterLink = n => { const item = c.chapters.find(x => parseInt(x.file,10) === n); return item ? `<a href="/notebooks?target=${encodeURIComponent(item.target)}" target="_blank" rel="noopener">${n}章</a>` : `${n}章`; };
+    $('ads-course-content').innerHTML = `<p>${esc(c.prerequisites)}</p><p>${esc(c.boundary)}</p><div class="chapter-grid">${c.sources.map(s=>`<a class="notebook-entry" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join('')}</div>${c.units.map(u=>`<section class="learning-path"><h2>${esc(u.id)} · ${esc(u.topic)}</h2><p>${esc(u.acceptance)}</p><p>课程：${u.chapters.map(chapterLink).join(' / ')} · ${esc(u.evidence_type)} · 来源：${esc(u.source)}</p><p>${esc(u.limitation)}</p></section>`).join('')}`;
+  } catch(e) { $('ads-course-content').textContent = '路线加载失败：'+e.message; }
+}
+loadAdsCourse();

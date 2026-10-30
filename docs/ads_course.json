@@ -1,0 +1,420 @@
+{
+  "title": "广告讲义与路线",
+  "prerequisites": "先修公用31–34。按A01–A18：产品与市场 → 资格候选 → 响应预测 → 投放反馈。",
+  "boundary": "中文GitHub确有96页作者配套第8章，但不是现代广告工程全套课；Lab新增自编实验。真实Criteo只支持CTR；转化、画像、归因与市场均明确构造，不代表线上收益。",
+  "sources": [
+    {
+      "title": "刘鹏、王超《计算广告》第2版，出版社提供的目录",
+      "url": "https://read.douban.com/ebook/371259701/"
+    },
+    {
+      "title": "《计算传播学导论》第8章计算广告PPT",
+      "url": "https://github.com/SocratesClub/ccrbook/blob/6dbd5650f2adc6e257e5bd5d156bc50a72560ee9/slides/Chapter%208%20%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A.pptx"
+    },
+    {
+      "title": "南京大学《计算传播与广告》2015课程",
+      "url": "https://github.com/SocratesClub/computational-advertising-2015"
+    },
+    {
+      "title": "Weinan Zhang / Jian Xu, Learning, Prediction and Optimisation in RTB Display Advertising, CIKM 2016",
+      "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf"
+    },
+    {
+      "title": "张伟楠 RTB论文索引",
+      "url": "https://github.com/wnzhang/rtb-papers"
+    }
+  ],
+  "chapters": [
+    {
+      "target": "ads",
+      "file": "18_Ads_Experiments.ipynb",
+      "title": "真实广告点击：概率、校准与模拟拍卖",
+      "mode": "真实曝光点击 · 独立校准与审计 · 模拟预算市场"
+    },
+    {
+      "target": "ads_19",
+      "file": "19_Ads_Data_Splits.ipynb",
+      "title": "曝光、标签、缺失与无泄漏切分",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_20",
+      "file": "20_Ads_Linear_Features.ipynb",
+      "title": "CTR线性基线与特征工程",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_21",
+      "file": "21_Ads_Nonlinearity.ipynb",
+      "title": "非线性、特征交叉与树容量",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_22",
+      "file": "22_Ads_Calibration.ipynb",
+      "title": "概率评分、可靠性与校准审计",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_23",
+      "file": "23_Ads_Auction_Bids.ipynb",
+      "title": "拍卖、支付规则与出价",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_24",
+      "file": "24_Ads_Pacing_Integration.ipynb",
+      "title": "预算pacing、约束与整合误差分析",
+      "mode": "真实点击分布与独立模拟市场 · 可运行单变量实验"
+    },
+    {
+      "target": "ads_47",
+      "file": "47_Ads_Products.ipynb",
+      "title": "广告产品、参与方与交易链路",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_48",
+      "file": "48_Ads_Billing.ipynb",
+      "title": "计费、分母与三方账本",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_49",
+      "file": "49_Ads_Contracts.ipynb",
+      "title": "合约库存预测与在线分配",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_50",
+      "file": "50_Ads_SponsoredSearch.ipynb",
+      "title": "搜索广告匹配与质量排序",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_51",
+      "file": "51_Ads_MultiSlot.ipynb",
+      "title": "多广告位GFP、GSP与VCG",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_52",
+      "file": "52_Ads_RTB.ipynb",
+      "title": "RTB协议角色、底价与截尾反馈",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_53",
+      "file": "53_Ads_Targeting.ipynb",
+      "title": "上下文定向、扩量与数据边界",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_54",
+      "file": "54_Ads_CandidateIndex.ipynb",
+      "title": "广告候选索引与约束匹配",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_55",
+      "file": "55_Ads_FM.ipynb",
+      "title": "真实CTR：线性与FM交叉的预算对照",
+      "module": "ads",
+      "mode": "真实采样曝光的训练与select诊断"
+    },
+    {
+      "target": "ads_56",
+      "file": "56_Ads_Conversion.ipynb",
+      "title": "CVR、CTCVR、延迟与选择偏差",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_57",
+      "file": "57_Ads_Bidding.ipynb",
+      "title": "价值出价与预算、ROAS约束",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_58",
+      "file": "58_Ads_FeedbackPacing.ipynb",
+      "title": "预算节奏与反馈控制",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_59",
+      "file": "59_Ads_Attribution.ipynb",
+      "title": "多触点归因与随机增量",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_60",
+      "file": "60_Ads_ReservePrices.ipynb",
+      "title": "底价、填充率与供需效用",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_61",
+      "file": "61_Ads_ExperimentIntegrity.ipynb",
+      "title": "广告实验、偏差与反作弊",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    },
+    {
+      "target": "ads_62",
+      "file": "62_Ads_Ledger.ipynb",
+      "title": "广告请求到结算的端到端账本",
+      "module": "ads",
+      "mode": "明确构造机制实验（非真实广告日志）"
+    }
+  ],
+  "units": [
+    {
+      "id": "A01",
+      "topic": "广告参与方、产品与交易全貌",
+      "source": "A-LIU 市场/产品；A-CCR 第8章",
+      "acceptance": "以广告主/媒体/用户/平台解释合约、竞价、搜索、原生、程序化产品；贯通一次请求和结算，先讲目标再讲模型。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "18只从Criteo预测和模拟切入",
+      "chapters": [
+        47
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "产品与角色的构造链路；非完整协议或品牌效果评估。"
+    },
+    {
+      "id": "A02",
+      "topic": "计费单位、指标与三方目标",
+      "source": "A-LIU 基础；A-CCR 优化目标",
+      "acceptance": "补CPM/CPC/CPA、CTR/CVR/CTCVR、eCPM/ROAS单位换算和分母；用可检查账本避免把出价、支付、收入、利润混为一谈。",
+      "audit_baseline_status": "部分",
+      "audit_baseline_evidence": "23/24有每曝光货币、价值与盈余边界",
+      "chapters": [
+        48
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "无手续费的构造账本；收入减广告费未计其他成本，不是净利润。"
+    },
+    {
+      "id": "A03",
+      "topic": "合约广告、库存预测与在线分配",
+      "source": "A-LIU 合约/核心技术；A-NJU 匹配",
+      "acceptance": "构造库存与合约，做离线最优小规模枚举/LP与在线贪心对照，检查保量、欠投和机会成本；不用虚构真实订单。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "无合约、保量、库存与分配课程",
+      "chapters": [
+        49
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "3份库存的穷举与在线贪心、历史均值预测；不是工业库存模型或在线最优保证。"
+    },
+    {
+      "id": "A04",
+      "topic": "搜索广告、定向资格与质量排序",
+      "source": "A-LIU 搜索竞价；A-NJU 搜索广告市场",
+      "acceptance": "讲关键词/广告/落地页匹配、资格过滤与质量分；同请求中区分自然结果与商业候选，缺质量日志用机制例。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "SciFact文档检索不是广告匹配；auction无关键词广告场景",
+      "chapters": [
+        50
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "关键词OR与规则资格、人工质量；无真实关键词/落地页质量日志。"
+    },
+    {
+      "id": "A05",
+      "topic": "GFP/GSP/VCG与多广告位拍卖",
+      "source": "A-CCR/A-NJU 拍卖；A-RTB auction",
+      "acceptance": "增加位置外部性、多广告位GSP/VCG支付与效用可枚举验算；不把现单物品二价叫GSP/VCG，不承诺真实最优。",
+      "audit_baseline_status": "机制",
+      "audit_baseline_evidence": "23只有单赢家独立二价，无多广告位机制",
+      "chapters": [
+        51
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "同质质量、可分离位置CTR、无预算；VCG数值核验不替代理论假设。"
+    },
+    {
+      "id": "A06",
+      "topic": "程序化RTB、底价与市场反馈",
+      "source": "A-LIU 程序化；A-RTB 系统/底价",
+      "acceptance": "串联DSP/SSP/ADX的请求和反馈；区分底价、竞价对手、支付、输标和截尾市场价；把制度设定写入实验配置。",
+      "audit_baseline_status": "部分",
+      "audit_baseline_evidence": "auction有固定外部报价，非完整RTB协议；外部价不等于平台底价",
+      "chapters": [
+        52
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "最小角色/反馈状态；不实现OpenRTB，未达底价与竞争输标分别处理。"
+    },
+    {
+      "id": "A07",
+      "topic": "受众定向、上下文、扩量与DMP",
+      "source": "A-LIU 定向/数据；A-RTB targeting",
+      "acceptance": "以构造人群/上下文做约束匹配与扩量、覆盖和误投；解释冷启动、数据最小化与跨域限制，不能把匿名编码解释为真实属性。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "39个匿名字段不含已知用户画像语义",
+      "chapters": [
+        53
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "人工上下文及相关标签；无真实画像、DMP跨域或扩量效果。"
+    },
+    {
+      "id": "A08",
+      "topic": "广告候选检索与约束匹配",
+      "source": "A-LIU 定向/竞价技术；Lab教学展开",
+      "acceptance": "建小广告库存与AND/OR约束索引、候选top-k；向量检索可复用共享组件，但必须检验资格约束，不能借文档搜索冒充广告引擎。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "无广告库、活动状态/预算资格的候选引擎",
+      "chapters": [
+        54
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "小广告库倒排与穷举oracle；无分布式服务与并发预算一致性。"
+    },
+    {
+      "id": "A09",
+      "topic": "真实曝光、标签、切分与线性CTR",
+      "source": "A-LIU CTR；A-RTB response",
+      "acceptance": "复用，不重新训练200k正式实验；把抽样、训练先验和未知字段语义放进数据契约。",
+      "audit_baseline_status": "已覆盖",
+      "audit_baseline_evidence": "19/20真实曝光、特征组切分、onehot两次真拟合",
+      "chapters": [
+        19,
+        20
+      ],
+      "evidence_type": "真实采样曝光实验",
+      "limitation": "真实抽样曝光、匿名字段、特征组分区；不是用户/时间切分或总体CTR。"
+    },
+    {
+      "id": "A10",
+      "topic": "特征交叉与非线性响应模型",
+      "source": "A-LIU CTR；A-RTB response",
+      "acceptance": "复用推荐06机制代码而非复制；选少量有代表性的交叉/embedding对照进行实际小预算拟合，单变量与参数预算清楚，不堆论文名字。",
+      "audit_baseline_status": "部分",
+      "audit_baseline_evidence": "21是构造XOR与真实树容量，未实际实现广告FM/FFM/神经CTR",
+      "chapters": [
+        55
+      ],
+      "evidence_type": "真实采样曝光实验",
+      "limitation": "10k真实曝光、类别字段、单种子8epoch；select开发诊断，FM过拟合负结果保留。"
+    },
+    {
+      "id": "A11",
+      "topic": "转化预估、延迟反馈与样本选择",
+      "source": "A-RTB response/attribution；Lab展开",
+      "acceptance": "讲CTR×CVR与CTCVR、延迟删失与选择偏差；要么找许可清楚的小真实转换数据，要么明确构造日志做机制，绝不从click捏造conversion。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "Criteo样本只有曝光点击，无真实转化或延迟标签",
+      "chapters": [
+        56
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "明确构造转化与延迟，不从Criteo click制造真实conversion；无真实CVR/ESMM收益。"
+    },
+    {
+      "id": "A12",
+      "topic": "概率校准、评分与分段审计",
+      "source": "A-LIU CTR；Lab概率方法展开",
+      "acceptance": "保留负结果和计数，说明calibration/audit独立性与抽样先验限制；不把ECE最小当唯一选型。",
+      "audit_baseline_status": "已覆盖",
+      "audit_baseline_evidence": "22 proper scores、sigmoid重拟合、分箱/分段；正式raw/sigmoid/isotonic",
+      "chapters": [
+        22
+      ],
+      "evidence_type": "真实采样曝光实验",
+      "limitation": "原独立calibration/audit与负结果保持；未知抽样先验，不推断线上校准。"
+    },
+    {
+      "id": "A13",
+      "topic": "出价目标、竞价函数与智能投放",
+      "source": "A-RTB learning to bid；A-LIU 程序化",
+      "acceptance": "从CPC/CPA/ROAS目标推导报价、约束和最优反应的依赖假设；至少固定市场比较价值报价与约束策略，不承诺实投利润。",
+      "audit_baseline_status": "部分",
+      "audit_baseline_evidence": "23仅value/flat/倍数与单赢家市场",
+      "chapters": [
+        57
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "固定构造二价市场与已知期望转化价值；硬预算与ROAS阈值非全局最优。"
+    },
+    {
+      "id": "A14",
+      "topic": "预算pacing与反馈控制",
+      "source": "A-RTB pacing",
+      "acceptance": "先讲现门控，再加入反馈型节奏控制并比较突发、稀疏、漂移；逐请求断言花费不超预算，区分匀速花费与价值最大化。",
+      "audit_baseline_status": "机制",
+      "audit_baseline_evidence": "24是累计预算比例硬门控，非PID/对偶优化",
+      "chapters": [
+        58
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "积分式误差反馈，不是完整PID；3情景价值/花费有取舍，不保证花完或最优。"
+    },
+    {
+      "id": "A15",
+      "topic": "归因与增量效果",
+      "source": "A-RTB attribution；A-LIU 相关技术",
+      "acceptance": "构造多触点路径比last-click等记账；另用带已知随机分配的机制实验说明增量。没有propensity不能声称真实IPS/OPE或因果增收。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "没有曝光/点击/转化序列与归因",
+      "chapters": [
+        59
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "构造路径与已知随机化；无真实归因真值、propensity或IPS/OPE。"
+    },
+    {
+      "id": "A16",
+      "topic": "底价优化与供需策略",
+      "source": "A-RTB reserve price",
+      "acceptance": "在相同构造报价分布下扫底价，计算填充、收入和广告主效用；明确分布/拍卖机制，不依据模拟选择真实价格。",
+      "audit_baseline_status": "缺失",
+      "audit_baseline_evidence": "外部报价变化不是平台reserve机制或最优底价",
+      "chapters": [
+        60
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "固定U(0,2)报价、统一二价reserve；忽略长期战略响应，不选择真实底价。"
+    },
+    {
+      "id": "A17",
+      "topic": "实验、偏差、反作弊与数据边界",
+      "source": "A-LIU 其他技术；Lab工程展开",
+      "acceptance": "通过机制例说明曝光选择、分桶干扰、异常流量与数据滥用；不可由特征哈希切分推断用户级独立或公平性；保留负结果。",
+      "audit_baseline_status": "部分",
+      "audit_baseline_evidence": "现有离线分区/校准审计与预算断言，不含广告在线实验/欺诈",
+      "chapters": [
+        61
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "构造混合偏差、预算干扰和规则误伤；非真实反作弊准确率/线上实验。"
+    },
+    {
+      "id": "A18",
+      "topic": "端到端账本与课程综合",
+      "source": "Lab教学设计，串联产品/预测/决策",
+      "acceptance": "用同一Lab中的可追溯小请求演示完整结构，始终将真实CTR证据和模拟决策证据分层；课程先产品/市场，再预测/优化，不从Criteo实验倒推主线。",
+      "audit_baseline_status": "部分",
+      "audit_baseline_evidence": "18/24串联概率与模拟，但尚无产品—资格—候选—决策—反馈全过程",
+      "chapters": [
+        62
+      ],
+      "evidence_type": "构造机制 / 模拟市场",
+      "limitation": "单请求与单进程幂等机制；无并发事务、退款、真实点击或真实收入。"
+    }
+  ]
+}

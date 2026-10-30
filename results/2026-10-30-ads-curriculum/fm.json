@@ -1,0 +1,157 @@
+{
+  "run_id": "20261030T143314-b0538124",
+  "result": {
+    "kind": "workshop",
+    "rows": [
+      {
+        "method": "linear",
+        "features": 26,
+        "fit_seconds": 1.0610675409989199,
+        "parameters": 1691,
+        "train_loss": [
+          0.14646176993846893,
+          0.11562688648700714,
+          0.10671891272068024,
+          0.10152316093444824,
+          0.09748876094818115,
+          0.09416419267654419,
+          0.09149784594774246,
+          0.08936915546655655
+        ],
+        "select": {
+          "n": 1534,
+          "positives": 43,
+          "click_rate": 0.02803129144012928,
+          "mean_probability": 0.024224348962813162,
+          "auc": 0.607723862555176,
+          "logloss": 0.13226711446100473,
+          "brier": 0.027532271472472683,
+          "ece": 0.008300693781814668,
+          "reliability": [
+            {
+              "bin": 0,
+              "count": 1487,
+              "mean_probability": 0.0199821406331503,
+              "click_rate": 0.026227302849292755
+            },
+            {
+              "bin": 1,
+              "count": 39,
+              "mean_probability": 0.1353645458435401,
+              "click_rate": 0.07692307978868484
+            },
+            {
+              "bin": 2,
+              "count": 6,
+              "mean_probability": 0.24880596498648325,
+              "click_rate": 0.1666666716337204
+            },
+            {
+              "bin": 3,
+              "count": 2,
+              "mean_probability": 0.3373275548219681,
+              "click_rate": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "method": "fm",
+        "features": 26,
+        "fit_seconds": 0.18649529100002837,
+        "parameters": 8451,
+        "train_loss": [
+          0.13528195023536682,
+          0.09953270852565765,
+          0.07762815803289413,
+          0.061654578894376755,
+          0.052155256271362305,
+          0.043922219425439835,
+          0.03756038099527359,
+          0.035005323588848114
+        ],
+        "select": {
+          "n": 1534,
+          "positives": 43,
+          "click_rate": 0.02803129144012928,
+          "mean_probability": 0.021685057986495514,
+          "auc": 0.5589506028418574,
+          "logloss": 0.1782557975889551,
+          "brier": 0.031998055665591225,
+          "ece": 0.030650135345648324,
+          "reliability": [
+            {
+              "bin": 0,
+              "count": 1458,
+              "mean_probability": 0.007972418321852949,
+              "click_rate": 0.02743484266102314
+            },
+            {
+              "bin": 1,
+              "count": 39,
+              "mean_probability": 0.1377520528741372,
+              "click_rate": 0.0
+            },
+            {
+              "bin": 2,
+              "count": 14,
+              "mean_probability": 0.23592933586665563,
+              "click_rate": 0.0714285746216774
+            },
+            {
+              "bin": 3,
+              "count": 6,
+              "mean_probability": 0.3494812895854314,
+              "click_rate": 0.0
+            },
+            {
+              "bin": 4,
+              "count": 4,
+              "mean_probability": 0.4331159442663193,
+              "click_rate": 0.0
+            },
+            {
+              "bin": 5,
+              "count": 3,
+              "mean_probability": 0.5363346139589945,
+              "click_rate": 0.3333333432674408
+            },
+            {
+              "bin": 6,
+              "count": 3,
+              "mean_probability": 0.6399103999137878,
+              "click_rate": 0.0
+            },
+            {
+              "bin": 7,
+              "count": 4,
+              "mean_probability": 0.7611487060785294,
+              "click_rate": 0.0
+            },
+            {
+              "bin": 8,
+              "count": 3,
+              "mean_probability": 0.8543569644292196,
+              "click_rate": 0.3333333432674408
+            }
+          ]
+        }
+      }
+    ],
+    "shapes": {
+      "raw": [
+        10000,
+        39
+      ],
+      "categorical": [
+        10000,
+        26
+      ],
+      "train": 5542,
+      "select": 1534
+    },
+    "changed_variable": "FM pair interactions; extra factor parameters explicitly counted; same rows/order/epochs/optimizer",
+    "scope": "Real sampled Criteo categorical-only select diagnostic, not independent audit or population CTR.",
+    "limits": "Capped train vocab, small prefix, one seed, numeric features omitted equally; no production selection or revenue claim."
+  }
+}

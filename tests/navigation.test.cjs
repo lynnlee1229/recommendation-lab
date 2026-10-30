@@ -33,10 +33,10 @@ test('every module page has a real panel and survives route reload', () => {
 });
 test('all existing notebooks belong to exactly one domain; rec basics remain rec', () => {
   const all = Object.values(COURSE_PATHS).flatMap(phases => phases.flatMap(p => plain(p.chapters)));
-  assert.equal(all.length, 47);
-  assert.deepEqual([...all].sort((a,b)=>a-b), Array.from({length:47},(_,i)=>i));
+  assert.equal(all.length, 63);
+  assert.deepEqual([...all].sort((a,b)=>a-b), Array.from({length:63},(_,i)=>i));
   assert.equal(COURSE_PATHS.search.flatMap(p=>p.chapters).length, 19);
-  assert.equal(COURSE_PATHS.ads.flatMap(p=>p.chapters).length, 7);
+  assert.equal(COURSE_PATHS.ads.flatMap(p=>p.chapters).length, 23);
   const rec = COURSE_PATHS.recommendation.flatMap(p=>p.chapters);
   for (const n of [0,1,2,3]) assert.ok(rec.includes(n));
   assert.deepEqual(plain(COURSE_PATHS.common.flatMap(p=>p.chapters)), [31,32,33,34]);

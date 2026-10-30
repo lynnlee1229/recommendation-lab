@@ -20,6 +20,24 @@ RUNTIME = ROOT / "logs/jupyter-runtime"
 PID_FILE = ROOT / "logs/notebook.pid"
 PYTHON = ROOT / ".venv/bin/python"
 TARGETS = {
+    "ads_curriculum_code": "reclab/ads_curriculum.py",
+    "ads_47": "notebooks/47_Ads_Products.ipynb",
+    "ads_48": "notebooks/48_Ads_Billing.ipynb",
+    "ads_49": "notebooks/49_Ads_Contracts.ipynb",
+    "ads_50": "notebooks/50_Ads_SponsoredSearch.ipynb",
+    "ads_51": "notebooks/51_Ads_MultiSlot.ipynb",
+    "ads_52": "notebooks/52_Ads_RTB.ipynb",
+    "ads_53": "notebooks/53_Ads_Targeting.ipynb",
+    "ads_54": "notebooks/54_Ads_CandidateIndex.ipynb",
+    "ads_55": "notebooks/55_Ads_FM.ipynb",
+    "ads_56": "notebooks/56_Ads_Conversion.ipynb",
+    "ads_57": "notebooks/57_Ads_Bidding.ipynb",
+    "ads_58": "notebooks/58_Ads_FeedbackPacing.ipynb",
+    "ads_59": "notebooks/59_Ads_Attribution.ipynb",
+    "ads_60": "notebooks/60_Ads_ReservePrices.ipynb",
+    "ads_61": "notebooks/61_Ads_ExperimentIntegrity.ipynb",
+    "ads_62": "notebooks/62_Ads_Ledger.ipynb",
+
     "search_35": "notebooks/35_Search_Needs_Judgments.ipynb",
     "search_36": "notebooks/36_Search_Chinese_Tokenization.ipynb",
     "search_37": "notebooks/37_Search_Term_Fields.ipynb",
